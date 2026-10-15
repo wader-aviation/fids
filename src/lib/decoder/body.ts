@@ -12,6 +12,19 @@ export function parseIssued(flat: string): string | undefined {
   return /\b(\d{4})Z\b/.exec(flat)?.[1];
 }
 
+/** Day of month from a DDHHMM group near the top ("METAR 141650", "YSSY R   152104"). */
+export function parseIssuedDay(firstLines: string, hhmm?: string): number | undefined {
+  for (const m of firstLines.matchAll(/(?:^|[\s-])(\d{2})(\d{4})Z?(?=\s|$)/g)) {
+    const day = Number(m[1]);
+    const hh = Number(m[2].slice(0, 2));
+    const mm = Number(m[2].slice(2));
+    if (day < 1 || day > 31 || hh > 23 || mm > 59) continue;
+    if (hhmm && Math.abs(hh * 60 + mm - (Number(hhmm.slice(0, 2)) * 60 + Number(hhmm.slice(2)))) > 60) continue;
+    return day;
+  }
+  return undefined;
+}
+
 export function parseWind(flat: string): Wind | undefined {
   // METAR group: 14004KT, VRB06KT, 36035G45KT, 01010KT 210V270
   const metar = /(?:^|\s)(\d{3}|VRB)(\d{2,3})(?:G(\d{2,3}))?(KT|MPS)\b(?:\s+(\d{3})V(\d{3})\b)?/.exec(flat);

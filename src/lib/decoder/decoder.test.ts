@@ -27,6 +27,11 @@ describe("header", () => {
     const d = byIcao("PHL ");
     assert.equal(d.icao, "KPHL");
   });
+  it("reads the day of month when stated", () => {
+    assert.equal(byIcao("EDDF").issuedDay, 15);
+    assert.equal(byIcao("YSSY").issuedDay, 15);
+    assert.equal(byIcao("KSEA").issuedDay, undefined);
+  });
   it("reads the RA printer form", () => {
     const d = decodeAtis(fixtures.printer[0].text);
     assert.ok(d);
@@ -47,6 +52,10 @@ describe("checksum", () => {
   });
   it("drops a checksum glued to the QNH", () => {
     assert.equal(stripChecksum("QNH: 103058C9").text, "QNH: 1030");
+  });
+  it("drops a checksum glued to a word", () => {
+    assert.equal(stripChecksum("FIRST CONTACT WITH HEATHROWD167").text, "FIRST CONTACT WITH HEATHROW");
+    assert.equal(stripChecksum("BIRD ACTIVITY ACKNOWLEDGED").hadChecksum, false);
   });
   it("keeps a real altimeter at the end of a cut message", () => {
     assert.equal(stripChecksum("BKN250 20/10 A3016").hadChecksum, false);

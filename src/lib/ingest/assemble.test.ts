@@ -14,6 +14,10 @@ describe("issuedAtFrom", () => {
   it("uses the receive day", () => {
     assert.equal(issuedAtFrom("1953", new Date("2026-10-15T20:01:00Z")).toISOString(), "2026-10-15T19:53:00.000Z");
   });
+  it("uses the stated day of month", () => {
+    assert.equal(issuedAtFrom("1650", new Date("2026-10-15T21:35:00Z"), 14).toISOString(), "2026-10-14T16:50:00.000Z");
+    assert.equal(issuedAtFrom("0850", new Date("2026-10-02T21:35:00Z"), 30).toISOString(), "2026-09-30T08:50:00.000Z");
+  });
   it("goes back a day across midnight", () => {
     assert.equal(issuedAtFrom("2350", new Date("2026-10-16T00:05:00Z")).toISOString(), "2026-10-15T23:50:00.000Z");
   });

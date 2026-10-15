@@ -3,6 +3,7 @@ import {
   parseApproaches,
   parseClouds,
   parseIssued,
+  parseIssuedDay,
   parseQnh,
   parseRunways,
   parseRwycc,
@@ -50,11 +51,13 @@ export function decodeAtis(rawText: string): DecodedAtis | null {
     approaches.flatMap((a) => a.runways).forEach((r) => !arrivalRunways.includes(r) && arrivalRunways.push(r));
   }
 
+  const issued = header.issued ?? parseIssued(flat);
   return {
     icao: header.icao,
     type: header.type,
     letter: header.letter,
-    issued: header.issued ?? parseIssued(flat),
+    issued,
+    issuedDay: parseIssuedDay(lines.slice(0, 2).join(" "), issued),
     lines,
     wind: parseWind(flat),
     visibility,

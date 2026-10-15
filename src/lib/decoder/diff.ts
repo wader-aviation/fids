@@ -37,8 +37,17 @@ const sentences = (d: DecodedAtis) => {
   const joined = d.lines.join(" ");
   const periods = (joined.match(/\.(\s|$)/g) ?? []).length;
   const parts = periods >= d.lines.length / 3 ? joined.split(/\.(?:\s+|$)/) : d.lines;
-  return parts.map((s) => s.replace(/\s+/g, " ").replace(/\.$/, "").trim()).filter((s) => s.length > 3);
+  return parts
+    .map((s) => s.replace(/\s+/g, " ").replace(/\.$/, "").trim())
+    .filter((s) => s.length > 3 && !ROUTINE.test(s));
 };
+
+/**
+ * Sentences that change on every issue (letter, time, weather, read-back request).
+ * Their content is already compared field by field above.
+ */
+const ROUTINE =
+  /\b(?:ATIS|INFO(?:RMATION)?)\s+[A-Z]\b|\b\d{3}\d{2,3}(?:G\d{2,3})?(?:KT|MPS)\b|\b(?:VRB|CALM)\d*KT\b|(?:^|\s)[AQ]\d{4}\b|\bQNH\b|\bRMK\b|\b(?:WIND|WND|TEMP|TMP|DP|VIS|CLD|CAVOK|NOSIG|TREND|METAR)\b|^T\s?M?\d{1,2}\b|(?:^|\s)M?\d{2}\/M?\d{2}(?:\s|$)/;
 
 export function diffAtis(prev: DecodedAtis, next: DecodedAtis): AtisDiff {
   const changes: FieldChange[] = [];

@@ -15,6 +15,7 @@ export function stripChecksum(text: string): { text: string; hadChecksum: boolea
     /(\.)[0-9A-F]{4}$/, // "INFO B.EA8D", "BCFG.AC04"
     /((?:INFO|ATIS|INFORMATION)\s+[A-Z])[0-9A-F]{4}$/, // "INFO Z42BE"
     /(\d{4})(?=[0-9A-F]{4}$)(?=.*[A-F])[0-9A-F]{4}$/, // "QNH: 103058C9"
+    /(\b[A-Z]{3,})(?=[0-9A-F]{4}$)(?=.*\d)[0-9A-F]{4}$/, // "CONTACT WITH HEATHROWD167"
   ];
   for (const re of glued) {
     if (re.test(trimmed)) return { text: trimmed.replace(re, "$1"), hadChecksum: true };

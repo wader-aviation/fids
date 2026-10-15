@@ -16,13 +16,21 @@ const STITCH_WINDOW_MS = 120_000;
  * Builds the full issue time from "HHMM" and the receive time.
  * ATIS is issued before it is received, so a time that lands in the future belongs to the day before.
  */
-export function issuedAtFrom(hhmm: string | undefined, receivedAt: Date): Date {
+export function issuedAtFrom(hhmm: string | undefined, receivedAt: Date, day?: number): Date {
   if (!hhmm) return new Date(Math.floor(receivedAt.getTime() / 3_600_000) * 3_600_000);
   const d = new Date(receivedAt);
   d.setUTCHours(Number(hhmm.slice(0, 2)), Number(hhmm.slice(2, 4)), 0, 0);
-  if (d.getTime() - receivedAt.getTime() > 60 * 60_000) d.setUTCDate(d.getUTCDate() - 1);
+  if (day) {
+    d.setUTCDate(day);
+    if (d.getTime() - receivedAt.getTime() > 60 * 60_000) d.setUTCMonth(d.getUTCMonth() - 1, day);
+  } else if (d.getTime() - receivedAt.getTime() > 60 * 60_000) {
+    d.setUTCDate(d.getUTCDate() - 1);
+  }
   return d;
 }
+
+/** Some aircraft get old ATIS replayed (days old). Anything issued this long before receipt is ignored. */
+export const MAX_REPLAY_AGE_MS = 24 * 3_600_000;
 
 export function atisKey(d: Pick<DecodedAtis, "icao" | "type" | "letter">, issuedAt: Date): string {
   return `${d.icao}|${d.type}|${d.letter}|${issuedAt.toISOString().slice(0, 16)}`;
@@ -62,7 +70,8 @@ export function assemble(messages: AirframesMessage[]): AtisCandidate[] {
     if (!decoded) continue;
 
     if (msg.tail) lastByTail.set(msg.tail, { msg, text, ids });
-    const issuedAt = issuedAtFrom(decoded.issued, receivedAt);
+    const issuedAt = issuedAtFrom(decoded.issued, receivedAt, decoded.issuedDay);
+    if (receivedAt.getTime() - issuedAt.getTime() > MAX_REPLAY_AGE_MS) continue;
     out.push({ key: atisKey(decoded, issuedAt), issuedAt, receivedAt, text, decoded, sourceIds: ids });
   }
   return out;

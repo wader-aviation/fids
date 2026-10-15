@@ -1,26 +1,102 @@
 @import "tailwindcss";
 
+/* Dark is the default: OCC rooms are dim. Light follows the OS, or data-theme="light". */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0b0f14;
+  --surface: #121821;
+  --surface-2: #19212c;
+  --border: #253041;
+  --text: #e6edf5;
+  --muted: #8a99ad;
+  --accent: #5cc8ff;
+  --ok: #3ecf8e;
+  --warn: #f5b942;
+  --danger: #ff6b6b;
+  --vfr: #3ecf8e;
+  --mvfr: #5c9dff;
+  --ifr: #ff6b6b;
+  --lifr: #e46cf0;
+  --flash: rgba(92, 200, 255, 0.16);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f4f6f9;
+    --surface: #ffffff;
+    --surface-2: #eef1f5;
+    --border: #d6dce5;
+    --text: #0f1722;
+    --muted: #5b6b80;
+    --accent: #0a74c2;
+    --ok: #138a52;
+    --warn: #a86a00;
+    --danger: #c62828;
+    --vfr: #138a52;
+    --mvfr: #1f5fd1;
+    --ifr: #c62828;
+    --lifr: #a21caf;
+    --flash: rgba(10, 116, 194, 0.12);
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --surface-2: #eef1f5;
+  --border: #d6dce5;
+  --text: #0f1722;
+  --muted: #5b6b80;
+  --accent: #0a74c2;
+  --ok: #138a52;
+  --warn: #a86a00;
+  --danger: #c62828;
+  --vfr: #138a52;
+  --mvfr: #1f5fd1;
+  --ifr: #c62828;
+  --lifr: #a21caf;
+  --flash: rgba(10, 116, 194, 0.12);
+  color-scheme: light;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-fg: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-danger: var(--danger);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.cat-VFR { color: var(--vfr); }
+.cat-MVFR { color: var(--mvfr); }
+.cat-IFR { color: var(--ifr); }
+.cat-LIFR { color: var(--lifr); }
+.bgcat-VFR { background: var(--vfr); }
+.bgcat-MVFR { background: var(--mvfr); }
+.bgcat-IFR { background: var(--ifr); }
+.bgcat-LIFR { background: var(--lifr); }
+
+@keyframes flash {
+  0%, 100% { background: transparent; }
+  50% { background: var(--flash); }
 }
+.row-changed {
+  animation: flash 1.6s ease-in-out 4;
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+/* Wall / TV mode: bigger type, no chrome. */
+.tv { zoom: 1.3; }

@@ -63,6 +63,8 @@ export interface DecodedAtis {
   letter: string;
   /** "HHMM" UTC. */
   issued?: string;
+  /** Day of month of the issue, when the ATIS states it ("METAR 141650", "ATIS YSSY R 152104"). */
+  issuedDay?: number;
   /** Body lines, cleaned, for display. */
   lines: string[];
   wind?: Wind;
