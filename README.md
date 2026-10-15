@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# D-ATIS Board
 
-## Getting Started
+Open-source D-ATIS (digital ATIS over ACARS) board for airline operations control and dispatch.
+It decodes ATIS into runways, approaches, weather and ops flags, tracks every letter change, and
+exposes a JSON API.
 
-First, run the development server:
+> **Not for operational use.** D-ATIS only reaches us when an aircraft requests it, so some airports
+> will be missing or stale.
+
+Data provided by [Airframes.io](https://airframes.io) and its community of feeders.
+
+## How it works
+
+1. **Ingest** — a Vercel Cron job (`/api/cron/ingest`, every minute) pulls new ACARS messages from the
+   Airframes API: all label `A9` (ATIS uplinks) plus `RA`/`HX` that mention ATIS. Raw messages are kept 7 days.
+2. **Assemble** — long ATIS arrive in several ACARS blocks; blocks from the same aircraft are joined.
+   Repeats of the same ATIS (same airport, type, letter, issue time) are merged; the complete, longest text wins.
+3. **Decode** — `src/lib/decoder` turns the text into structured fields: wind, visibility, clouds, ceiling,
+   temperature, QNH, transition level, approaches, arrival/departure runways, RWYCC, flight category and ops
+   flags (runway closed, LVP, windshear, navaid out, GNSS interference, …).
+4. **Diff** — each new letter is compared with the previous one for the same airport and type.
+
+## Develop
 
 ```bash
+npm install
+cp .env.example .env.local   # set DATABASE_URL and CRON_SECRET
+npm run db:push              # create tables
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Try the decoder on live data without a database:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npx tsx scripts/dry-run.mts
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Trigger one ingest locally:
 
-## Learn More
+```bash
+curl -H "Authorization: Bearer $CRON_SECRET" http://localhost:3000/api/cron/ingest
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Path | What |
+|------|------|
+| `src/lib/decoder/` | Pure ATIS decoder + diff, with tests on real messages |
+| `src/lib/airframes/client.ts` | Airframes `/v1/messages` client (paging, 429 retry) |
+| `src/lib/ingest/` | Block stitching, merge, and the cron ingest |
+| `src/db/schema.ts` | Postgres tables (Drizzle) |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT. Airframes data is subject to the [Airframes API terms](https://docs.airframes.io/api/licensing).
