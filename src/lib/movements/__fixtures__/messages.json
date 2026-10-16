@@ -1,0 +1,3370 @@
+[
+{
+"id": 7848566345,
+"label": "10",
+"text": "LDR01,189,D,SWA-2600-019,0,N 27.602,W 82.386,38998,  9.1,KDAL,KFLL,KFLL,10L/,10R/,/,0,0,,,,,,,0,0,0,00,,112.8,08.0,120.8,,,",
+"timestamp": "2026-10-16T15:37:41.276Z",
+"tail": "N435WN",
+"flightNumber": "WN0806"
+},
+{
+"id": 7848566180,
+"label": "QP",
+"text": "KBOSKPHL01590148     OS KPHL /DC 0153/PB 0159/CC 0151/PC 0153/APH 0042348",
+"timestamp": "2026-10-16T15:37:39.236Z",
+"tail": "N8030F",
+"flightNumber": "AA2169"
+},
+{
+"id": 7848566135,
+"label": "80",
+"text": "1001 OUTRP  0918/16 CYYC/CYEG .C-FFPA\r\n/OUT 1536/FOB 0199/BRD 002581/UNT LITERS  /TYP A ",
+"timestamp": "2026-10-16T15:37:38.344Z",
+"tail": "C-FFPA",
+"flightNumber": "W80918"
+},
+{
+"id": 7848566107,
+"label": "80",
+"text": "/FB 0134/AD KMCO/N4033.7,W07933.0,3P01 POSRPT  0085/16 KBUF/KMCO .N3115J\r\n/UTC 132340/POS N4033.7 W07933.0/ALT 33000\r\n/SPD 396/FOB 0134/ETA 1520",
+"timestamp": "2026-10-16T15:37:38.619Z",
+"tail": "N3115J",
+"flightNumber": "B60085"
+},
+{
+"id": 7848566006,
+"label": "16",
+"text": "MIROT  ,N 25.113,E 054.610,39996, 491,0243, 20\\TS015904,151026",
+"timestamp": "2026-10-16T15:37:37.510Z",
+"tail": "A7-BUA",
+"flightNumber": "QR056T"
+},
+{
+"id": 7848565918,
+"label": "16",
+"text": "153730,26868,1611, 116,N 29.036,W 83.402",
+"timestamp": "2026-10-16T15:37:36.073Z",
+"tail": "N209NV",
+"flightNumber": "G40894"
+},
+{
+"id": 7848565910,
+"label": "16",
+"text": "153732,32002,1801,  27,N 22.054 E 54.987",
+"timestamp": "2026-10-16T15:37:36.041Z",
+"tail": "S2-ALD",
+"flightNumber": "BS0361"
+},
+{
+"id": 7848565794,
+"label": "14",
+"text": "3,,,Y,N,Y,KLAS,161542,9480,1 AISLE WC PLZ,,,,",
+"timestamp": "2026-10-16T15:37:34.514Z",
+"tail": "N705FR",
+"flightNumber": "F92232"
+},
+{
+"id": 7848565750,
+"label": "15",
+"text": "(2N42366W 88068353 26 47  1(Z",
+"timestamp": "2026-10-16T15:37:34.182Z",
+"tail": "N426EJ",
+"flightNumber": "GS0001"
+},
+{
+"id": 7848565737,
+"label": "22",
+"text": "N 295522W 821228,-------,153724,25355, ,      , ,M 20,21840  23,  92,",
+"timestamp": "2026-10-16T15:37:33.664Z",
+"tail": "N341FR",
+"flightNumber": "F92792"
+},
+{
+"id": 7848565720,
+"label": "16",
+"text": "015900,+38023,0321,14720,N 48.1350,E 19.0186,SXS2PC  ",
+"timestamp": "2026-10-16T15:37:34.320Z",
+"tail": "TC-SON",
+"flightNumber": "XQ02PC"
+},
+{
+"id": 7848565711,
+"label": "16",
+"text": "015859,+10726,0209,9480,N 49.6813,E 11.2855,SXS4BD  ",
+"timestamp": "2026-10-16T15:37:34.277Z",
+"tail": "TC-SPB",
+"flightNumber": "XQ04BD"
+},
+{
+"id": 7848565668,
+"label": "QQ",
+"text": "SBGRSBVT0158/OT 0128/OF 0158/E1 0147/E2 0135/FO  18120",
+"timestamp": "2026-10-16T15:37:33.988Z",
+"tail": "PR-XML",
+"flightNumber": "G31398"
+},
+{
+"id": 7848565652,
+"label": "16",
+"text": "015859,+38000,0302,12080,N 47.6716,E 14.9111,SXS93K  ",
+"timestamp": "2026-10-16T15:37:33.921Z",
+"tail": "TC-SNN",
+"flightNumber": "XQ093K"
+},
+{
+"id": 7848565577,
+"label": "16",
+"text": "015859,+6154,0206,6200,N 52.0308,E 8.2955,SXS52N  ",
+"timestamp": "2026-10-16T15:37:33.501Z",
+"tail": "TC-SMZ",
+"flightNumber": "XQ052N"
+},
+{
+"id": 7848565563,
+"label": "21",
+"text": ",,\r\nPDC\r\n**DEPARTURE CLEARANCE**\r\n\r\nFLT 7006-16 KSEA-PAJN\r\nASA7006 KSEA\r\nB737/L P1600 \r\nREQUESTED FL 380\r\nXPDR 1516\r\n\r\n\r\n***FILED ROUTE***\r\nKSEA BANGR9 PANGL KEVNA\r\nLVD R1055 STVNS PAJN \r\n \r\n\r\n***REVISED SEGMENT***\r\nNONE\r\n\r\n***ADDL INSTRUCTIONS***\r\nCLEARED BANGR9 DEPARTURE\r\nPANGL TRSN\r\n \r\nCLB VIA SID EXC MAINT\r\n7000FT\r\nEXP 380 15 NM AFT\r\nDP,DPFRQ 120.4\r\n \r\n \r\nEDCT  \r\n\r\n**END OF CLEARANCE***\r\n\r\n",
+"timestamp": "2026-10-16T15:37:32.339Z",
+"tail": "N627AS",
+"flightNumber": null
+},
+{
+"id": 7848565480,
+"label": "16",
+"text": "PC1581/15OCT26 01:58:54,36991,0315, 125,N 41.937 E 26.487",
+"timestamp": "2026-10-16T15:37:32.536Z",
+"tail": "TC-NBD",
+"flightNumber": "PC1581"
+},
+{
+"id": 7848565282,
+"label": "10",
+"text": "/N33.336/W080.431/10/0.73/195/450/KMIA/0319/0046/00013/JUSEE/WURFL/0207/KONEY/0201/",
+"timestamp": "2026-10-16T15:37:30.015Z",
+"tail": "N571QS",
+"flightNumber": "GS0000"
+},
+{
+"id": 7848565214,
+"label": "10",
+"text": "160428/APSDLDTA/11/DS KMEM3727,1,,,1,,1,,1,353.5\r\n2,1,1,0,0,1,1,1,1,,,,,,\r\n36C,,,,\r\n,,,,\r\n,,,,\r\n",
+"timestamp": "2026-10-16T15:37:29.136Z",
+"tail": "N583FE",
+"flightNumber": "FX0428"
+},
+{
+"id": 7848565201,
+"label": "21",
+"text": "POSN 29.921W 82.208,  92,153724,25355,21840,  23,-20,160348,KMCO",
+"timestamp": "2026-10-16T15:37:28.700Z",
+"tail": "N341FR",
+"flightNumber": "F92792"
+},
+{
+"id": 7848565062,
+"label": "80",
+"text": "3401 ETA    0707/16 RKSI/RPLC .HL8364\r\n/ETA 1642/FOB  204\r\n\r\n\r\n\r\n",
+"timestamp": "2026-10-16T15:37:27.027Z",
+"tail": "HL8364",
+"flightNumber": "OZ0707"
+},
+{
+"id": 7848564857,
+"label": "80",
+"text": "3N01 POSRPT 02EG/16 LGAV/EGLL .SX-NAM\r\n/POS N47048E008503/ALT +35975/MCH 781/FOB 0058/ETA 1434",
+"timestamp": "2026-10-16T15:37:25.450Z",
+"tail": "SX-NAM",
+"flightNumber": "A302EG"
+},
+{
+"id": 7848564595,
+"label": "22",
+"text": "N 290730W 823126,-------,153712,35006, ,      , ,M 45,23777  23,  84,",
+"timestamp": "2026-10-16T15:37:22.105Z",
+"tail": "N648FR",
+"flightNumber": "F92205"
+},
+{
+"id": 7848564583,
+"label": "16",
+"text": "132336,114760,1343,  79,N 49.114 E  8.570",
+"timestamp": "2026-10-16T15:37:22.122Z",
+"tail": "9H-QAK",
+"flightNumber": "FR74VJ"
+},
+{
+"id": 7848564543,
+"label": "80",
+"text": "3N01 POSRPT 0101/16 LIRF/KJFK .VT-JRB\r\n/POS N 41.585W  71.581/ALT 317/MCH 001/FOB 0114\r\n/TME 1323/WND -99 71/OAT -35/TAS 494/ETA 1351",
+"timestamp": "2026-10-16T15:37:21.633Z",
+"tail": "VT-JRB",
+"flightNumber": "AI0101"
+},
+{
+"id": 7848564492,
+"label": "12",
+"text": "N 50.352,W100.191,38000,153719, 140,.C-GWSV,1706",
+"timestamp": "2026-10-16T15:37:20.901Z",
+"tail": "C-GWSV",
+"flightNumber": "WS0633"
+},
+{
+"id": 7848564447,
+"label": "22",
+"text": "N 370921W 830758,-------,153712,34992, ,      , ,M 40,20783  67, 172,",
+"timestamp": "2026-10-16T15:37:20.099Z",
+"tail": "N709FR",
+"flightNumber": "F92410"
+},
+{
+"id": 7848564428,
+"label": "21",
+"text": "POSN 29.123W 82.524,  84,153712,35006,23777,  23,-45,161100,KFLL",
+"timestamp": "2026-10-16T15:37:20.073Z",
+"tail": "N648FR",
+"flightNumber": "F92205"
+},
+{
+"id": 7848564409,
+"label": "22",
+"text": "N 293155W 820224,-------,153706,25998, ,      , ,M 21,20642  15,  64,",
+"timestamp": "2026-10-16T15:37:19.477Z",
+"tail": "N380FR",
+"flightNumber": "F94646"
+},
+{
+"id": 7848564201,
+"label": "44",
+"text": "00POS02,N34551W101285,400,KADS,KSLC,1016,1537,1718,006.9",
+"timestamp": "2026-10-16T15:37:16.428Z",
+"tail": "N650JF",
+"flightNumber": "ZD0000"
+},
+{
+"id": 7848564060,
+"label": "21",
+"text": "OUT01YX5801/15150158KBOSKCVG015834 154 154",
+"timestamp": "2026-10-16T15:37:15.413Z",
+"tail": "N228JQ",
+"flightNumber": "YX5801"
+},
+{
+"id": 7848564021,
+"label": "16",
+"text": "153706,36006,0001,1172,N 45.993,W   . 93",
+"timestamp": "2026-10-16T15:37:14.621Z",
+"tail": "C-GPTS",
+"flightNumber": "TS0309"
+},
+{
+"id": 7848564000,
+"label": "21",
+"text": "POSN 37.158W 83.131, 172,153712,34992,20783,  67,-40,161806,KCLE",
+"timestamp": "2026-10-16T15:37:14.208Z",
+"tail": "N709FR",
+"flightNumber": "F92410"
+},
+{
+"id": 7848563986,
+"label": "21",
+"text": "POSN 29.532W 82.040,  64,153706,25998,20642,  15,-21,155900,KMCO",
+"timestamp": "2026-10-16T15:37:13.908Z",
+"tail": "N380FR",
+"flightNumber": "F94646"
+},
+{
+"id": 7848563767,
+"label": "22",
+"text": "N 305324W 830101,-------,153700,31757, ,      , ,M 37,22615  32, 113,",
+"timestamp": "2026-10-16T15:37:12.005Z",
+"tail": "N717FR",
+"flightNumber": "F91432"
+},
+{
+"id": 7848563543,
+"label": "12",
+"text": "N 50.926,W115.487,28000,153706, 116,.C-FBWS,1632",
+"timestamp": "2026-10-16T15:37:09.567Z",
+"tail": "C-FBWS",
+"flightNumber": "WS0263"
+},
+{
+"id": 7848563434,
+"label": "44",
+"text": " /FB 0403/AD EGPH/N 42.375,W 71.030,JBU1079,INI03,KBOS,EGPH,65625,6428,,",
+"timestamp": "2026-10-16T15:37:09.014Z",
+"tail": "N2199J",
+"flightNumber": "B61079"
+},
+{
+"id": 7848563304,
+"label": "21",
+"text": "POSN 30.890W 83.015, 113,153700,31757,22615,  32,-37,161618,KMCO",
+"timestamp": "2026-10-16T15:37:06.356Z",
+"tail": "N717FR",
+"flightNumber": "F91432"
+},
+{
+"id": 7848563290,
+"label": "16",
+"text": " /N 52.839/E 25.395/37999/1610/1323/192/1534/",
+"timestamp": "2026-10-16T15:37:06.901Z",
+"tail": "TC-JOD",
+"flightNumber": "TK04RC"
+},
+{
+"id": 7848563162,
+"label": "QQ",
+"text": "KBOSEGLL0158 911",
+"timestamp": "2026-10-16T15:37:05.454Z",
+"tail": "G-VJAM",
+"flightNumber": "VS058N"
+},
+{
+"id": 7848563152,
+"label": "80",
+"text": "/FB 0063/AD KPHL/N3942.2,W07351.4,3P01 POSRPT  0159/15 KBOS/KPHL .N3085J\r\n/UTC 015833/POS N3942.2 W07351.4/ALT 14003\r\n/SPD 342/FOB 0063/ETA 0221",
+"timestamp": "2026-10-16T15:37:05.360Z",
+"tail": "N3085J",
+"flightNumber": "B60159"
+},
+{
+"id": 7848563083,
+"label": "QP",
+"text": "CYVRCYQR1537 148 4631/DC 153303/FU L/LN AZ08382   /L1 152822/L2 135713/CD 153050/SD ------/PB 153658",
+"timestamp": "2026-10-16T15:37:04.250Z",
+"tail": "C-FBWI",
+"flightNumber": "WS0680"
+},
+{
+"id": 7848563047,
+"label": "22",
+"text": "N 421203W 831413,-------,153654,7887, ,      , ,,26877  29, 198,",
+"timestamp": "2026-10-16T15:37:03.915Z",
+"tail": "N723FR",
+"flightNumber": "F94937"
+},
+{
+"id": 7848562898,
+"label": "22",
+"text": "N 293903W 975736,-------,153654,33826, ,      , ,M 42,26490  28, 117,",
+"timestamp": "2026-10-16T15:37:02.856Z",
+"tail": "N681FR",
+"flightNumber": "F91756"
+},
+{
+"id": 7848562797,
+"label": "21",
+"text": "I21,V02,*,701418E,--,1515,0557,127476B,RQ,1515,0557\r\n128282J,--,1515,0557,145767J,--,1515,0557\r\n-------,--,----,----,KEATING NPN    \r\n",
+"timestamp": "2026-10-16T15:37:02.029Z",
+"tail": "B-KQF",
+"flightNumber": null
+},
+{
+"id": 7848562719,
+"label": "21",
+"text": "POSN 29.651W 97.960, 117,153654,33826,26490,  28,-42,160806,KIAH",
+"timestamp": "2026-10-16T15:37:01.056Z",
+"tail": "N681FR",
+"flightNumber": "F91756"
+},
+{
+"id": 7848562662,
+"label": "80",
+"text": "/FB 0061/AD KJFK/N3948.8,W07401.0,3P01 POSRPT  0164/15 KSRQ/KJFK .N3229J\r\n/UTC 015828/POS N3948.8 W07401.0/ALT 12474\r\n/SPD 369/FOB 0061/ETA 0213",
+"timestamp": "2026-10-16T15:37:00.509Z",
+"tail": "N3229J",
+"flightNumber": "B60164"
+},
+{
+"id": 7848562490,
+"label": "44",
+"text": " /FB 0246/AD MDST/N 42.374,W 71.030,JBU1323,INI03,KBOS,MDST,66246,15962,,",
+"timestamp": "2026-10-16T15:36:58.934Z",
+"tail": "N715JB",
+"flightNumber": "B61323"
+},
+{
+"id": 7848562426,
+"label": "16",
+"text": "POSA1N41960W 87382,VOGLR  ,132235,50 ,RZUKO  ,132611,2, 34, 114,350",
+"timestamp": "2026-10-16T15:36:58.231Z",
+"tail": "B-222H",
+"flightNumber": "CK0225"
+},
+{
+"id": 7848562416,
+"label": "21",
+"text": "POSN 42.202W 83.236, 198,153654,7887,26877,  29,  0,154148,KDTW",
+"timestamp": "2026-10-16T15:36:57.510Z",
+"tail": "N723FR",
+"flightNumber": "F94937"
+},
+{
+"id": 7848562232,
+"label": "16",
+"text": "FTX01PD0289/16161323CYOWCYWG\r\nDXP\r\nDELAYCODE\r\nMAINTENANCE",
+"timestamp": "2026-10-16T15:36:56.515Z",
+"tail": "C-GZQR",
+"flightNumber": "PD0289"
+},
+{
+"id": 7848562213,
+"label": "22",
+"text": "N 333914W 812909,-------,015818,36942, ,      , ,M 47,27934  11, 119,",
+"timestamp": "2026-10-16T15:36:56.322Z",
+"tail": "N610FR",
+"flightNumber": "F92008"
+},
+{
+"id": 7848562186,
+"label": "21",
+"text": "POSN 33.654W 81.486, 119,015818,36942,27934,  11,-47,032130,KDTW",
+"timestamp": "2026-10-16T15:36:56.119Z",
+"tail": "N610FR",
+"flightNumber": "F92008"
+},
+{
+"id": 7848562185,
+"label": "22",
+"text": "/DA YSSY/DS NWWW/FB  243/EB  124/TX  400",
+"timestamp": "2026-10-16T15:36:56.102Z",
+"tail": "F-ONEO",
+"flightNumber": "SB0141"
+},
+{
+"id": 7848562163,
+"label": "15",
+"text": "REQPOS",
+"timestamp": "2026-10-16T15:36:55.840Z",
+"tail": "A7-ANA",
+"flightNumber": null
+},
+{
+"id": 7848562120,
+"label": "16",
+"text": "/+44.001/+23.782/37002/1510/0158/20800/0253/",
+"timestamp": "2026-10-16T15:36:55.266Z",
+"tail": "TC-JJF",
+"flightNumber": "TK0004"
+},
+{
+"id": 7848562087,
+"label": "80",
+"text": "3N01 POSRPT 0659/16 VVTS/VTBD .HS-BBV\r\n/POS N13392E100204/ALT +14522/MCH 510/FOB 0096/ETA 1550",
+"timestamp": "2026-10-16T15:36:53.602Z",
+"tail": "HS-BBV",
+"flightNumber": "FD0659"
+},
+{
+"id": 7848561983,
+"label": "16",
+"text": "POSA1N49984E  9323,INB-38 ,014901,319,BOM-39 ,020056,,-43, 36, 211,826",
+"timestamp": "2026-10-16T15:36:53.725Z",
+"tail": "G-ONEG",
+"flightNumber": "HC0443"
+},
+{
+"id": 7848561879,
+"label": "15",
+"text": "(2N29131W 81329186 25410-52(Z",
+"timestamp": "2026-10-16T15:36:51.543Z",
+"tail": "N107CE",
+"flightNumber": "XA0001"
+},
+{
+"id": 7848561843,
+"label": "16",
+"text": "153650,,1800, 177,MMMM.MMM MMMM.MMM",
+"timestamp": "2026-10-16T15:36:51.543Z",
+"tail": "TC-TJY",
+"flightNumber": "XCCND1"
+},
+{
+"id": 7848561657,
+"label": "80",
+"text": "3N01 POSRPT 7770/16 MMMM/KMDW .XA-VRT\r\n/POS N29143W095319/ALT +34993/MCH 727/FOB 0085/ETA 1744",
+"timestamp": "2026-10-16T15:36:49.027Z",
+"tail": "XA-VRT",
+"flightNumber": "Y47770"
+},
+{
+"id": 7848561511,
+"label": "80",
+"text": "3401 ETA    0159/16 EBBR/LIRF .EI-HOL\r\n/ETA 1405/FOB 0034",
+"timestamp": "2026-10-16T15:36:47.775Z",
+"tail": "EI-HOL",
+"flightNumber": "AZ0159"
+},
+{
+"id": 7848561357,
+"label": "16",
+"text": "PC096T/15OCT26 01:58:12,35005,0329, 201,N 46.842 E 18.828",
+"timestamp": "2026-10-16T15:36:46.412Z",
+"tail": "TC-RDE",
+"flightNumber": "PC096T"
+},
+{
+"id": 7848561294,
+"label": "QP",
+"text": "CYYCMMUN     44021790/DC 153637/FU L/LN AZ84743   ",
+"timestamp": "2026-10-16T15:36:45.271Z",
+"tail": "C-GORP",
+"flightNumber": "WS2202"
+},
+{
+"id": 7848561272,
+"label": "16",
+"text": "MVT01132324EGLLLIMC000012000012021",
+"timestamp": "2026-10-16T15:36:45.392Z",
+"tail": "G-NEOT",
+"flightNumber": "BA588L"
+},
+{
+"id": 7848561216,
+"label": "16",
+"text": "153642,23000,1611, 3930,N2900.11 W09636.89",
+"timestamp": "2026-10-16T15:36:44.349Z",
+"tail": "N12175",
+"flightNumber": "C54358"
+},
+{
+"id": 7848561159,
+"label": "16",
+"text": "153639",
+"timestamp": "2026-10-16T15:36:43.816Z",
+"tail": "C-GMXH",
+"flightNumber": "WS0000"
+},
+{
+"id": 7848561149,
+"label": "16",
+"text": "1323,36971,13160,N 472620,W   0907",
+"timestamp": "2026-10-16T15:36:44.006Z",
+"tail": "CS-TVA",
+"flightNumber": "TP0669"
+},
+{
+"id": 7848561054,
+"label": "22",
+"text": "I22,V01,CX 815 20261016 1\r\n",
+"timestamp": "2026-10-16T15:36:43.287Z",
+"tail": "B-KQF",
+"flightNumber": null
+},
+{
+"id": 7848560942,
+"label": "16",
+"text": "153638",
+"timestamp": "2026-10-16T15:36:41.597Z",
+"tail": "C-GORP",
+"flightNumber": "WS2202"
+},
+{
+"id": 7848560896,
+"label": "16",
+"text": "015809,36822,0336, 137,N 15.804 W 70.170",
+"timestamp": "2026-10-16T15:36:41.083Z",
+"tail": "HI1081",
+"flightNumber": "DM1738"
+},
+{
+"id": 7848560855,
+"label": "22",
+"text": "N 294821W 830744,-------,153630,35949, ,      , ,M 47,21910  27, 161,",
+"timestamp": "2026-10-16T15:36:40.359Z",
+"tail": "N330FR",
+"flightNumber": "F91477"
+},
+{
+"id": 7848560851,
+"label": "16",
+"text": "ASNIB  ,N 24.532,E 57.644,40034,489,0306,032\\TS015803,151026",
+"timestamp": "2026-10-16T15:36:40.784Z",
+"tail": "A7-ALF",
+"flightNumber": "QR0829"
+},
+{
+"id": 7848560762,
+"label": "44",
+"text": "06cE5g.7M9) :gLg.g9f979f`7E61D7a5A<7.g.f7.C .7.C)`7ggf, ",
+"timestamp": "2026-10-16T15:36:39.949Z",
+"tail": "A7CHB",
+"flightNumber": "GS0719"
+},
+{
+"id": 7848560489,
+"label": "16",
+"text": "RORON  ,N 25.292,E 53.798,20004,0411,0234, 13\\TS015800,151026",
+"timestamp": "2026-10-16T15:36:37.091Z",
+"tail": "A7-LAB",
+"flightNumber": "QR1061"
+},
+{
+"id": 7848560482,
+"label": "80",
+"text": "3C01 POS N39066W077005  ,,015803,               ,      ,               ,P07,042,0066",
+"timestamp": "2026-10-16T15:36:37.003Z",
+"tail": "N529GJ",
+"flightNumber": "G74521"
+},
+{
+"id": 7848560415,
+"label": "QQ",
+"text": "EGBBLEMG15361520",
+"timestamp": "2026-10-16T15:36:35.565Z",
+"tail": "EI-IGO",
+"flightNumber": "FR38PL"
+},
+{
+"id": 7848560299,
+"label": "21",
+"text": "POSN 29.808W 83.130, 161,153630,35949,21910,  27,-47,170048,KCVG",
+"timestamp": "2026-10-16T15:36:34.298Z",
+"tail": "N330FR",
+"flightNumber": "F91477"
+},
+{
+"id": 7848560257,
+"label": "80",
+"text": "1101 OFFRP  0454/16 CYWG/CYFB .C-GCJB\r\n/OUT 1531/OFF 1536/FOB ----/ETA 1835",
+"timestamp": "2026-10-16T15:36:33.456Z",
+"tail": "C-GCJB",
+"flightNumber": "W80454"
+},
+{
+"id": 7848560211,
+"label": "16",
+"text": "PC1036/15OCT26 01:58:00,34998,0305, 176,N 44.854 E 22.545",
+"timestamp": "2026-10-16T15:36:33.996Z",
+"tail": "TC-RDV",
+"flightNumber": "PC1036"
+},
+{
+"id": 7848560171,
+"label": "20",
+"text": "  22160963,16OCT,EST,16 1613,5974,KORD,KATW,105391,FOREMAN         ,ACTIVE,111962,REYNOLDS        ,------,04368,0,FO REQUIRED TO ACTIVATE , IN FLITEVIEW           ,UA,\r\n\r\n",
+"timestamp": "2026-10-16T15:36:30.162Z",
+"tail": "N916SW",
+"flightNumber": null
+},
+{
+"id": 7848560005,
+"label": "QP",
+"text": "KMSNKMEM01560306     /OUTRPT/151330/IFQ 030600\r\nCMN 0000544129 CPN 1\r\nCMN 0004215678 CPN 2",
+"timestamp": "2026-10-16T15:36:31.515Z",
+"tail": "N724FD",
+"flightNumber": "FX1330"
+},
+{
+"id": 7848559905,
+"label": "16",
+"text": "132317,93640,1403, 120,N 52.530 W  1.177",
+"timestamp": "2026-10-16T15:36:30.045Z",
+"tail": "G-RUKF",
+"flightNumber": "FRRUK8"
+},
+{
+"id": 7848559840,
+"label": "16",
+"text": "153624,12432,1551,  70,N 28.687,W 82.284",
+"timestamp": "2026-10-16T15:36:28.937Z",
+"tail": "N332NV",
+"flightNumber": "G41089"
+},
+{
+"id": 7848559591,
+"label": "16",
+"text": "/+48.072/+7.670/35998/1510/0157/45900/0948/",
+"timestamp": "2026-10-16T15:36:27.204Z",
+"tail": "TC-LLJ",
+"flightNumber": "TK04KG"
+},
+{
+"id": 7848559565,
+"label": "16",
+"text": "015755,37005,0420, 175,MMMM.MMM MMMM.MMM",
+"timestamp": "2026-10-16T15:36:27.046Z",
+"tail": "9H-SAS",
+"flightNumber": "U58901"
+},
+{
+"id": 7848559532,
+"label": "80",
+"text": "3J01 DSPTCH 1318/16 KMCO/KSEA .N474AS\r\nMOD APP ICT",
+"timestamp": "2026-10-16T15:36:26.580Z",
+"tail": "N474AS",
+"flightNumber": "AS1318"
+},
+{
+"id": 7848559480,
+"label": "16",
+"text": "PVD    ,N 42.446,W 71.091,40009,494,0237,018\\TS015750,151026",
+"timestamp": "2026-10-16T15:36:26.116Z",
+"tail": "A7-AMJ",
+"flightNumber": "QR057H"
+},
+{
+"id": 7848559178,
+"label": "22",
+"text": "N 321532W 833831,-------,153612,37003, ,      , ,M 47,19304  47,  81,",
+"timestamp": "2026-10-16T15:36:21.999Z",
+"tail": "N390FR",
+"flightNumber": "F91286"
+},
+{
+"id": 7848559125,
+"label": "10",
+"text": "140110 KMSP KJFK6\r\n26920157018001460136013801440144075570010281",
+"timestamp": "2026-10-16T15:36:22.061Z",
+"tail": "N312DU",
+"flightNumber": "DL2692"
+},
+{
+"id": 7848559083,
+"label": "QP",
+"text": "KBOSKPHL    0148     ",
+"timestamp": "2026-10-16T15:36:21.584Z",
+"tail": "N8030F",
+"flightNumber": "AA2169"
+},
+{
+"id": 7848558937,
+"label": "21",
+"text": "LIRZ WX\n\tMETAR\n\tMETAR LIRZ 200720Z AUTO 35003KT 300V030 9999 NCD 20/16 Q1024 \n\tTAF\n\tTAF LIRZ 200500Z 2006/2106 VRB05KT 9999 FEW050\n\tPIREP\n\tNO PIREPS FOUND FOR LIRZ\n\tNOTAM\n\tLIRZ B5820/26 01OCT0500-05OCT1800 PORTION OF APRON DEFINED BY ACFT STAND 103 TO BE CONSIDERED SPECIAL REGULATION AREA FOR LONG TERM PARKING OF AIRCRAFT ICAO CODE  C. REF AIP AD 2 LIRZ 2-3LIRZ B5785/26 29SEP0600-06OCT1500 SEP 29 30 OCT 05 06 0600-1500 NEW OBSTACLE MOBILE CRANE ERECTED PENETRATING INNER HORIZZONTAL SURFACE PSN COORD (WGS-84) 430557N0123131E ROTATING JIB 50M MAX ELEV 62M/204FT AGL 273M/896FT AMSL RMK: ICAO SIGNAL PROVIDEDLIRZ B5399/26 27AUG1338-30SEP1000 TUE 1700-1900, WED 0630-1000, THU 1330-1700, FRI 1230-1630, SAT 0800-1030 1200-1400, SUN 0800-1000 1130-1530 TRAINING ACTIVITY NOT ALLOWED DUE TO HIGH TFC VOLUME REF AIP AD 2 LIRZ 1-17LIRZ B4738/26 27JUL0702-30SEP2000 EST OBSTACLE LGT UNSERVICEABLE PSN COORD (WGS-84): 430646.6N0123107.9E ELEV AMSL 223.7M/733.9FT ELEV AGL 11.7M/38.4FT REF AIP AD 2 LIRZ 3-1LIRZ B6878/25 24NOV1709-PERM INSTRUMENT APCH PROCEDURE CHART RNP RWY01: ALL VALUES OF MOCA (MINIMUM OBSTACLE CLEARANCE ALTITUDE) IN PROFILE VIEW SHALL BE RAISED TO THE LOWER ALTITUDE OF THE RELATED SEGMENT OF THE PROCEDURE. REF AIP AD 2 LIRZ 5-11LIRZ B2498/24 26APR0909-PERM AERODROME OPERATOR REFERENCE CONTACTS IN CASE OF EMERGENCY MEDICAL FLT FOR AD REOPENING DRG HR 2100-0600 (2000-0500) ARE NOW THE FOLLOWING: -MOBILE TELEPHONE: +39 3484585366 E-MAIL: OPSMANAGER(A)AIRPORT.UMBRIA.IT REF AIP AD 2 LIRZ 1-1\n\t",
+"timestamp": "2026-10-16T15:36:20.536Z",
+"tail": "9HVCD",
+"flightNumber": null
+},
+{
+"id": 7848558931,
+"label": "22",
+"text": "RPR01,161536,N51284W114580,229,A,8.0",
+"timestamp": "2026-10-16T15:36:20.074Z",
+"tail": "C-GENV",
+"flightNumber": "WR3597"
+},
+{
+"id": 7848558864,
+"label": "16",
+"text": "132316,36002,1534, 163,N 52.710 E 24.874",
+"timestamp": "2026-10-16T15:36:20.196Z",
+"tail": "TC-GRO",
+"flightNumber": "2S0086"
+},
+{
+"id": 7848558619,
+"label": "80",
+"text": "3A01 OPSCTL 0639/16 RKPK/VHHH .HL8547\r\nTWB639 ETA1620 \r\nRQ SPOT NO.",
+"timestamp": "2026-10-16T15:36:17.479Z",
+"tail": "HL8547",
+"flightNumber": "TW0639"
+},
+{
+"id": 7848558599,
+"label": "10",
+"text": "161510 KSTL KDTW6\r\n28681536390015271522152515261526000000      ",
+"timestamp": "2026-10-16T15:36:17.303Z",
+"tail": "N932AT",
+"flightNumber": "DL2868"
+},
+{
+"id": 7848558540,
+"label": "16",
+"text": "015741,+37004,0320,16080,N 41.8761,E 24.2275,SXS6WN  ,5,7,4,925760,/,",
+"timestamp": "2026-10-16T15:36:17.275Z",
+"tail": "TC-SPF",
+"flightNumber": "XQ06WN"
+},
+{
+"id": 7848558511,
+"label": "16",
+"text": "/N 42.79/E 024.10/28992/1610/1323/4807/1416/",
+"timestamp": "2026-10-16T15:36:17.107Z",
+"tail": "TC-LUO",
+"flightNumber": "TKJ7FC"
+},
+{
+"id": 7848558505,
+"label": "21",
+"text": "POSN 32.259W 83.642,  81,153612,37003,19304,  47,-47,162406,KMCO",
+"timestamp": "2026-10-16T15:36:16.537Z",
+"tail": "N390FR",
+"flightNumber": "F91286"
+},
+{
+"id": 7848558484,
+"label": "16",
+"text": "POSA1N50932E  1254,SOVAT  ,132038,297,SANDY  ,132430,,*****,64.55,1200,   0",
+"timestamp": "2026-10-16T15:36:17.011Z",
+"tail": "N818AL",
+"flightNumber": "AA0151"
+},
+{
+"id": 7848558405,
+"label": "16",
+"text": "132314,,1341,  70,N   .    MMMM.MMM",
+"timestamp": "2026-10-16T15:36:16.412Z",
+"tail": "G-RUKI",
+"flightNumber": "RK8491"
+},
+{
+"id": 7848558386,
+"label": "80",
+"text": "3N01 POSRPT 0761/14 RCTP/WIII B-18918\r\n/POS N23595E121545/ALT 236/MCH 740/FOB  77.8\r\n/TME 0157/WND -129 20/OAT -16/TAS 463/ETA 0626",
+"timestamp": "2026-10-16T15:36:16.233Z",
+"tail": "B-18918",
+"flightNumber": "CI0761"
+},
+{
+"id": 7848558344,
+"label": "80",
+"text": "\r\nMVA\r\nQFA0649/15.VHOGF.YSSY\r\nAD0133/0157 EA0627 YPPH\r\nSI DR0130",
+"timestamp": "2026-10-16T15:36:15.672Z",
+"tail": "VH-OGF",
+"flightNumber": "QF0649"
+},
+{
+"id": 7848558252,
+"label": "16",
+"text": "POSA1N47820E 15941,ARS-06 ,015254,339,REN-07 ,021139,,-49, 64, 147,831",
+"timestamp": "2026-10-16T15:36:14.851Z",
+"tail": "F-HMRF",
+"flightNumber": "2C0731"
+},
+{
+"id": 7848558246,
+"label": "4A",
+"text": "153612,1605,  72,31449,N 36.320,W 95.600",
+"timestamp": "2026-10-16T15:36:14.685Z",
+"tail": "N320NV",
+"flightNumber": "G40107"
+},
+{
+"id": 7848558231,
+"label": "11",
+"text": "POS\r\nCAS 250,LAT N 20.870,LON E116.473,ALT 36151,FOB 017999,UTC 153609,PD 172.65,WD -040,WS 029,TAT -47",
+"timestamp": "2026-10-16T15:36:14.066Z",
+"tail": "B-32KD",
+"flightNumber": "MU0211"
+},
+{
+"id": 7848558121,
+"label": "22",
+"text": "RPR01,161535,N51442W115053,234,A,6.8",
+"timestamp": "2026-10-16T15:36:13.247Z",
+"tail": "C-GWEU",
+"flightNumber": "WR3615"
+},
+{
+"id": 7848558076,
+"label": "16",
+"text": "PC706H/16OCT26 13:23:12,7877,1333,  91,N 52.518 E  5.799",
+"timestamp": "2026-10-16T15:36:13.333Z",
+"tail": "TC-RFS",
+"flightNumber": "PC706H"
+},
+{
+"id": 7848557839,
+"label": "QS",
+"text": "KSFOCYYC1533  72  /L1 153608",
+"timestamp": "2026-10-16T15:36:10.969Z",
+"tail": "C-GJLZ",
+"flightNumber": "WS1499"
+},
+{
+"id": 7848557717,
+"label": "20",
+"text": "APR01,161536,N51278W114574,228,A,8.0",
+"timestamp": "2026-10-16T15:36:09.492Z",
+"tail": "C-GENV",
+"flightNumber": "WR3597"
+},
+{
+"id": 7848557699,
+"label": "16",
+"text": "132306,35130,1351, 137,N 32.033,W 96.676",
+"timestamp": "2026-10-16T15:36:09.533Z",
+"tail": "N196NV",
+"flightNumber": "G40549"
+},
+{
+"id": 7848557676,
+"label": "15",
+"text": "FST01EGLLVOHSN507631E0050302330 676  73 M46C 5621810810550111600000221535",
+"timestamp": "2026-10-16T15:36:08.918Z",
+"tail": "G-YMML",
+"flightNumber": "BA0277"
+},
+{
+"id": 7848557654,
+"label": "16",
+"text": " /N 27.930/E 77.988/35002/1510/0157/263/0520/",
+"timestamp": "2026-10-16T15:36:09.128Z",
+"tail": "TC-LNC",
+"flightNumber": "TK0064"
+},
+{
+"id": 7848557591,
+"label": "16",
+"text": "132306,27770,1402, 138,N 39.904,W 74.173",
+"timestamp": "2026-10-16T15:36:08.345Z",
+"tail": "N337NV",
+"flightNumber": "G40882"
+},
+{
+"id": 7848557516,
+"label": "22",
+"text": "N 280343W 813831,-------,153554,25644, ,      , ,M 22,22791   8,  68,",
+"timestamp": "2026-10-16T15:36:07.023Z",
+"tail": "N363FR",
+"flightNumber": "F91577"
+},
+{
+"id": 7848557460,
+"label": "22",
+"text": "N 354702W 815309,-------,153554,37981, ,      , ,M 49,20008  49,  84,",
+"timestamp": "2026-10-16T15:36:05.861Z",
+"tail": "N382FR",
+"flightNumber": "F94707"
+},
+{
+"id": 7848557061,
+"label": "80",
+"text": "3701 INRANG 8016/15 KGRR/KMSP .N840SY\r\n/ETA 0216/ERT     ",
+"timestamp": "2026-10-16T15:36:02.598Z",
+"tail": "N840SY",
+"flightNumber": "SY8016"
+},
+{
+"id": 7848557027,
+"label": "21",
+"text": "POSN 28.062W 81.642,  68,153554,25644,22791,   8,-22,160100,KRSW",
+"timestamp": "2026-10-16T15:36:01.753Z",
+"tail": "N363FR",
+"flightNumber": "F91577"
+},
+{
+"id": 7848556982,
+"label": "44",
+"text": "UPS1219/15 IAD -SDF \r\nTAIL N331UP    VER #   1\r\nPAYLD   37500  ACMS   00\r\nZFW     217.9  ZFCG 21.0\r\nFOB ENT  34.9  TAXI  1.2\r\nFOB SEL  35.2  NOTOC YES\r\n\r\nTOGW    252.0  TOCG 20.0",
+"timestamp": "2026-10-16T15:36:01.826Z",
+"tail": "N331UP",
+"flightNumber": null
+},
+{
+"id": 7848556978,
+"label": "16",
+"text": "TEGRI  ,N 44.072,E 025.752,37995, 486,0513, 82\\TS015717,151026",
+"timestamp": "2026-10-16T15:36:01.796Z",
+"tail": "A7-BDB",
+"flightNumber": "QR001T"
+},
+{
+"id": 7848556943,
+"label": "15",
+"text": "(2N28036W 81055163  6 67 14(Z",
+"timestamp": "2026-10-16T15:36:00.760Z",
+"tail": "N247WD",
+"flightNumber": "XA0001"
+},
+{
+"id": 7848556880,
+"label": "80",
+"text": "3701 INRANG 0520/16 KIAH/KSAT .N763CK\r\n/ETA 1555/ERT     ",
+"timestamp": "2026-10-16T15:35:59.784Z",
+"tail": "N763CK",
+"flightNumber": "GB0520"
+},
+{
+"id": 7848556874,
+"label": "15",
+"text": "161515 KAUS KTPA6\r\n048715350052\r\n      842938184934                        ",
+"timestamp": "2026-10-16T15:35:59.713Z",
+"tail": "N359NW",
+"flightNumber": "NW0487"
+},
+{
+"id": 7848556765,
+"label": "16",
+"text": "MEKRI  ,N 24.490,E 54.045,38683,492,0230,025\\TS015708,151026",
+"timestamp": "2026-10-16T15:35:59.010Z",
+"tail": "A7-ANO",
+"flightNumber": "QR032N"
+},
+{
+"id": 7848556545,
+"label": "22",
+"text": "N 400328W 810036,-------,153542,27986, ,      , ,M 25,23425  67, 255,",
+"timestamp": "2026-10-16T15:35:56.326Z",
+"tail": "N368FR",
+"flightNumber": "F91601"
+},
+{
+"id": 7848556507,
+"label": "11",
+"text": "OUT0113231320EGLLEHAM",
+"timestamp": "2026-10-16T15:35:56.450Z",
+"tail": "G-EUYE",
+"flightNumber": "BA03KG"
+},
+{
+"id": 7848556504,
+"label": "16",
+"text": "PC037Z/15OCT26 01:57:06,33783,0224,  78,N 50.637 E 10.468",
+"timestamp": "2026-10-16T15:35:56.435Z",
+"tail": "TC-RDC",
+"flightNumber": "PC037Z"
+},
+{
+"id": 7848556386,
+"label": "10",
+"text": "/N47.503/W002.521/10/0.76/198/390/LEMD/1443/0082/00018/DELOG/VADOX/1327/SNR  /1325/",
+"timestamp": "2026-10-16T15:35:55.823Z",
+"tail": "CSLTW",
+"flightNumber": "GS0000"
+},
+{
+"id": 7848556377,
+"label": "20",
+"text": "  22153941,14OCT,SCH,15 0245,3656,KMSP,CYWG,081295,MALHIOT         ,------,102354,LEE             ,ACTIVE,09446,0,CA REQUIRED TO ACTIVATE , IN FLITEVIEW           ,DL,\r\n\r\n",
+"timestamp": "2026-10-16T15:35:55.777Z",
+"tail": "N254SY",
+"flightNumber": null
+},
+{
+"id": 7848556207,
+"label": "QQ",
+"text": "CYVRKLAX1535/FB  247",
+"timestamp": "2026-10-16T15:35:54.605Z",
+"tail": "C-GVWA",
+"flightNumber": "WS1102"
+},
+{
+"id": 7848556199,
+"label": "20",
+"text": "RST18A15015708KLM856  RKSIEHAM\r\n",
+"timestamp": "2026-10-16T15:35:54.643Z",
+"tail": "PH-BHF",
+"flightNumber": "KL0856"
+},
+{
+"id": 7848555743,
+"label": "QQ",
+"text": "KBWI    1535\r\n001FE16153546N3912.0W07640.4013210    ",
+"timestamp": "2026-10-16T15:35:50.347Z",
+"tail": "N534CC",
+"flightNumber": "ZD0001"
+},
+{
+"id": 7848555669,
+"label": "21",
+"text": "POSN 40.058W 81.013, 255,153542,27986,23425,  67,-25,200924,KLAS",
+"timestamp": "2026-10-16T15:35:49.721Z",
+"tail": "N368FR",
+"flightNumber": "F91601"
+},
+{
+"id": 7848555594,
+"label": "16",
+"text": "132306,260,1559, 446,N 21.037 W 86.890",
+"timestamp": "2026-10-16T15:35:49.557Z",
+"tail": "LV-KHU",
+"flightNumber": "AR1370"
+},
+{
+"id": 7848555449,
+"label": "16",
+"text": "PC1773/15OCT26 01:56:54,15194,0214,  62,N 52.491 E  5.716",
+"timestamp": "2026-10-16T15:35:48.553Z",
+"tail": "TC-NBK",
+"flightNumber": "PC1773"
+},
+{
+"id": 7848555398,
+"label": "11",
+"text": "140111 KBNA KBOS6\r\n267701490053111220390       0586350075720140\r\n\r\n\r\n\r\n\r\n\r\n",
+"timestamp": "2026-10-16T15:35:48.159Z",
+"tail": "N317DU",
+"flightNumber": "DL0000"
+},
+{
+"id": 7848555291,
+"label": "16",
+"text": "153542,36986,1650, 112,N 32.960,W 85.180",
+"timestamp": "2026-10-16T15:35:45.630Z",
+"tail": "N220NV",
+"flightNumber": "G40956"
+},
+{
+"id": 7848555259,
+"label": "16",
+"text": "VESAN  ,N 48.761,E 4.613,36002,490,2209,138\\TS132257,161026",
+"timestamp": "2026-10-16T15:35:47.082Z",
+"tail": "A7-ANL",
+"flightNumber": "QR020V"
+},
+{
+"id": 7848555253,
+"label": "16",
+"text": "AMPOP  ,N 48.300,W 3.958,38015,492,1948,098\\TS132302,161026",
+"timestamp": "2026-10-16T15:35:46.946Z",
+"tail": "A7-AML",
+"flightNumber": "QR060Q"
+},
+{
+"id": 7848555141,
+"label": "80",
+"text": "3N01 POSRPT UAE033M   /14 VAAH/OMDB .A6-JHB\r\nPOS N245505E0560950/ALT 182/MCH 001/FOB 0080\r\nTME 0156/WND -155 4/OAT -8/TAS 321/ETA 0227",
+"timestamp": "2026-10-16T15:35:45.637Z",
+"tail": "A6-JHB",
+"flightNumber": "EK033M"
+},
+{
+"id": 7848555133,
+"label": "22",
+"text": "OFF01YX4807/16161535KLGAKMEM153535 149",
+"timestamp": "2026-10-16T15:35:44.563Z",
+"tail": "N865RW",
+"flightNumber": "YX4807"
+},
+{
+"id": 7848555000,
+"label": "80",
+"text": "3P01 POSRPT  0737/15 KDAB/KPVD .N253BZ\r\n/UTC 015657/POS N3351.1 W07936.0/ALT 350\r\n/SPD 455/FOB 0115/ETA 0327",
+"timestamp": "2026-10-16T15:35:44.061Z",
+"tail": "N253BZ",
+"flightNumber": "MX0737"
+},
+{
+"id": 7848554688,
+"label": "10",
+"text": "POS161535, N 5296,W 9794,836,299,33621,  93,32997, 245,-184,-496,7",
+"timestamp": "2026-10-16T15:35:39.525Z",
+"tail": "B-2093",
+"flightNumber": "CA3103"
+},
+{
+"id": 7848554617,
+"label": "16",
+"text": "015653,36000,0238,  46,N 49.451 E 12.632/SXS7GP",
+"timestamp": "2026-10-16T15:35:40.410Z",
+"tail": "TC-SPC",
+"flightNumber": "XQ07GP"
+},
+{
+"id": 7848554579,
+"label": "22",
+"text": "N 295136W 942508,-------,153518,36906, ,      , ,M 47,27864  22, 147,",
+"timestamp": "2026-10-16T15:35:38.087Z",
+"tail": "N393FR",
+"flightNumber": "F91654"
+},
+{
+"id": 7848554546,
+"label": "80",
+"text": "POSHL83640707RKSIRPLC16OCT26153524\r\nTN 22.797E121.551153524  34019- 4225503   9 20600",
+"timestamp": "2026-10-16T15:35:37.714Z",
+"tail": "HL8364",
+"flightNumber": "OZ0707"
+},
+{
+"id": 7848554384,
+"label": "10",
+"text": "LDR01,189,D,SWA-2600-019,0,N 21.205,W157.789,8328, 10.8,PHNL,PHOG,PHOG,02/,/,/,0,0,,,,,,,0,0,0,00,,108.5,09.7,118.2,,,",
+"timestamp": "2026-10-16T15:35:37.825Z",
+"tail": "N8769Q",
+"flightNumber": "WN1982"
+},
+{
+"id": 7848554291,
+"label": "14",
+"text": "2,,,Y,N,Y,KATL,161000,8377,,,,,",
+"timestamp": "2026-10-16T15:35:35.057Z",
+"tail": "N382FR",
+"flightNumber": "F94707"
+},
+{
+"id": 7848554050,
+"label": "20",
+"text": "RST54A16132300TRA14L  EHAMGCLA",
+"timestamp": "2026-10-16T15:35:34.291Z",
+"tail": "PH-YHB",
+"flightNumber": "HV014L"
+},
+{
+"id": 7848553997,
+"label": "16",
+"text": "POSA1N51522W    43,LAM    ,153156,52 ,IRR10  ,153656,,2, 18,  81,333",
+"timestamp": "2026-10-16T15:35:31.019Z",
+"tail": "AP-BGZ",
+"flightNumber": "PK0785"
+},
+{
+"id": 7848553951,
+"label": "12",
+"text": "N 51.229,W114.015,5100,153528,  68,.C-FAXD,1537",
+"timestamp": "2026-10-16T15:35:30.763Z",
+"tail": "C-FAXD",
+"flightNumber": "WS1541"
+},
+{
+"id": 7848553908,
+"label": "22",
+"text": "N 331752W 794019,-------,015636,32003, ,      , ,M 34, 2395  15, 144,",
+"timestamp": "2026-10-16T15:35:32.985Z",
+"tail": "N650FR",
+"flightNumber": "F91233"
+},
+{
+"id": 7848553887,
+"label": "16",
+"text": "LLBG,LIRF,153524,N 37.495,E 23.095,1725,-------,37993,64",
+"timestamp": "2026-10-16T15:35:30.293Z",
+"tail": "OK-HEU",
+"flightNumber": "QS0383"
+},
+{
+"id": 7848553872,
+"label": "21",
+"text": "01/8816/16/KBUF/KLAS////////",
+"timestamp": "2026-10-16T15:35:27.547Z",
+"tail": "N6713Y",
+"flightNumber": null
+},
+{
+"id": 7848553700,
+"label": "20",
+"text": "APR01,161535,N51419W115029,232,A,6.8",
+"timestamp": "2026-10-16T15:35:26.333Z",
+"tail": "C-GWEU",
+"flightNumber": "WR3615"
+},
+{
+"id": 7848553659,
+"label": "21",
+"text": "POSN 29.861W 94.416, 147,153518,36906,27864,  22,-47,172536,KMCO",
+"timestamp": "2026-10-16T15:35:25.260Z",
+"tail": "N393FR",
+"flightNumber": "F91654"
+},
+{
+"id": 7848553639,
+"label": "44",
+"text": "01G_l~b_'~~~'nlqAlA~bd51_bdc*4bAlAEblAELbllqOl",
+"timestamp": "2026-10-16T15:35:30.194Z",
+"tail": "N618KG",
+"flightNumber": "XA0618"
+},
+{
+"id": 7848553522,
+"label": "15",
+"text": "161515 KGEG KMSP6\r\n161515350088\r\n      705034697148                        ",
+"timestamp": "2026-10-16T15:35:23.640Z",
+"tail": "N367NW",
+"flightNumber": "NW1615"
+},
+{
+"id": 7848553441,
+"label": "21",
+"text": "POSN 33.994W117.655, 134,153518,5130, 9722,  25, 16,161542,KLAS",
+"timestamp": "2026-10-16T15:35:22.480Z",
+"tail": "N705FR",
+"flightNumber": "F92232"
+},
+{
+"id": 7848553431,
+"label": "10",
+"text": "FPL AVAILABLE\r\nFLIGHT PLAN A0110 (KSTC - KFLD) FOR TAIL N393BW IS AVAILABLE FOR RECALL\r\n",
+"timestamp": "2026-10-16T15:35:19.742Z",
+"tail": "N393BW",
+"flightNumber": null
+},
+{
+"id": 7848553178,
+"label": "21",
+"text": "POSN 33.298W 79.672, 144,015636,32003, 2395,  15,-34,024548,KMCO",
+"timestamp": "2026-10-16T15:35:25.064Z",
+"tail": "N650FR",
+"flightNumber": "F91233"
+},
+{
+"id": 7848553177,
+"label": "16",
+"text": "SODEX  ,N 23.825,E  55.551,35997,0488,0246,036\\TS015639,151026",
+"timestamp": "2026-10-16T15:35:25.054Z",
+"tail": "A7-BEK",
+"flightNumber": "QR016M"
+},
+{
+"id": 7848553155,
+"label": "11",
+"text": "LDR01,KMCO LANDING DATA,FLT     METAR-0053Z\r\n2168    WIND       LDW\r\nTIME    067/06G--  118.2\r\n0156Z   OAT/DEW  36R    \r\n        026/021  35R    \r\n        QNH      35L    \r\n        30.07\r\nREMARKS\r\nCK WING FROST IF FUEL\r\nTEMP LESS THAN +5\r\n \r\n \r\n \r\n \r\n36R                11546\r\nFLAPS 30                \r\nVREF/VTGT        02H/06R\r\n 127/132 +5    AB2  4370\r\nMRLW 129.2/S   AB3  5751\r\n LDW 118.2     ABM  7164\r\n \r\n35R                 8954\r\nFLAPS 30                \r\nVREF/VTGT        02H/06R\r\n 127/132 +5    AB2  1776\r\nMRLW 129.2/S   AB3  3158\r\n LDW 118.2     ABM  4571\r\n \r\n35L                 9963\r\nFLAPS 30                \r\nVREF/VTGT        02H/06R\r\n 127/132 +5    AB2  2787\r\nMRLW 129.2/S   AB3  4167\r\n LDW 118.2     ABM  5580\r\n \r\n",
+"timestamp": "2026-10-16T15:35:24.891Z",
+"tail": "N260WN",
+"flightNumber": null
+},
+{
+"id": 7848553029,
+"label": "11",
+"text": "S 30                \r\nVREF/VTGT        02H/06R\r\n 127/132 +5    AB2  1776\r\nMRLW 129.2/S   AB3  3158\r\n LDW 118.2     ABM  4571\r\n \r\n35L                 9963\r\nFLAPS 30                \r\nVREF/VTGT        02H/06R\r\n 127/132 +5  ",
+"timestamp": "2026-10-16T15:35:23.150Z",
+"tail": "N260WN",
+"flightNumber": null
+},
+{
+"id": 7848552857,
+"label": "16",
+"text": "132258,,1332,  92,N   .    MMMM.MMM",
+"timestamp": "2026-10-16T15:35:20.488Z",
+"tail": "EI-DLC",
+"flightNumber": "FR90SF"
+},
+{
+"id": 7848552801,
+"label": "22",
+"text": "OFF02\r\nKTPA,KBNA,1535,16.8",
+"timestamp": "2026-10-16T15:35:19.551Z",
+"tail": "N8728Q",
+"flightNumber": "WN2315"
+},
+{
+"id": 7848552752,
+"label": "15",
+"text": "(2N27292W 80432--- 10230-15(Z",
+"timestamp": "2026-10-16T15:35:14.739Z",
+"tail": "N225DC",
+"flightNumber": "ZD0001"
+},
+{
+"id": 7848552706,
+"label": "11",
+"text": "TEMP LESS THAN +5\r\n \r\n \r\n \r\n \r\n36R                11546\r\nFLAPS 30                \r\nVREF/VTGT        02H/06R\r\n 127/132 +5    AB2  4370\r\nMRLW 129.2/S   AB3  5751\r\n LDW 118.2     ABM  7164\r\n \r\n35R                 8954\r\nFLAP",
+"timestamp": "2026-10-16T15:35:18.678Z",
+"tail": "N260WN",
+"flightNumber": null
+},
+{
+"id": 7848552689,
+"label": "16",
+"text": "132258,34975,1445,   6,N 42.926 E 25.880",
+"timestamp": "2026-10-16T15:35:18.499Z",
+"tail": "LY-WSM",
+"flightNumber": "HN2353"
+},
+{
+"id": 7848552489,
+"label": "16",
+"text": "/N 52.275/E  5.750/33999/1610/1322/06331/1433/",
+"timestamp": "2026-10-16T15:35:16.264Z",
+"tail": "TC-LCP",
+"flightNumber": "TK02UK"
+},
+{
+"id": 7848552425,
+"label": "16",
+"text": "132254,31985,1424, 100,N 41.882 W  5.035, 758",
+"timestamp": "2026-10-16T15:35:15.508Z",
+"tail": "EC-OJF",
+"flightNumber": "VY01HT"
+},
+{
+"id": 7848552280,
+"label": "11",
+"text": "LDR01,KTPA LANDING DATA,FLT     METAR-0053Z\r\n2891    WIND       LDW\r\nTIME    046/03G--  145.1\r\n0156Z   OAT/DEW  01L    \r\n        028/018  19R    \r\n        QNH\r\n        30.04\r\nREMARKS\r\nCK WING FROST IF FUEL\r\nTEMP LESS THAN +5\r\n \r\n \r\n \r\n \r\n01L                10765\r\nFLAPS 30                \r\nVREF/VTGT        02H/02R\r\n 145/150 +5    AB2  2295\r\nMRLW 151.5/S   AB3  4044\r\n LDW 145.1     ABM  5817\r\n \r\n19R                10948\r\nFLAPS 30                \r\nVREF/VTGT        03T/02L\r\n 145/150 +5    AB2  2082\r\nMRLW 151.5/S   AB3  3955\r\n LDW 145.1     ABM  5834\r\n \r\n",
+"timestamp": "2026-10-16T15:35:13.704Z",
+"tail": "N8805L",
+"flightNumber": null
+},
+{
+"id": 7848552169,
+"label": "11",
+"text": "N +5\r\n \r\n \r\n \r\n \r\n01L                10765\r\nFLAPS 30                \r\nVREF/VTGT        02H/02R\r\n 145/150 +5    AB2  2295\r\nMRLW 151.5/S   AB3  4044\r\n LDW 145.1     ABM  5817\r\n \r\n19R                10948\r\nFLAPS 30         ",
+"timestamp": "2026-10-16T15:35:12.778Z",
+"tail": "N8805L",
+"flightNumber": null
+},
+{
+"id": 7848552110,
+"label": "16",
+"text": "PC7126/16OCT26 13:22:54,26711,1612, 221,N 51.894 E  6.093",
+"timestamp": "2026-10-16T15:35:12.154Z",
+"tail": "TC-RBF",
+"flightNumber": "PC7126"
+},
+{
+"id": 7848552035,
+"label": "12",
+"text": "N 51.165,W114.046,3607,153505,  62,.C-FYPB,1535",
+"timestamp": "2026-10-16T15:35:09.942Z",
+"tail": "C-FYPB",
+"flightNumber": "WS0104"
+},
+{
+"id": 7848551811,
+"label": "16",
+"text": "132253,9987,1331,  88,N 53.694 W  1.729",
+"timestamp": "2026-10-16T15:35:08.098Z",
+"tail": "SP-RZO",
+"flightNumber": "FR06XW"
+},
+{
+"id": 7848551782,
+"label": "20",
+"text": "RST53A16132249KLM49N  EHAMEPWA",
+"timestamp": "2026-10-16T15:35:07.823Z",
+"tail": "PH-BCG",
+"flightNumber": "KL049N"
+},
+{
+"id": 7848551722,
+"label": "14",
+"text": "POS\r\n16OCT,1533,240,37977,N 23.817,E119.668,27511,  28,54",
+"timestamp": "2026-10-16T15:35:06.397Z",
+"tail": "B-LPK",
+"flightNumber": "HX0631"
+},
+{
+"id": 7848551691,
+"label": "22",
+"text": "N 3/4528W1210701<-------,153454,16147, ,   \u0004  , ,M  3, 8700  30,  96,",
+"timestamp": "2026-10-16T15:35:06.242Z",
+"tail": "N714FR",
+"flightNumber": "F92045"
+},
+{
+"id": 7848551659,
+"label": "22",
+"text": "N 362949W 765457,-------,153454,38000, ,      , ,M 50,22333  30, 120,",
+"timestamp": "2026-10-16T15:35:05.552Z",
+"tail": "N383FR",
+"flightNumber": "F91665"
+},
+{
+"id": 7848551492,
+"label": "12",
+"text": "N 49.668,W113.594,35000,015623, 160,.C-GWLK,0406",
+"timestamp": "2026-10-16T15:35:05.001Z",
+"tail": "C-GWLK",
+"flightNumber": "WS1168"
+},
+{
+"id": 7848551460,
+"label": "16",
+"text": "PC62FJ/16OCT26 13:22:48,27746,1347,  80,N 50.654 E 10.451",
+"timestamp": "2026-10-16T15:35:04.562Z",
+"tail": "TC-NBO",
+"flightNumber": "PC62FJ"
+},
+{
+"id": 7848551303,
+"label": "80",
+"text": "3N01 POSRPT 3045/16 MMLO/MMTJ .XA-VVF\r\n/POS N32144W115587/ALT +20046/MCH 550/FOB 0048/ETA 1552",
+"timestamp": "2026-10-16T15:35:01.965Z",
+"tail": "XA-VVF",
+"flightNumber": "Y43045"
+},
+{
+"id": 7848551223,
+"label": "21",
+"text": "POSN 37.758W121.117,  96,153454,16147, 8700,  30,- 3,155236,KOAK",
+"timestamp": "2026-10-16T15:35:00.670Z",
+"tail": "N714FR",
+"flightNumber": "F92045"
+},
+{
+"id": 7848551179,
+"label": "21",
+"text": "POSN 36.495W 76.917, 120,153454,38000,22333,  30,-50,172212,KMIA",
+"timestamp": "2026-10-16T15:34:59.746Z",
+"tail": "N383FR",
+"flightNumber": "F91665"
+},
+{
+"id": 7848551131,
+"label": "44",
+"text": "00POS02,N39358E024392,410,LFMN,LTFE,1016,1534,1618,002.4",
+"timestamp": "2026-10-16T15:34:59.492Z",
+"tail": "YRTRO",
+"flightNumber": "ZD0000"
+},
+{
+"id": 7848550695,
+"label": "15",
+"text": ":0114ARRIVINGKBOS02401000NYYYNNNNN\r\n                        \r\n1 PAX NO VIDENTE SIN\r\nACOMPANANTE.",
+"timestamp": "2026-10-16T15:34:54.868Z",
+"tail": "HP1840",
+"flightNumber": "CM0366"
+},
+{
+"id": 7848550585,
+"label": "22",
+"text": "N 285056W 810545,-------,132248,12897, ,      , ,   3,17436  12,  79,",
+"timestamp": "2026-10-16T15:34:53.540Z",
+"tail": "N607FR",
+"flightNumber": "F91807"
+},
+{
+"id": 7848550557,
+"label": "4A",
+"text": "132248,1340,  86,12419,N 27.867,W 81.748",
+"timestamp": "2026-10-16T15:34:53.256Z",
+"tail": "N309NV",
+"flightNumber": "G41344"
+},
+{
+"id": 7848550552,
+"label": "15",
+"text": "(2N39516W 83360--- 66299-30(Z",
+"timestamp": "2026-10-16T15:34:52.604Z",
+"tail": "N601BE",
+"flightNumber": "XA0001"
+},
+{
+"id": 7848550464,
+"label": "20",
+"text": "01/1003/16OCT26/PHNL/PHLI/1600/002100/      /      /\r\n",
+"timestamp": "2026-10-16T15:34:48.468Z",
+"tail": "N493HA",
+"flightNumber": null
+},
+{
+"id": 7848550235,
+"label": "22",
+"text": "N 275219W 823343,-------,015606,1756, ,      , ,  22,10180  19,  65,",
+"timestamp": "2026-10-16T15:34:49.941Z",
+"tail": "N437FR",
+"flightNumber": "F92925"
+},
+{
+"id": 7848550212,
+"label": "21",
+"text": "POSN 28.847W 81.097,  79,132248,12897,17436,  12,  3,133548,KMCO",
+"timestamp": "2026-10-16T15:34:49.712Z",
+"tail": "N607FR",
+"flightNumber": "F91807"
+},
+{
+"id": 7848550123,
+"label": "22",
+"text": "N 393448W 752432,-------,153436,10314, ,      , ,   6,24588  41, 252,",
+"timestamp": "2026-10-16T15:34:47.939Z",
+"tail": "N716FR",
+"flightNumber": "F92507"
+},
+{
+"id": 7848550053,
+"label": "21",
+"text": "POSN 27.872W 82.562,  65,015606,1756,10180,  19, 22,015842,KTPA",
+"timestamp": "2026-10-16T15:34:48.404Z",
+"tail": "N437FR",
+"flightNumber": "F92925"
+},
+{
+"id": 7848550028,
+"label": "22",
+"text": "N 302226W 824030,-------,153436,35019, ,      , ,M 44,21629  25, 128,",
+"timestamp": "2026-10-16T15:34:46.596Z",
+"tail": "N389FR",
+"flightNumber": "F92954"
+},
+{
+"id": 7848550022,
+"label": "22",
+"text": "N 281456W 825410,-------,153442,10650, ,      , ,   6,16802   6, 119,",
+"timestamp": "2026-10-16T15:34:47.932Z",
+"tail": "N619FR",
+"flightNumber": "F93782"
+},
+{
+"id": 7848549995,
+"label": "20",
+"text": "FI 2207/DY 16/DS KPHL/DS KORD/FT 0149/CN DEARY,SAMUEL\r\n/U400340/U441456////KMSN/\r\n",
+"timestamp": "2026-10-16T15:34:43.311Z",
+"tail": "N23721",
+"flightNumber": null
+},
+{
+"id": 7848549848,
+"label": "20",
+"text": "RST17A16153400KLM643  EHAMKJFK",
+"timestamp": "2026-10-16T15:34:45.376Z",
+"tail": "PH-BQO",
+"flightNumber": "KL0643"
+},
+{
+"id": 7848549789,
+"label": "21",
+"text": "POSN 28.248W 82.902, 119,153442,10650,16802,   6,  6,154812,KTPA",
+"timestamp": "2026-10-16T15:34:45.997Z",
+"tail": "N619FR",
+"flightNumber": "F93782"
+},
+{
+"id": 7848549719,
+"label": "22",
+"text": "N 394901W1062645,-------,153436,31681, ,      , ,M 43, 1972  33, 139,",
+"timestamp": "2026-10-16T15:34:43.811Z",
+"tail": "N375FR",
+"flightNumber": "F91229"
+},
+{
+"id": 7848549687,
+"label": "20",
+"text": "FI 1463/DY 14/DS KIAD/DS KIAH/FT 0238/CN KOOTSIKAS,AMY\r\n/U341996/U411421/////\r\n",
+"timestamp": "2026-10-16T15:34:45.150Z",
+"tail": "N61886",
+"flightNumber": null
+},
+{
+"id": 7848549574,
+"label": "21",
+"text": "POSN 39.579W 75.409, 252,153436,10314,24588,  41,  6,173648,KMCO",
+"timestamp": "2026-10-16T15:34:41.766Z",
+"tail": "N716FR",
+"flightNumber": "F92507"
+},
+{
+"id": 7848549559,
+"label": "22",
+"text": "RPR01,161534,N50504W115244,240,A,6.9",
+"timestamp": "2026-10-16T15:34:41.704Z",
+"tail": "C-FKWE",
+"flightNumber": "WR3733"
+},
+{
+"id": 7848549296,
+"label": "15",
+"text": "FST01EGPHEGLCN52224W00020229502800191M038C093221142129422  13571322",
+"timestamp": "2026-10-16T15:34:40.614Z",
+"tail": "G-LCYS",
+"flightNumber": "CJ8705"
+},
+{
+"id": 7848549178,
+"label": "21",
+"text": "POSN 39.817W106.449, 139,153436,31681, 1972,  33,-43,172306,KSFO",
+"timestamp": "2026-10-16T15:34:38.633Z",
+"tail": "N375FR",
+"flightNumber": "F91229"
+},
+{
+"id": 7848549142,
+"label": "16",
+"text": "153436,36006,1808, 232,N 29.625 W 94.713",
+"timestamp": "2026-10-16T15:34:38.378Z",
+"tail": "N319NV",
+"flightNumber": "G60024"
+},
+{
+"id": 7848549114,
+"label": "16",
+"text": "KIROP  ,N 24.488,E 057.938,38000, 491,0306, 27\\TS015603,151026",
+"timestamp": "2026-10-16T15:34:38.265Z",
+"tail": "A7-BCY",
+"flightNumber": "QR074R"
+},
+{
+"id": 7848548985,
+"label": "22",
+"text": "N 373534W 775602,-------,153424,32999, ,      , ,M 38,21734  50, 117,",
+"timestamp": "2026-10-16T15:34:35.952Z",
+"tail": "N396FR",
+"flightNumber": "F92538"
+},
+{
+"id": 7848548934,
+"label": "16",
+"text": "TONVO  ,N 25.030,E  55.917,36998,0483,0317,040\\TS015559,151026",
+"timestamp": "2026-10-16T15:34:36.535Z",
+"tail": "A7-BTC",
+"flightNumber": "QR8680"
+},
+{
+"id": 7848548898,
+"label": "22",
+"text": "N 332400W 945006,-------,153418,27658, ,      , ,M 27,24693  36, 235,",
+"timestamp": "2026-10-16T15:34:34.255Z",
+"tail": "N236FR",
+"flightNumber": "F92970"
+},
+{
+"id": 7848548650,
+"label": "16",
+"text": "MENSA  ,N 24.683,E 57.326,33981,0457,0259, 13\\TS015554,151026",
+"timestamp": "2026-10-16T15:34:33.603Z",
+"tail": "A7-AHG",
+"flightNumber": "QR002X"
+},
+{
+"id": 7848548518,
+"label": "80",
+"text": "1101 OFFRP  0570/16 PAFA/PANC .N562AS\r\n/OUT 1305/OFF 1322/FOB 0105/ETA 1410/CAB 1300/OIL 1307/AFT 1015/CARGO 1303/SRVC 1014",
+"timestamp": "2026-10-16T15:34:31.983Z",
+"tail": "N562AS",
+"flightNumber": "AS0570"
+},
+{
+"id": 7848548457,
+"label": "14",
+"text": "/14 OFF EVENT      / KORD KSBA 16 153429/TIME 1534\r\n/AU 49848807/AON 49804805/AIN 49814805/AOT 49846806\r\n/LOC S053648,W0064218",
+"timestamp": "2026-10-16T15:34:30.162Z",
+"tail": "N15751",
+"flightNumber": "UA8228"
+},
+{
+"id": 7848548413,
+"label": "21",
+"text": "POSN 37.593W 77.934, 117,153424,32999,21734,  50,-38,161212,KPHL",
+"timestamp": "2026-10-16T15:34:30.235Z",
+"tail": "N396FR",
+"flightNumber": "F92538"
+},
+{
+"id": 7848548176,
+"label": "21",
+"text": "POSN 33.400W 94.835, 235,153418,27658,24693,  36,-27,175230,KPHL",
+"timestamp": "2026-10-16T15:34:27.166Z",
+"tail": "N236FR",
+"flightNumber": "F92970"
+},
+{
+"id": 7848548152,
+"label": "10",
+"text": "LDR01,189,D,SWA-2600-019,0,N 36.130,W107.817,37999, 10.6,KMDW,KPHX,KPHX,26/,25L/,/,0,0,,,,,,,0,0,0,00,,137.2,08.2,145.4,,,",
+"timestamp": "2026-10-16T15:34:27.374Z",
+"tail": "N8807L",
+"flightNumber": "WN2960"
+},
+{
+"id": 7848548122,
+"label": "80",
+"text": "3N01 POSRPT 17FS/16 LPFR/EGSS .G-POWN\r\n/POS N49590W001256/ALT +32474/MCH 787/FOB 0041/ETA 1354",
+"timestamp": "2026-10-16T15:34:27.121Z",
+"tail": "G-POWN",
+"flightNumber": "ZT17FS"
+},
+{
+"id": 7848548094,
+"label": "16",
+"text": "132245,33074,1541,   8,N 40.761 W  2.358",
+"timestamp": "2026-10-16T15:34:26.904Z",
+"tail": "9A-CTK",
+"flightNumber": "SR01DK"
+},
+{
+"id": 7848548016,
+"label": "10",
+"text": "LDR01,189,D,SWA-2600-019,0,N 38.506,W 85.833,38013, 11.3,KMCO,KMKE,KMKE,25L/,/,/,1,0,,,,,,,0,0,0,00,,121.8,09.1,130.9,,,",
+"timestamp": "2026-10-16T15:34:26.192Z",
+"tail": "N8870K",
+"flightNumber": "WN4985"
+},
+{
+"id": 7848547960,
+"label": "22",
+"text": "N 391142W1060730,-------,153412,27242, ,      , ,M 32,  246  27,  81,",
+"timestamp": "2026-10-16T15:34:24.954Z",
+"tail": "N701FR",
+"flightNumber": "F91500"
+},
+{
+"id": 7848547887,
+"label": "15",
+"text": "FST01EGLLLIMCN46733E0085738295  31  38      9186      458  13541322",
+"timestamp": "2026-10-16T15:34:24.547Z",
+"tail": "G-EUPS",
+"flightNumber": "BA0584"
+},
+{
+"id": 7848547880,
+"label": "12",
+"text": "N 49.932,W122.002,39000,153422, 118,.C-GWBU,1627",
+"timestamp": "2026-10-16T15:34:24.146Z",
+"tail": "C-GWBU",
+"flightNumber": "WS0302"
+},
+{
+"id": 7848547807,
+"label": "20",
+"text": "FI 0462/DY 16/DS KPDX/DS KIAH/FT 0348/CN CARR,MICHAEL\r\n/U249466/U348685/////\r\n",
+"timestamp": "2026-10-16T15:34:23.604Z",
+"tail": "N69816",
+"flightNumber": null
+},
+{
+"id": 7848547743,
+"label": "10",
+"text": "FPL AVAILABLE\r\nFLIGHT PLAN A0109 (KFLD - KSTC) FOR TAIL N393BW IS AVAILABLE FOR RECALL\r\n",
+"timestamp": "2026-10-16T15:34:19.666Z",
+"tail": "N393BW",
+"flightNumber": null
+},
+{
+"id": 7848547660,
+"label": "16",
+"text": "132236,6756,1418, 106,N 38.341 W   .330,----",
+"timestamp": "2026-10-16T15:34:21.993Z",
+"tail": "EC-OKJ",
+"flightNumber": "VY08WD"
+},
+{
+"id": 7848547644,
+"label": "12",
+"text": "N 50.758,W113.761,28000,153419, 336,.C-FNAX,1939",
+"timestamp": "2026-10-16T15:34:21.225Z",
+"tail": "C-FNAX",
+"flightNumber": "WS2242"
+},
+{
+"id": 7848547565,
+"label": "15",
+"text": "(2N45320W119334--- 42360-51(Z",
+"timestamp": "2026-10-16T15:34:20.544Z",
+"tail": "N577QS",
+"flightNumber": "GS0001"
+},
+{
+"id": 7848547554,
+"label": "22",
+"text": "N 385244W 763133,-------,132236,34001, ,      , ,M 40,24306  53, 109,",
+"timestamp": "2026-10-16T15:34:20.940Z",
+"tail": "N630FR",
+"flightNumber": "F92282"
+},
+{
+"id": 7848547454,
+"label": "80",
+"text": "3701 INRANG 8011/16 KMSP/KSTC .N846SY\r\n/ETA 1337/ERT     ",
+"timestamp": "2026-10-16T15:34:20.099Z",
+"tail": "N846SY",
+"flightNumber": "SY8011"
+},
+{
+"id": 7848547447,
+"label": "21",
+"text": "POSN 39.196W106.123,  81,153412,27242,  246,  27,-32,155418,KDEN",
+"timestamp": "2026-10-16T15:34:19.627Z",
+"tail": "N701FR",
+"flightNumber": "F91500"
+},
+{
+"id": 7848547417,
+"label": "16",
+"text": "132240,35009,1548, 169,N 39.488 W   .579",
+"timestamp": "2026-10-16T15:34:19.685Z",
+"tail": "SP-RZS",
+"flightNumber": "FR2968"
+},
+{
+"id": 7848547397,
+"label": "80",
+"text": "3A01 OPSCTL 077Y/16 LIMC/ENGM .SE-RTO\r\nWE KNOWS PEOPLES....\r\n//11197",
+"timestamp": "2026-10-16T15:34:19.013Z",
+"tail": "SE-RTO",
+"flightNumber": "DY077Y"
+},
+{
+"id": 7848547392,
+"label": "80",
+"text": "3N01 POSRPT 0103/16 WMKK/ZPPP .9M-RAK\r\n/POS N14587E101027/ALT +36954/MCH 775/FOB 0080/ETA 1724",
+"timestamp": "2026-10-16T15:34:18.807Z",
+"tail": "9M-RAK",
+"flightNumber": "AK0103"
+},
+{
+"id": 7848547291,
+"label": "15",
+"text": "(2N32133W 86337229 20101  9(Z",
+"timestamp": "2026-10-16T15:34:18.172Z",
+"tail": "N533CC",
+"flightNumber": "XA0001"
+},
+{
+"id": 7848547181,
+"label": "20",
+"text": "INI/ID38022S,EXPO92,DUN82TB02289/MR0,2/AFKSKA,KSKA/TD161606,160632F4",
+"timestamp": "2026-10-16T15:34:14.000Z",
+"tail": "38022S",
+"flightNumber": null
+},
+{
+"id": 7848547155,
+"label": "21",
+"text": "POSN 38.879W 76.526, 109,132236,34001,24306,  53,-40,135500,KEWR",
+"timestamp": "2026-10-16T15:34:16.939Z",
+"tail": "N630FR",
+"flightNumber": "F92282"
+},
+{
+"id": 7848546383,
+"label": "15",
+"text": "(2N50070W  3411--- 31400-52(Z",
+"timestamp": "2026-10-16T15:34:10.101Z",
+"tail": "9HXOB",
+"flightNumber": "XA0001"
+},
+{
+"id": 7848546371,
+"label": "QQ",
+"text": "KIADLFPG015501553504120416",
+"timestamp": "2026-10-16T15:34:10.225Z",
+"tail": "F-HUVP",
+"flightNumber": "AF053X"
+},
+{
+"id": 7848546045,
+"label": "16",
+"text": "/N 24.007/E 57.492/17677/1510/0155/14058/0627/",
+"timestamp": "2026-10-16T15:34:06.330Z",
+"tail": "TC-LCO",
+"flightNumber": "TK01JM"
+},
+{
+"id": 7848545930,
+"label": "80",
+"text": "3J01 DSPTCH 0233/16 KMSP/KEWR .N851SY\r\nYOURE WELCOME",
+"timestamp": "2026-10-16T15:34:04.857Z",
+"tail": "N851SY",
+"flightNumber": "SY0233"
+},
+{
+"id": 7848545875,
+"label": "10",
+"text": "LDR01,189,D,ENG-2600-20E,0,N 28.142,W 81.532,16862,  7.7,KMCO,KRSW,KRSW,6/, 24/,/,0,0,,,,,,,0,0,0,00,,113.9,05.8,119.7,,,",
+"timestamp": "2026-10-16T15:34:04.176Z",
+"tail": "N8323C",
+"flightNumber": "WN0519"
+},
+{
+"id": 7848545738,
+"label": "80",
+"text": "3N01 POSRPT 1811/15 VIDP/VOCI .VT-RTF\r\n/POS N27236E076478/ALT +28831/MCH 734/FOB 08326/ETA 0425/0155\r\n",
+"timestamp": "2026-10-16T15:34:02.396Z",
+"tail": "VT-RTF",
+"flightNumber": "IX1811"
+},
+{
+"id": 7848545706,
+"label": "22",
+"text": "VA0556/YPPH/YSSY/151026/012400/000000/0124/0056/0.79/1/0068/008637/1/0124/28807764/F/000000/1/////",
+"timestamp": "2026-10-16T15:34:02.125Z",
+"tail": "VH-8VH",
+"flightNumber": "VA0556"
+},
+{
+"id": 7848545652,
+"label": "10",
+"text": "161510 KMSP KAUS6\r\n20621533023915131510150815131513            ",
+"timestamp": "2026-10-16T15:34:00.161Z",
+"tail": "N335NB",
+"flightNumber": "NW2062"
+},
+{
+"id": 7848545482,
+"label": "16",
+"text": "ADK-12 ,N 50.141,E   8.511,35998,0462,1634,054\\TS153355,161026",
+"timestamp": "2026-10-16T15:33:58.145Z",
+"tail": "A7-BBC",
+"flightNumber": "QR001F"
+},
+{
+"id": 7848545472,
+"label": "14",
+"text": "OFF02ANZ104    /15150155YSSYNZAA\r\n01330155 4720417\r\n 832801090109010501050100550055\r\n013322015532 47200",
+"timestamp": "2026-10-16T15:33:58.512Z",
+"tail": "ZK-OKO",
+"flightNumber": "NZ0104"
+},
+{
+"id": 7848545433,
+"label": "20",
+"text": "  22160664,16OCT,SCH,16 1610,5629,KORD,KGRB,072521,MEEKS           ,------,119179,FUNES           ,------,05383,0,BOTH CREW REQUIRED TO   ,ACTIVATE IN FLITEVIEW   ,UA,\r\n\r\n",
+"timestamp": "2026-10-16T15:33:57.244Z",
+"tail": "N679SA",
+"flightNumber": null
+},
+{
+"id": 7848545420,
+"label": "16",
+"text": "132236,,1340,  69,N   .    MMMM.MMM",
+"timestamp": "2026-10-16T15:33:57.914Z",
+"tail": "EI-DPL",
+"flightNumber": "FR22RD"
+},
+{
+"id": 7848545376,
+"label": "22",
+"text": "OFF02\r\nKTPA,KBUF,1533,22.5",
+"timestamp": "2026-10-16T15:33:57.237Z",
+"tail": "N969WN",
+"flightNumber": "WN0408"
+},
+{
+"id": 7848545339,
+"label": "10",
+"text": "/N31.563/W097.189/10/0.81/191/410/KMFE/1629/0048/00017/CWK  /YEEHA/1600/LOCOE/1610/KOKC/",
+"timestamp": "2026-10-16T15:33:56.604Z",
+"tail": "N827QS",
+"flightNumber": "GS0000"
+},
+{
+"id": 7848545186,
+"label": "80",
+"text": "3N01 POSRPT 0900/16 OMDB/UAAA .EI-KDK\r\n/POS N24495E058309/ALT +37011/MCH 772/FOB 01116/ETA 1920",
+"timestamp": "2026-10-16T15:33:54.430Z",
+"tail": "EI-KDK",
+"flightNumber": "KC0900"
+},
+{
+"id": 7848545181,
+"label": "80",
+"text": "3N01 POSRPT 4000/16 MROC/KMCO .N547VL\r\n/POS N26449W080301/ALT +29999/MCH 747/FOB 0039/ETA 1555",
+"timestamp": "2026-10-16T15:33:54.038Z",
+"tail": "N547VL",
+"flightNumber": "Q64000"
+},
+{
+"id": 7848545173,
+"label": "80",
+"text": "3N01 POSRPT 4000/16 MROC/IMCO .N547VL\r\n/POS N26449W0803\u00141/ALT +29999/-CH 747/FOB 0039/ETA 1555",
+"timestamp": "2026-10-16T15:33:53.823Z",
+"tail": "*N547VL",
+"flightNumber": "Q64000"
+},
+{
+"id": 7848545076,
+"label": "44",
+"text": "161544 KIAD KATL7\r\n/FN 1444\r\n011701  693689      ",
+"timestamp": "2026-10-16T15:33:52.669Z",
+"tail": "N357NB",
+"flightNumber": "NW1444"
+},
+{
+"id": 7848545069,
+"label": "22",
+"text": "N 282244W 811716,-------,015524,879, ,      , ,  24, 8383  15,  65,",
+"timestamp": "2026-10-16T15:33:53.328Z",
+"tail": "N672FR",
+"flightNumber": "F93819"
+},
+{
+"id": 7848544993,
+"label": "15",
+"text": "(2N32553W 82203184 35469-64(Z",
+"timestamp": "2026-10-16T15:33:51.728Z",
+"tail": "N793XJ",
+"flightNumber": "XA0001"
+},
+{
+"id": 7848544958,
+"label": "21",
+"text": "POSN 28.379W 81.288,  65,015524,879, 8383,  15, 24,015648,KMCO",
+"timestamp": "2026-10-16T15:33:51.968Z",
+"tail": "N672FR",
+"flightNumber": "F93819"
+},
+{
+"id": 7848544842,
+"label": "16",
+"text": "153342,24600,1738, 214,N 39.664,W 76.311",
+"timestamp": "2026-10-16T15:33:49.604Z",
+"tail": "N288NV",
+"flightNumber": "G40846"
+},
+{
+"id": 7848544804,
+"label": "16",
+"text": "PC75LR/15OCT26 01:55:24,34016,0226,  84,N 49.555 E  9.888",
+"timestamp": "2026-10-16T15:33:49.922Z",
+"tail": "TC-NBN",
+"flightNumber": "PC75LR"
+},
+{
+"id": 7848544498,
+"label": "14",
+"text": "/14 OFF EVENT      / KSFO KLAX 14 015521/TIME 0155\r\n/AU 28936471/AON 28814470/AIN 28816470/AOT 28931470\r\n/LOC S673242,W1463512",
+"timestamp": "2026-10-16T15:33:46.797Z",
+"tail": "N38417",
+"flightNumber": "UA1799"
+},
+{
+"id": 7848544472,
+"label": "44",
+"text": "00POS02,N42198W071435,140,KBED,KCNW,1016,1322,1654,*****",
+"timestamp": "2026-10-16T15:33:46.648Z",
+"tail": "N786CJ",
+"flightNumber": "ZD0000"
+},
+{
+"id": 7848544391,
+"label": "80",
+"text": "3J01 DSPTCH 1422/14 KPHX/KSEA .N253AK\r\nSCRE OF DODGERS TXS",
+"timestamp": "2026-10-16T15:33:46.085Z",
+"tail": "N253AK",
+"flightNumber": "AS1422"
+},
+{
+"id": 7848544281,
+"label": "10",
+"text": ":WAB11COMPLIANCE WITH EDNO 1\r\nBA436/16 16OCT26\r\nLHR AMS GEUYE 2/4\r\n.....................\r\nZFW  58.9\r\nTOF     4.8\r\nTOW  63.7\r\nTIF     2.2\r\nPAX  167   PLUS 1\r\nMACZFW    34.2   \r\nMACTOW    33.5   \r\nLIZFW     517.8 \r\nLITOW     517.8 \r\nNOTOC: NO\r\nFUEL IN TANKS 5103\r\nTAXI FUEL 341\r\n.....................\r\n1322Z 16OCT\r\nEND",
+"timestamp": "2026-10-16T15:33:45.256Z",
+"tail": "G-EUYE",
+"flightNumber": null
+},
+{
+"id": 7848544280,
+"label": "16",
+"text": "/N 44.040/E 24.275/35999/1510/0155/08852/0401/",
+"timestamp": "2026-10-16T15:33:45.243Z",
+"tail": "TC-JVB",
+"flightNumber": "TK01SQ"
+},
+{
+"id": 7848544272,
+"label": "44",
+"text": "00POS02,N39113W077339,060,KBAK,KIAD,1016,1533,1545,004.3",
+"timestamp": "2026-10-16T15:33:44.483Z",
+"tail": "N163R",
+"flightNumber": "ZD0163"
+},
+{
+"id": 7848544246,
+"label": "QR",
+"text": "KCLTKBOS0155OS KBOS /FUL0136/APH 0000000",
+"timestamp": "2026-10-16T15:33:44.967Z",
+"tail": "N847NN",
+"flightNumber": "AA2595"
+},
+{
+"id": 7848544229,
+"label": "16",
+"text": "PC43AN/15OCT26 01:55:12,36001,0226,  83,N 50.391 E 11.408",
+"timestamp": "2026-10-16T15:33:44.865Z",
+"tail": "TC-NCR",
+"flightNumber": "PC43AN"
+},
+{
+"id": 7848544171,
+"label": "16",
+"text": "153336,36980,1634, 122,N 38.503,W 95.007",
+"timestamp": "2026-10-16T15:33:43.081Z",
+"tail": "N208NV",
+"flightNumber": "G42317"
+},
+{
+"id": 7848544169,
+"label": "16",
+"text": "POSA1N42504W 71720,BOS    ,014909,390,BOS27  ,015830,,*****,*****, 786,   0",
+"timestamp": "2026-10-16T15:33:44.382Z",
+"tail": "N875BD",
+"flightNumber": "AA0040"
+},
+{
+"id": 7848543981,
+"label": "16",
+"text": "ERNAN  ,N 54.621,W   8.239,35003,0489,1649,037\\TS153340,161026",
+"timestamp": "2026-10-16T15:33:42.093Z",
+"tail": "A7-BFV",
+"flightNumber": "QR8171"
+},
+{
+"id": 7848543955,
+"label": "14",
+"text": "/14 OFF EVENT      / KORD KJAX 16 153333/TIME 1533\r\n/AU 33115551/AON 33015549/AIN 33019549/AOT 33105550\r\n/LOC N415739,W0875324",
+"timestamp": "2026-10-16T15:33:39.738Z",
+"tail": "N844UA",
+"flightNumber": "UA1113"
+},
+{
+"id": 7848543927,
+"label": "10",
+"text": "ETA18A15015516KLM856  RKSIEHAM150325EHAM  99",
+"timestamp": "2026-10-16T15:33:41.724Z",
+"tail": "PH-BHF",
+"flightNumber": "KL0856"
+},
+{
+"id": 7848543906,
+"label": "10",
+"text": "/N41.360/W121.544/10/0.75/350/400/KBFI/0253/0043/00017/BTG  /COUGA/0158/OLM  /0203/",
+"timestamp": "2026-10-16T15:33:41.502Z",
+"tail": "N581QS",
+"flightNumber": "GS0000"
+},
+{
+"id": 7848543837,
+"label": "16",
+"text": "153339,6768,1543,   4,N 37.531 E 23.865",
+"timestamp": "2026-10-16T15:33:38.932Z",
+"tail": "5B-DEG",
+"flightNumber": "U80704"
+},
+{
+"id": 7848543722,
+"label": "QQ",
+"text": "LMMLLHBP13221310",
+"timestamp": "2026-10-16T15:33:39.351Z",
+"tail": "EI-IJK",
+"flightNumber": "FR02RE"
+},
+{
+"id": 7848543656,
+"label": "22",
+"text": "N 365002W 785743,-------,153324,34955, ,      , ,M 42,21629  51, 190,",
+"timestamp": "2026-10-16T15:33:37.742Z",
+"tail": "N720FR",
+"flightNumber": "F92472"
+},
+{
+"id": 7848543551,
+"label": "16",
+"text": "KUSBA  ,N 25.251,E 53.503,27068,418,0231,023\\TS015458,151026",
+"timestamp": "2026-10-16T15:33:37.502Z",
+"tail": "A7-AMI",
+"flightNumber": "QR0891"
+},
+{
+"id": 7848543453,
+"label": "QS",
+"text": "KDFWKMSN1532 109--OS KMSN /OPN0046/DO 1533/PB 1532/CO 1533/PO ----/MS 1532",
+"timestamp": "2026-10-16T15:33:36.143Z",
+"tail": "N801AW",
+"flightNumber": "US2388"
+},
+{
+"id": 7848543344,
+"label": "20",
+"text": "DA HEGN/DS EGGD/ETA 0215/FN TOM699\r\n15OCT26/UTC 015501/CLI ",
+"timestamp": "2026-10-16T15:33:35.794Z",
+"tail": "G-TUPE",
+"flightNumber": "BY0699"
+},
+{
+"id": 7848543287,
+"label": "12",
+"text": "N 52.125,W114.480,10000,153330,  71,.C-FYJD,1553",
+"timestamp": "2026-10-16T15:33:33.589Z",
+"tail": "C-FYJD",
+"flightNumber": "WS0145"
+},
+{
+"id": 7848543131,
+"label": "16",
+"text": "ASPEN  ,N 42.809,W 70.915,40010,494,0238,019\\TS015457,151026",
+"timestamp": "2026-10-16T15:33:33.912Z",
+"tail": "A7-AMJ",
+"flightNumber": "QR057H"
+},
+{
+"id": 7848543047,
+"label": "16",
+"text": "015500,+36999,0359,19760,N 44.8811,E 17.9597,SXS2GA  ",
+"timestamp": "2026-10-16T15:33:32.873Z",
+"tail": "TC-SOY",
+"flightNumber": "XQ02GA"
+},
+{
+"id": 7848543022,
+"label": "21",
+"text": "POSN 36.834W 78.962, 190,153324,34955,21629,  51,-42,162854,KEWR",
+"timestamp": "2026-10-16T15:33:31.512Z",
+"tail": "N720FR",
+"flightNumber": "F92472"
+},
+{
+"id": 7848542958,
+"label": "22",
+"text": "N 390932W 782906,-------,153324,17925, ,      , ,M  9,23637  48,  93,",
+"timestamp": "2026-10-16T15:33:30.054Z",
+"tail": "N395FR",
+"flightNumber": "F90686"
+},
+{
+"id": 7848542866,
+"label": "16",
+"text": "132228,33011,1530, 168,N 44.332 E 11.407",
+"timestamp": "2026-10-16T15:33:30.620Z",
+"tail": "EI-ILO",
+"flightNumber": "FR45MK"
+},
+{
+"id": 7848542865,
+"label": "16",
+"text": "153324,36987,1705, 122,N 29.909,W 81.531",
+"timestamp": "2026-10-16T15:33:29.124Z",
+"tail": "N199NV",
+"flightNumber": "G40611"
+},
+{
+"id": 7848542830,
+"label": "21",
+"text": "POSN 39.159W 78.483,  93,153324,17925,23637,  48,- 9,155348,KDCA",
+"timestamp": "2026-10-16T15:33:28.269Z",
+"tail": "N395FR",
+"flightNumber": "F90686"
+},
+{
+"id": 7848542748,
+"label": "22",
+"text": "CYYC,CYQR, 162,153322,1631",
+"timestamp": "2026-10-16T15:33:27.379Z",
+"tail": "C-GKWJ",
+"flightNumber": "WS0392"
+},
+{
+"id": 7848542723,
+"label": "16",
+"text": "132229,,1402, 108,N   .    MMMM.MMM",
+"timestamp": "2026-10-16T15:33:28.854Z",
+"tail": "EI-EVB",
+"flightNumber": "FR85ZR"
+},
+{
+"id": 7848542615,
+"label": "QP",
+"text": "KBOSLFPG0154038303018015453",
+"timestamp": "2026-10-16T15:33:27.561Z",
+"tail": "F-HTYD",
+"flightNumber": "AF331E"
+},
+{
+"id": 7848542580,
+"label": "16",
+"text": "015454,39000,0336,  78,N 43.730 E 21.962/SXS4TF",
+"timestamp": "2026-10-16T15:33:27.144Z",
+"tail": "TC-SPD",
+"flightNumber": "XQ04TF"
+},
+{
+"id": 7848542507,
+"label": "21",
+"text": "POSN 39.675W 88.555, 118,153318,29004,23742, 112,-28,163924,KATL",
+"timestamp": "2026-10-16T15:33:25.522Z",
+"tail": "N374FR",
+"flightNumber": "F93046"
+},
+{
+"id": 7848542435,
+"label": "16",
+"text": "153322,19002,1558, 2531,N4238.92 W 8118.42",
+"timestamp": "2026-10-16T15:33:24.603Z",
+"tail": "CFEKH",
+"flightNumber": "QK8732"
+},
+{
+"id": 7848542422,
+"label": "44",
+"text": "00POS03,N33454W081039,385,KCRG,KBCB,1016,1533,1614,003.3",
+"timestamp": "2026-10-16T15:33:24.165Z",
+"tail": "N313QS",
+"flightNumber": "GS0313"
+},
+{
+"id": 7848542403,
+"label": "80",
+"text": "3P01 POSRPT  1476/15 KSNA/KPVU .N267BZ\r\n/UTC 015451/POS N3423.6 W11719.5/ALT 254\r\n/SPD 419/FOB 0128/ETA 0301",
+"timestamp": "2026-10-16T15:33:25.673Z",
+"tail": "N267BZ",
+"flightNumber": "MX1476"
+},
+{
+"id": 7848542307,
+"label": "80",
+"text": "3N01 POSRPT 0364/15 EDDP/KJFK .D-ALMA\r\n/POS N51436E010096/ALT +24670/MCH 0739/FOB 0540/ETA 1005",
+"timestamp": "2026-10-16T15:33:24.916Z",
+"tail": "D-ALMA",
+"flightNumber": "QY0364"
+},
+{
+"id": 7848542235,
+"label": "QQ",
+"text": "KBFIKSFO0154\r\n001FE15015448N4733.5W12220.3---0190084",
+"timestamp": "2026-10-16T15:33:24.142Z",
+"tail": "N621WK",
+"flightNumber": "XA0001"
+},
+{
+"id": 7848542148,
+"label": "10",
+"text": ":PRI11TPA ARR INFO A 1753Z. 21006KT 10SM FEW035\n\tSCT150 SCT200 BKN250 31/24 A2995 (TWO NINER\n\tNINER FIVE). ILS APCH RY 19L AND RY 19R IN\n\tUSE. NOTAMS... RY 19L, 01R PAPI OTS. ALL ACFT\n\tRQRD TO HAVE TPNDR ON  WHEN OPNG ON TWYS AND\n\tRWYS. BIRD ACTIVITY VICINITY ARPT. HAZD WX\n\tINFO FOR TPA AREA AVBL FM FSS. ...ADVS YOU\n\tHAVE INFO A.",
+"timestamp": "2026-10-16T15:33:23.386Z",
+"tail": "G-VIIT",
+"flightNumber": null
+},
+{
+"id": 7848542147,
+"label": "16",
+"text": "153300,39988,1737,  17,N 52.695 E  5.127",
+"timestamp": "2026-10-16T15:33:23.034Z",
+"tail": "EC-NHM",
+"flightNumber": "EB4902"
+},
+{
+"id": 7848542067,
+"label": "80",
+"text": "3A01 OPSCTL 9210/16 LEPA/EKYT .SE-RPR\r\nHI FLIGHTPLANNING / FOR\r\nTHE WAY BACK FL LEVEL\r\n250 MAX TOO / HOW MUCH\r\nFUEL DO WE NEED",
+"timestamp": "2026-10-16T15:33:22.549Z",
+"tail": "SE-RPR",
+"flightNumber": "D89210"
+},
+{
+"id": 7848541968,
+"label": "80",
+"text": "3P01 POSRPT  0821/15 KSBY/KMCO .N214BZ\r\n/UTC 015441/POS N3256.2 W07951.6/ALT 360\r\n/SPD 472/FOB 0082/ETA 0238",
+"timestamp": "2026-10-16T15:33:21.858Z",
+"tail": "N214BZ",
+"flightNumber": "MX0821"
+},
+{
+"id": 7848541936,
+"label": "11",
+"text": "  DEP VTBS ETA 1758 DES ZUTF LON E100.761 LAT N 14.388 TWP ------- FOB  218 ALT 24276 CAS 290 WID 27265 WIS    1 END",
+"timestamp": "2026-10-16T15:33:20.865Z",
+"tail": "B-32D5",
+"flightNumber": "9C6880"
+},
+{
+"id": 7848541915,
+"label": "16",
+"text": " /N 28.433/E 79.621/37003/1510/0154/145/0250/",
+"timestamp": "2026-10-16T15:33:21.240Z",
+"tail": "TC-JOL",
+"flightNumber": "TK0726"
+},
+{
+"id": 7848541912,
+"label": "10",
+"text": "POS150154,N 23.648,E119.319,0256,  437500,35970,87,",
+"timestamp": "2026-10-16T15:33:21.204Z",
+"tail": "B-MCE",
+"flightNumber": "NX0631"
+},
+{
+"id": 7848541729,
+"label": "44",
+"text": "03m0>xJqL(PtP9fx9(tP-qxeVq.Tmwq.18)qtxteqtJ((qtJJJqxxt$P",
+"timestamp": "2026-10-16T15:33:19.638Z",
+"tail": "N464AF",
+"flightNumber": "GS0157"
+},
+{
+"id": 7848541721,
+"label": "16",
+"text": "132226,13303,1334,310.2, 3090,N5234.53 E00556.80",
+"timestamp": "2026-10-16T15:33:19.480Z",
+"tail": "D-AKJC",
+"flightNumber": "ZQ1844"
+},
+{
+"id": 7848541611,
+"label": "16",
+"text": "153312,23446,1818, 204,N 36.137,W 83.557",
+"timestamp": "2026-10-16T15:33:17.491Z",
+"tail": "N249NV",
+"flightNumber": "G40242"
+},
+{
+"id": 7848541579,
+"label": "80",
+"text": "3M01 OPNORM 1395/15 KMIA/KSDF .N349CM",
+"timestamp": "2026-10-16T15:33:17.745Z",
+"tail": "N349CM",
+"flightNumber": "M61395"
+},
+{
+"id": 7848541537,
+"label": "QQ",
+"text": "CYTZKEWR153316OCT26",
+"timestamp": "2026-10-16T15:33:16.953Z",
+"tail": "C-GLQR",
+"flightNumber": "P32129"
+},
+{
+"id": 7848541446,
+"label": "10",
+"text": "LDR01,189,D,SWA-2600-019,0,N 40.652,W 74.007,4359,  7.3,KMDW,KLGA,KLGA,31/, 22/,/,0,0,,,,,,,0,0,0,00,,127.4,07.5,134.9,,,",
+"timestamp": "2026-10-16T15:33:16.611Z",
+"tail": "N8833L",
+"flightNumber": "WN1162"
+},
+{
+"id": 7848541366,
+"label": "10",
+"text": "PRE020836BLAKT  ----SAXPA  WEBNZ         BLAKT  040104281312131909180844N",
+"timestamp": "2026-10-16T15:33:16.078Z",
+"tail": "G-XWBP",
+"flightNumber": "BA03GB"
+},
+{
+"id": 7848541336,
+"label": "22",
+"text": "N 284937W 811810,-------,132218,11887, ,      , ,   5,19022  10, 220,",
+"timestamp": "2026-10-16T15:33:15.887Z",
+"tail": "N638FR",
+"flightNumber": "F91542"
+},
+{
+"id": 7848541332,
+"label": "16",
+"text": "/N 51.164/E 20.707/37000/1610/1322/08036/1532/",
+"timestamp": "2026-10-16T15:33:15.868Z",
+"tail": "TC-JSA",
+"flightNumber": "TK07CB"
+},
+{
+"id": 7848541272,
+"label": "10",
+"text": "151926/ACKMSG/5310",
+"timestamp": "2026-10-16T15:33:15.525Z",
+"tail": "N921FD",
+"flightNumber": "FX1926"
+},
+{
+"id": 7848541244,
+"label": "16",
+"text": "015431,36000,0424,  84,N 41.207 E 23.623/SXS8DG",
+"timestamp": "2026-10-16T15:33:15.412Z",
+"tail": "TC-SOE",
+"flightNumber": "XQ08DG"
+},
+{
+"id": 7848541061,
+"label": "21",
+"text": "POSN 28.827W 81.303, 220,132218,11887,19022,  10,  5,151812,KPHL",
+"timestamp": "2026-10-16T15:33:14.618Z",
+"tail": "N638FR",
+"flightNumber": "F91542"
+},
+{
+"id": 7848540980,
+"label": "16",
+"text": "015428,38000,0313,  52,N 47.206 E 17.380/SXS6YM",
+"timestamp": "2026-10-16T15:33:14.143Z",
+"tail": "TC-SML",
+"flightNumber": "XQ06YM"
+},
+{
+"id": 7848540956,
+"label": "10",
+"text": "/N43.580/W086.276/10/0.69/282/240/KGRB/1345/0051/00025/KP87M/KGRB /1323/MYZKA/1325/",
+"timestamp": "2026-10-16T15:33:13.996Z",
+"tail": "N965QS",
+"flightNumber": "GS0000"
+},
+{
+"id": 7848540945,
+"label": "15",
+"text": "(2N40526W 73476--- 25 19 16(Z",
+"timestamp": "2026-10-16T15:33:13.219Z",
+"tail": "N612QS",
+"flightNumber": "GS0001"
+},
+{
+"id": 7848540927,
+"label": "80",
+"text": "3M01 OPNORM 0643/15 KLAX/MMMX .N368AM",
+"timestamp": "2026-10-16T15:33:13.791Z",
+"tail": "N368AM",
+"flightNumber": "AM0643"
+},
+{
+"id": 7848540909,
+"label": "14",
+"text": "POS\r\n15OCT,0154,273,32989,N 24.035,E120.687,25222,  21,92",
+"timestamp": "2026-10-16T15:33:13.597Z",
+"tail": "B-LPW",
+"flightNumber": "HX0628"
+},
+{
+"id": 7848540468,
+"label": "44",
+"text": "00POS03,N33424W088048,410,KLIT,KCHS,1016,1532,1631,004.5",
+"timestamp": "2026-10-16T15:33:08.245Z",
+"tail": "N361QS",
+"flightNumber": "GS0361"
+},
+{
+"id": 7848540313,
+"label": "22",
+"text": "N 441200W 953715,-------,153254,28991, ,      , ,M 40,  246 101,  82,",
+"timestamp": "2026-10-16T15:33:06.310Z",
+"tail": "N381FR",
+"flightNumber": "F92398"
+},
+{
+"id": 7848540224,
+"label": "12",
+"text": "N 51.045,W113.317,28000,153304, 269,.C-FKWS,1945",
+"timestamp": "2026-10-16T15:33:06.387Z",
+"tail": "C-FKWS",
+"flightNumber": "WS0668"
+},
+{
+"id": 7848540207,
+"label": "16",
+"text": "MIS-05 ,N 51.592,E   6.526,29138,0494,1930,114\\TS132220,161026",
+"timestamp": "2026-10-16T15:33:06.660Z",
+"tail": "A7-BFF",
+"flightNumber": "QR012B"
+},
+{
+"id": 7848540085,
+"label": "80",
+"text": "3401 ETA    06DV/16 ENGM/ENVA .LN-NIP\r\n/ETA 1336/FOB  324\r\n4.4 TONS NO SPEC\r\n",
+"timestamp": "2026-10-16T15:33:05.330Z",
+"tail": "LN-NIP",
+"flightNumber": "DY06DV"
+},
+{
+"id": 7848540065,
+"label": "15",
+"text": "(2N42169W 84052---112350-41(Z",
+"timestamp": "2026-10-16T15:33:04.639Z",
+"tail": "IALHO",
+"flightNumber": "GS0001"
+},
+{
+"id": 7848540062,
+"label": "80",
+"text": "3P01 POSRPT  1414/16 KMCO/KEYW .N251BZ\r\n/UTC 132218/POS N2635.2 W08136.4/ALT 210\r\n/SPD 396/FOB 0099/ETA 1354",
+"timestamp": "2026-10-16T15:33:05.099Z",
+"tail": "N251BZ",
+"flightNumber": "MX1414"
+},
+{
+"id": 7848539991,
+"label": "10",
+"text": "999 SCT040\n\t             TEMPO 0612/0618 18030G40KT 3000 SHRA BKN010\n\t             PROB30 INTER 0518/0520 VRB20G40KT 2000 TSRA BKN020\n\t             SCT060CB=",
+"timestamp": "2026-10-16T15:33:04.346Z",
+"tail": "G-ZBKP",
+"flightNumber": null
+},
+{
+"id": 7848539939,
+"label": "16",
+"text": "015415,+35995,0433,18480,N 42.1672,E 27.3166,SXS3YD  ,5,7,4,925760,/,",
+"timestamp": "2026-10-16T15:33:03.913Z",
+"tail": "TC-SPR",
+"flightNumber": "XQ03YD"
+},
+{
+"id": 7848539919,
+"label": "16",
+"text": "EGTAG  ,N 25.041,E 55.971,38002,493,0243,030\\TS015408,151026",
+"timestamp": "2026-10-16T15:33:03.718Z",
+"tail": "A7-ANP",
+"flightNumber": "QR0859"
+},
+{
+"id": 7848539759,
+"label": "15",
+"text": "FST01EGLLKPHLN517011W0016767181 532  30 M16C065061286294364  20191322",
+"timestamp": "2026-10-16T15:33:02.059Z",
+"tail": "G-XWBN",
+"flightNumber": "BA06RB"
+},
+{
+"id": 7848539734,
+"label": "15",
+"text": "(2N36434W118086032 42410-52(Z",
+"timestamp": "2026-10-16T15:33:01.503Z",
+"tail": "N827CK",
+"flightNumber": "XA0000"
+},
+{
+"id": 7848539670,
+"label": "22",
+"text": "N 391727W1041055,-------,153248,16918, ,      , ,M  9,  140  33,  68,",
+"timestamp": "2026-10-16T15:33:00.671Z",
+"tail": "N335FR",
+"flightNumber": "F91449"
+},
+{
+"id": 7848539595,
+"label": "21",
+"text": "POSN 44.200W 95.618,  82,153254,28991,  246, 101,-40,155918,KMSP",
+"timestamp": "2026-10-16T15:32:59.921Z",
+"tail": "N381FR",
+"flightNumber": "F92398"
+},
+{
+"id": 7848539474,
+"label": "16",
+"text": "015409,6461,0203,  68,MMMM.MMM MMMM.MMM",
+"timestamp": "2026-10-16T15:32:59.385Z",
+"tail": "G-NPTI",
+"flightNumber": "ED005U"
+},
+{
+"id": 7848539355,
+"label": "22",
+"text": "OFF01YX5609/15150153KBOSKLGA015356  95",
+"timestamp": "2026-10-16T15:32:58.196Z",
+"tail": "N233JQ",
+"flightNumber": "YX5609"
+},
+{
+"id": 7848539245,
+"label": "16",
+"text": "MEKRI  ,N 24.400,E 54.446,39993,489,0230,025\\TS015405,151026",
+"timestamp": "2026-10-16T15:32:57.262Z",
+"tail": "A7-ANO",
+"flightNumber": "QR032N"
+},
+{
+"id": 7848539203,
+"label": "10",
+"text": "FTX01.FIC\r\nADC ZZZ/0000 FMO/0008",
+"timestamp": "2026-10-16T15:32:56.645Z",
+"tail": "G-NEOW",
+"flightNumber": "BA04DC"
+},
+{
+"id": 7848539090,
+"label": "10",
+"text": "/N49.394/E000.546/30/0.45/147/230/LSGL/1426/0016/00004/PEKIM/PILUL/1348/PIMUP/1355/EGKB/",
+"timestamp": "2026-10-16T15:32:55.677Z",
+"tail": "OHBNZ",
+"flightNumber": "ZD0000"
+},
+{
+"id": 7848539057,
+"label": "21",
+"text": "POSN 39.291W104.182,  68,153248,16918,  140,  33,- 9,154606,KDEN",
+"timestamp": "2026-10-16T15:32:55.037Z",
+"tail": "N335FR",
+"flightNumber": "F91449"
+},
+{
+"id": 7848538997,
+"label": "80",
+"text": "3C01 POS N40136W074031  ,,132217,               ,      ,               ,P04,034,0072",
+"timestamp": "2026-10-16T15:32:55.126Z",
+"tail": "N568GJ",
+"flightNumber": "G74401"
+},
+{
+"id": 7848538994,
+"label": "22",
+"text": "N 335002W1152432,-------,015354,34967, ,      , ,M 41,31139  44,  77,",
+"timestamp": "2026-10-16T15:32:55.115Z",
+"tail": "N435FR",
+"flightNumber": "F91192"
+},
+{
+"id": 7848538896,
+"label": "QS",
+"text": "KDFWKMSN     108--OS KMSN/OPN----",
+"timestamp": "2026-10-16T15:32:53.770Z",
+"tail": "N801AW",
+"flightNumber": "US2388"
+},
+{
+"id": 7848538876,
+"label": "16",
+"text": "015401,37000,0401,  90,N 46.606 E 19.286/SXS11A",
+"timestamp": "2026-10-16T15:32:54.443Z",
+"tail": "TC-SOA",
+"flightNumber": "XQ011A"
+},
+{
+"id": 7848538765,
+"label": "16",
+"text": "132215,37989,1357,  69,N 49.192 E  1.704",
+"timestamp": "2026-10-16T15:32:53.455Z",
+"tail": "EI-IHK",
+"flightNumber": "FR07MW"
+},
+{
+"id": 7848538429,
+"label": "16",
+"text": "PC1581/15OCT26 01:53:54,36993,0316, 129,N 42.487 E 26.084",
+"timestamp": "2026-10-16T15:32:50.463Z",
+"tail": "TC-NBD",
+"flightNumber": "PC1581"
+},
+{
+"id": 7848538388,
+"label": "16",
+"text": " /N 44.362/E 24.167/34002/1510/0153/90/0415/",
+"timestamp": "2026-10-16T15:32:49.904Z",
+"tail": "TC-JSY",
+"flightNumber": "TK06CN"
+},
+{
+"id": 7848538177,
+"label": "12",
+"text": "ETR01G74445/16161321KTYSKEWR1400N38139W077428782",
+"timestamp": "2026-10-16T15:32:48.124Z",
+"tail": "N587GJ",
+"flightNumber": "G74445"
+},
+{
+"id": 7848538100,
+"label": "4A",
+"text": "N51400E005258BUD08  ,132214313RAVLO  ,133610,M43,223060939,82820371",
+"timestamp": "2026-10-16T15:32:47.750Z",
+"tail": "D-ABPH",
+"flightNumber": "LH0478"
+},
+{
+"id": 7848538027,
+"label": "16",
+"text": "KURTA  ,N 23.665,E  55.896,36000,0488,0246,036\\TS015352,151026",
+"timestamp": "2026-10-16T15:32:47.254Z",
+"tail": "A7-BEK",
+"flightNumber": "QR016M"
+},
+{
+"id": 7848537898,
+"label": "QQ",
+"text": "EGLLKIAD15321514",
+"timestamp": "2026-10-16T15:32:41.547Z",
+"tail": "G-VRAY",
+"flightNumber": "VS021K"
+},
+{
+"id": 7848537880,
+"label": "16",
+"text": "015350,+21029,0209,9880,N 49.7452,E 12.0669,SXS4BD  ,5,7,4,925760,/,",
+"timestamp": "2026-10-16T15:32:46.159Z",
+"tail": "TC-SPB",
+"flightNumber": "XQ04BD"
+},
+{
+"id": 7848537846,
+"label": "20",
+"text": "  22160105,16OCT,OUT,16 1419,5027,KDEC,KORD,094526,KELLER          ,ACTIVE,115287,JONES           ,ACTIVE,05518,0,  LAST UPDATED: 16 1532Z,                       -,UA,\r\n\r\n",
+"timestamp": "2026-10-16T15:32:40.261Z",
+"tail": "N679SA",
+"flightNumber": null
+},
+{
+"id": 7848537779,
+"label": "4A",
+"text": "132206,1406, 140,29414,N 39.804,W 74.279",
+"timestamp": "2026-10-16T15:32:45.396Z",
+"tail": "N337NV",
+"flightNumber": "G40882"
+},
+{
+"id": 7848537454,
+"label": "10",
+"text": "ETA31A16132211KLM1832 EDDSEHAM161347EHAM  22",
+"timestamp": "2026-10-16T15:32:42.691Z",
+"tail": "PH-NXY",
+"flightNumber": "KL1832"
+},
+{
+"id": 7848537415,
+"label": "4A",
+"text": "153230,1611, 216,32424,N 41.184,W 89.271",
+"timestamp": "2026-10-16T15:32:36.198Z",
+"tail": "N284NV",
+"flightNumber": "G44765"
+},
+{
+"id": 7848537269,
+"label": "22",
+"text": "N 302739W 823108,-------,153224,28976, ,      , ,M 29,22545  31,  95,",
+"timestamp": "2026-10-16T15:32:34.499Z",
+"tail": "N341FR",
+"flightNumber": "F92792"
+},
+{
+"id": 7848537209,
+"label": "QQ",
+"text": "LFPGTFFR153215323007640773",
+"timestamp": "2026-10-16T15:32:33.702Z",
+"tail": "F-GZNL",
+"flightNumber": "AF0758"
+},
+{
+"id": 7848536959,
+"label": "10",
+"text": "151654/APSDTACK/02/5325\r\n",
+"timestamp": "2026-10-16T15:32:37.599Z",
+"tail": "N192FE",
+"flightNumber": "FX1654"
+},
+{
+"id": 7848536923,
+"label": "QR",
+"text": "KPHLKSAN0153OS KSAN /FUL0094/APH 0015809",
+"timestamp": "2026-10-16T15:32:37.365Z",
+"tail": "N433AN",
+"flightNumber": "AA1844"
+},
+{
+"id": 7848536851,
+"label": "16",
+"text": "015336,+33813,0451,24000,N 51.5233,E 11.9744,SXS75K  ,5,7,4,925760,/,",
+"timestamp": "2026-10-16T15:32:36.699Z",
+"tail": "TC-SRG",
+"flightNumber": "XQ075K"
+},
+{
+"id": 7848536786,
+"label": "44",
+"text": "07*?X.4)E0MmkMT.D<<<0)m<.)lO{E)lr\\y);.;U);04;);<;.).;4+m",
+"timestamp": "2026-10-16T15:32:36.148Z",
+"tail": "N605RH",
+"flightNumber": "ZD605R"
+},
+{
+"id": 7848536717,
+"label": "16",
+"text": "/+48.418/+17.743/36999/1510/0153/14800/0328/",
+"timestamp": "2026-10-16T15:32:35.711Z",
+"tail": "TC-LLT",
+"flightNumber": "TK084U"
+},
+{
+"id": 7848536644,
+"label": "15",
+"text": "FST01LTFMEGLLN50339E0061142360  34  68     44219      444  14091322",
+"timestamp": "2026-10-16T15:32:35.181Z",
+"tail": "G-TTNA",
+"flightNumber": "BA0717"
+},
+{
+"id": 7848536632,
+"label": "10",
+"text": "/N27.178/W081.504/10/0.61/342/223/KTLH/1358/0056/00032/BGOUT/PULEC/1325/SMELZ/1324/",
+"timestamp": "2026-10-16T15:32:35.072Z",
+"tail": "N990MS",
+"flightNumber": "ZD0000"
+},
+{
+"id": 7848536539,
+"label": "21",
+"text": "POSN 30.461W 82.519,  95,153224,28976,22545,  31,-29,160406,KMCO",
+"timestamp": "2026-10-16T15:32:28.111Z",
+"tail": "N341FR",
+"flightNumber": "F92792"
+},
+{
+"id": 7848536494,
+"label": "11",
+"text": "5702,15,KBOS,KJFK,6.6,RPA5702 \r\n12267  SIGN FFD/LM/RLS009\r\n64994  SIGN FFD\r\nAMI: EN5-6476-506",
+"timestamp": "2026-10-16T15:32:33.836Z",
+"tail": "N211JQ",
+"flightNumber": "YX5702"
+},
+{
+"id": 7848536437,
+"label": "16",
+"text": "132207,37003,1508, 134,N 41.034 W  4.282",
+"timestamp": "2026-10-16T15:32:33.441Z",
+"tail": "EI-HES",
+"flightNumber": "FR01NH"
+},
+{
+"id": 7848536137,
+"label": "16",
+"text": "015330,48664,0206,  84,N 51.537 E   . 33",
+"timestamp": "2026-10-16T15:32:30.711Z",
+"tail": "G-RUKA",
+"flightNumber": "RK0941"
+},
+{
+"id": 7848536097,
+"label": "15",
+"text": "(2N40499W 74230--- 80259-22(Z",
+"timestamp": "2026-10-16T15:32:22.827Z",
+"tail": "N583QS",
+"flightNumber": "GS0001"
+},
+{
+"id": 7848536015,
+"label": "15",
+"text": "151330/WTBACK/DA KMSN/DS KMEM\r\n/CMR 0000544129/151026 002/ACK\r\n/MGW 3089",
+"timestamp": "2026-10-16T15:32:29.169Z",
+"tail": "N724FD",
+"flightNumber": "FX1330"
+},
+{
+"id": 7848536014,
+"label": "10",
+"text": "161510 KDAL KATL6\r\n04411532420015231508151615161516      000000",
+"timestamp": "2026-10-16T15:32:22.255Z",
+"tail": "N891AT",
+"flightNumber": "DL0441"
+},
+{
+"id": 7848536004,
+"label": "12",
+"text": "OFF01    ETH517/15150153KIADDXXX\r\n0153 587",
+"timestamp": "2026-10-16T15:32:29.034Z",
+"tail": "ET-ATL",
+"flightNumber": "ET0517"
+},
+{
+"id": 7848535879,
+"label": "22",
+"text": "N 363209W 833506,-------,153206,34998, ,      , ,M 42,20607  66, 178,",
+"timestamp": "2026-10-16T15:32:21.256Z",
+"tail": "N709FR",
+"flightNumber": "F92410"
+},
+{
+"id": 7848535837,
+"label": "16",
+"text": "PC23AG/15OCT26 01:53:24,36995,0437, 179,N 49.116 E 12.853",
+"timestamp": "2026-10-16T15:32:26.795Z",
+"tail": "TC-NCK",
+"flightNumber": "PC23AG"
+},
+{
+"id": 7848535710,
+"label": "22",
+"text": "N 300607W 821745,-------,153206,26002, ,      , ,M 22,21136  19,  68,",
+"timestamp": "2026-10-16T15:32:19.340Z",
+"tail": "N380FR",
+"flightNumber": "F94646"
+},
+{
+"id": 7848535516,
+"label": "10",
+"text": "151330/ACKMSG/5156",
+"timestamp": "2026-10-16T15:32:23.555Z",
+"tail": "N724FD",
+"flightNumber": "FX1330"
+},
+{
+"id": 7848535466,
+"label": "44",
+"text": "07y?5.0)EmU4k0T;40.UU)m..)lx6Y)l-(_);.;<).;<0).04;)..0+k",
+"timestamp": "2026-10-16T15:32:23.107Z",
+"tail": "N169MM",
+"flightNumber": "GS169M"
+},
+{
+"id": 7848535444,
+"label": "44",
+"text": " /FB 0185/AD KSYR/N 40.651,W 73.657,JBU1516,INR03,KSYR,0239",
+"timestamp": "2026-10-16T15:32:22.772Z",
+"tail": "N561JB",
+"flightNumber": "B61516"
+},
+{
+"id": 7848535441,
+"label": "15",
+"text": "(2N33471W 96191--- 64350-44(Z",
+"timestamp": "2026-10-16T15:32:16.444Z",
+"tail": "N990HC",
+"flightNumber": "XA0001"
+},
+{
+"id": 7848535357,
+"label": "21",
+"text": "POSN 36.536W 83.585, 178,153206,34998,20607,  66,-42,161742,KCLE",
+"timestamp": "2026-10-16T15:32:15.093Z",
+"tail": "N709FR",
+"flightNumber": "F92410"
+},
+{
+"id": 7848535313,
+"label": "15",
+"text": "(2N38048W 77049232 46339-38(Z",
+"timestamp": "2026-10-16T15:32:14.798Z",
+"tail": "N110WA",
+"flightNumber": "XA0001"
+},
+{
+"id": 7848535236,
+"label": "21",
+"text": "POSN 30.101W 82.295,  68,153206,26002,21136,  19,-22,155924,KMCO",
+"timestamp": "2026-10-16T15:32:13.007Z",
+"tail": "N380FR",
+"flightNumber": "F94646"
+},
+{
+"id": 7848535171,
+"label": "16",
+"text": "015322,40000,0404,  64,N 41.971 E 23.083/SXS8ER",
+"timestamp": "2026-10-16T15:32:19.613Z",
+"tail": "TC-SMF",
+"flightNumber": "XQ08ER"
+},
+{
+"id": 7848535154,
+"label": "22",
+"text": "N 305258W 834810,-------,153200,34985, ,      , ,M 45,22298  32, 118,",
+"timestamp": "2026-10-16T15:32:11.624Z",
+"tail": "N717FR",
+"flightNumber": "F91432"
+},
+{
+"id": 7848534996,
+"label": "22",
+"text": "N 415504W 830140,-------,153148,12063, ,      , ,M  2,24799  71, 200,",
+"timestamp": "2026-10-16T15:32:10.192Z",
+"tail": "N723FR",
+"flightNumber": "F94937"
+},
+{
+"id": 7848534956,
+"label": "22",
+"text": "RPR01,161532,N53175W113342,032,A,5.9",
+"timestamp": "2026-10-16T15:32:10.133Z",
+"tail": "C-FWEP",
+"flightNumber": "WR3254"
+},
+{
+"id": 7848534935,
+"label": "22",
+"text": "N 330133W 812201,-------,015318,36976, ,      , ,M 46,33957   2, 123,",
+"timestamp": "2026-10-16T15:32:16.738Z",
+"tail": "N610FR",
+"flightNumber": "F92008"
+},
+{
+"id": 7848534743,
+"label": "21",
+"text": "POSN 33.028W 81.367, 123,015318,36976,33957,   2,-46,032130,KDTW",
+"timestamp": "2026-10-16T15:32:15.205Z",
+"tail": "N610FR",
+"flightNumber": "F92008"
+},
+{
+"id": 7848534738,
+"label": "QS",
+"text": "NFFNYSSY01480077  FI 0911/DD 14",
+"timestamp": "2026-10-16T15:32:15.142Z",
+"tail": "DQ-FAN",
+"flightNumber": "FJ0911"
+},
+{
+"id": 7848534487,
+"label": "21",
+"text": "POSN 30.883W 83.803, 118,153200,34985,22298,  32,-45,161506,KMCO",
+"timestamp": "2026-10-16T15:32:06.083Z",
+"tail": "N717FR",
+"flightNumber": "F91432"
+},
+{
+"id": 7848534426,
+"label": "16",
+"text": "153200,14286,1552, 121,N 34.298,W117.038",
+"timestamp": "2026-10-16T15:32:05.628Z",
+"tail": "N255NV",
+"flightNumber": "G43230"
+},
+{
+"id": 7848534391,
+"label": "80",
+"text": "1101 OFFRP  077Y/16 LIMC/ENGM .SE-RTO\r\n/OUT 1510/OFF 1519/FOB 0706/ETA 1759",
+"timestamp": "2026-10-16T15:32:05.125Z",
+"tail": "SE-RTO",
+"flightNumber": "DY077Y"
+},
+{
+"id": 7848534321,
+"label": "22",
+"text": "N 423104W 705703,-------,153154,3036, ,      , ,  12,22122  50, 110,",
+"timestamp": "2026-10-16T15:32:04.626Z",
+"tail": "N392FR",
+"flightNumber": "F93512"
+},
+{
+"id": 7848534319,
+"label": "16",
+"text": "TONVO  ,N 24.990,E  55.472,37000,0482,0319,041\\TS015315,151026",
+"timestamp": "2026-10-16T15:32:10.907Z",
+"tail": "A7-BTC",
+"flightNumber": "QR8680"
+},
+{
+"id": 7848534274,
+"label": "16",
+"text": " /N 48.070/E 21.407/35033/1510/0153/84/0343/",
+"timestamp": "2026-10-16T15:32:10.498Z",
+"tail": "TC-JRC",
+"flightNumber": "TK03AB"
+},
+{
+"id": 7848534264,
+"label": "16",
+"text": "015313,37528,0404, 150,N 27.592 E 77.446",
+"timestamp": "2026-10-16T15:32:10.399Z",
+"tail": "VT-BWK",
+"flightNumber": "IX1062"
+},
+{
+"id": 7848534220,
+"label": "21",
+"text": "POSN 37.843W107.768, 133,015312,34979,22862,  47,-38,033048,KDFW",
+"timestamp": "2026-10-16T15:32:10.056Z",
+"tail": "N414FR",
+"flightNumber": "F92564"
+},
+{
+"id": 7848534143,
+"label": "16",
+"text": "PC096T/15OCT26 01:53:06,35000,0329, 206,N 47.193 E 17.978",
+"timestamp": "2026-10-16T15:32:09.315Z",
+"tail": "TC-RDE",
+"flightNumber": "PC096T"
+},
+{
+"id": 7848534130,
+"label": "16",
+"text": "POS02     HVN56/14150153EGLLVVNB\r\nN27534E077380,39003,015313,+096,-083,73,559,0518,+43,261,0.838,-52,21.7",
+"timestamp": "2026-10-16T15:32:09.236Z",
+"tail": "VN-A863",
+"flightNumber": "VN0056"
+},
+{
+"id": 7848533938,
+"label": "16",
+"text": "UMIBU  ,N 24.352,E 54.573,39999,488,0230,026\\TS015300,151026",
+"timestamp": "2026-10-16T15:32:07.848Z",
+"tail": "A7-ANO",
+"flightNumber": "QR032N"
+},
+{
+"id": 7848533831,
+"label": "16",
+"text": "132158,+36002,1636,26560,N 42.9247,E 22.1380,SXS7BY  ",
+"timestamp": "2026-10-16T15:32:06.501Z",
+"tail": "TC-SOZ",
+"flightNumber": "XQ07BY"
+},
+{
+"id": 7848533732,
+"label": "16",
+"text": "132158,,1349,  90,N   .    MMMM.MMM",
+"timestamp": "2026-10-16T15:32:05.232Z",
+"tail": "G-RUKH",
+"flightNumber": "RK07AY"
+},
+{
+"id": 7848533648,
+"label": "21",
+"text": "POSN 42.518W 70.951, 110,153154,3036,22122,  50, 12,153624,KBOS",
+"timestamp": "2026-10-16T15:31:58.738Z",
+"tail": "N392FR",
+"flightNumber": "F93512"
+},
+{
+"id": 7848533640,
+"label": "QQ",
+"text": "CYEGCYMM153116OCT26",
+"timestamp": "2026-10-16T15:31:58.357Z",
+"tail": "C-FWEP",
+"flightNumber": "WR3254"
+},
+{
+"id": 7848533582,
+"label": "21",
+"text": "POSN 41.918W 83.028, 200,153148,12063,24799,  71,- 2,154318,KDTW",
+"timestamp": "2026-10-16T15:31:57.056Z",
+"tail": "N723FR",
+"flightNumber": "F94937"
+},
+{
+"id": 7848533366,
+"label": "22",
+"text": "N 294546W 984358,-------,153154,35015, ,      , ,M 43,23848  36, 121,",
+"timestamp": "2026-10-16T15:32:01.899Z",
+"tail": "N681FR",
+"flightNumber": "F91756"
+},
+{
+"id": 7848533335,
+"label": "10",
+"text": "140110 KBOS KMSP6\r\n13080153029401330129013001300130            ",
+"timestamp": "2026-10-16T15:32:01.839Z",
+"tail": "N322DN",
+"flightNumber": "NW1308"
+},
+{
+"id": 7848533242,
+"label": "22",
+"text": "N 333206W1161142,-------,015254,28374, ,      , ,M 36,30717  50, 210,",
+"timestamp": "2026-10-16T15:32:01.013Z",
+"tail": "N613FR",
+"flightNumber": "F94990"
+},
+{
+"id": 7848533234,
+"label": "21",
+"text": "POSN 29.762W 98.731, 121,153154,35015,23848,  36,-43,160830,KIAH",
+"timestamp": "2026-10-16T15:32:00.802Z",
+"tail": "N681FR",
+"flightNumber": "F91756"
+},
+{
+"id": 7848533212,
+"label": "16",
+"text": "MIS-05 ,N 51.629,E   6.460,28468,0490,1929,114\\TS132156,161026",
+"timestamp": "2026-10-16T15:32:00.789Z",
+"tail": "A7-BFF",
+"flightNumber": "QR012B"
+},
+{
+"id": 7848533034,
+"label": "21",
+"text": "POSN 33.535W116.195, 210,015254,28374,30717,  50,-36,032712,KDEN",
+"timestamp": "2026-10-16T15:31:58.520Z",
+"tail": "N613FR",
+"flightNumber": "F94990"
+},
+{
+"id": 7848532951,
+"label": "16",
+"text": "015259,+37001,0000,22360,N 48.5483,E 14.1922,SXS5CQ  ",
+"timestamp": "2026-10-16T15:31:57.791Z",
+"tail": "TC-SNU",
+"flightNumber": "XQ05CQ"
+},
+{
+"id": 7848532746,
+"label": "80",
+"text": "3N01 POSRPT 0291/16 LFPG/KLAX .N572DZ\r\n/POS N53120W005462/ALT 360/MCH 860/FOB 1487\r\n/TME 1531/WND 284 053/OAT -046/TAS 0504/ETA 0104",
+"timestamp": "2026-10-16T15:31:55.843Z",
+"tail": "N572DZ",
+"flightNumber": "DL0291"
+},
+{
+"id": 7848532650,
+"label": "20",
+"text": "  22159925,16OCT,OUT,16 1520,4791,KORD,KSBN,068615,JACOBSON        ,ACTIVE,109252,POLLOCK         ,ACTIVE,05952,0,  LAST UPDATED: 16 1531Z,                       -,UA,\r\n\r\n",
+"timestamp": "2026-10-16T15:31:45.573Z",
+"tail": "N915SW",
+"flightNumber": null
+},
+{
+"id": 7848532510,
+"label": "80",
+"text": "3C01 POS N41067W074305  ,,015253,               ,      ,               ,P11,071,0063",
+"timestamp": "2026-10-16T15:31:53.012Z",
+"tail": "N568GJ",
+"flightNumber": "G74190"
+},
+{
+"id": 7848532500,
+"label": "10",
+"text": "151654/APSDTDTA/11/DA KSAN5253,1,,,1,,1,,1,\r\n1,1,1,1,0,1,0,1,1,1,,,,,\r\n27-FULL,FA5A,300,,\r\n,,,,\r\n,,,,\r\n",
+"timestamp": "2026-10-16T15:31:52.928Z",
+"tail": "N192FE",
+"flightNumber": "FX1654"
+},
+{
+"id": 7848532309,
+"label": "10",
+"text": "151654/ACKMSG/5215",
+"timestamp": "2026-10-16T15:31:50.693Z",
+"tail": "N192FE",
+"flightNumber": "FX1654"
+},
+{
+"id": 7848532160,
+"label": "80",
+"text": "3N01 POSRPT 0739/16 GMMX/LGAV .SX-NEF\r\n/POS N37265E023305/ALT +10311/MCH 434/FOB 0032/ETA 1541",
+"timestamp": "2026-10-16T15:31:41.777Z",
+"tail": "SX-NEF",
+"flightNumber": "A30739"
+}
+]

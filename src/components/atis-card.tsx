@@ -1,15 +1,11 @@
 "use client";
 
-import Link from "next/link";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import type { AirportAtis, AtisRecord } from "@/lib/data/types";
+import { useMemo, useState } from "react";
+import type { AtisRecord } from "@/lib/data/types";
 import { diffAtis, type AtisDiff } from "@/lib/decoder/diff";
 import { windComponents } from "@/lib/decoder/ops";
 import { fmtAge, fmtCeil, fmtVis, fmtWind, fmtZ, minutesSince } from "@/lib/format";
-import type { Weather } from "@/lib/weather";
 import { CategoryPill, FlagChips, LetterBadge } from "./bits";
-
-type Data = AirportAtis & { history: AtisRecord[] };
 
 const FIELD_LABEL: Record<string, string> = {
   letter: "Letter",
@@ -23,114 +19,8 @@ const FIELD_LABEL: Record<string, string> = {
   flags: "Flags",
 };
 
-export function AirportView({ icao }: { icao: string }) {
-  const [data, setData] = useState<Data | null>(null);
-  const [wx, setWx] = useState<Weather | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [now, setNow] = useState(() => Date.now());
-
-  const load = useCallback(async () => {
-    // Weather is slower; it fills in on its own.
-    fetch(`/api/v1/wx/${icao}`)
-      .then((w) => (w.ok ? w.json() : null))
-      .then((w) => w && setWx(w.data))
-      .catch(() => {});
-    try {
-      const a = await fetch(`/api/v1/atis/${icao}?hours=24`, { cache: "no-store" });
-      if (!a.ok) throw new Error(a.status === 404 ? "Unknown airport" : `HTTP ${a.status}`);
-      setData((await a.json()).data);
-      setError(null);
-      setNow(Date.now());
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "failed");
-    }
-  }, [icao]);
-
-  useEffect(() => {
-    const first = setTimeout(load, 0);
-    const t = setInterval(load, 60_000);
-    return () => {
-      clearTimeout(first);
-      clearInterval(t);
-    };
-  }, [load]);
-
-  const addToBoard = () => {
-    try {
-      const cur: string[] = JSON.parse(localStorage.getItem("datis.board") ?? "[]");
-      if (!cur.includes(icao)) localStorage.setItem("datis.board", JSON.stringify([...cur, icao]));
-    } catch {}
-  };
-
-  if (error) return <p className="py-16 text-center text-danger">{error}</p>;
-  if (!data) return <p className="py-16 text-center text-muted">Loading {icao}…</p>;
-
-  const same = data.arr && data.dep && data.arr.key === data.dep.key;
-  const byType = (type: "ARR" | "DEP") =>
-    data.history.filter((r) => (type === "ARR" ? r.type !== "DEP" : r.type !== "ARR"));
-
-  return (
-    <div className="flex flex-col gap-6">
-      <header className="flex flex-wrap items-end gap-x-4 gap-y-2">
-        <div>
-          <h1 className="font-mono text-3xl font-semibold">
-            {icao}
-            {data.airport?.iata && <span className="ml-2 text-xl font-normal text-muted">{data.airport.iata}</span>}
-          </h1>
-          <p className="text-muted">{data.airport ? `${data.airport.name} · ${data.airport.city}, ${data.airport.country}` : "Airport not in our list"}</p>
-        </div>
-        <div className="ml-auto flex gap-2 text-sm">
-          <Link href="/" onClick={addToBoard} className="rounded-md border border-line px-3 py-1.5 hover:border-accent">
-            Add to my board
-          </Link>
-        </div>
-      </header>
-
-      {!data.arr && !data.dep && (
-        <div className="rounded-lg border border-line bg-surface p-6 text-muted">
-          No D-ATIS heard for {icao} in the last 3 hours. D-ATIS only reaches us when an aircraft asks for it,
-          and only some airports publish it.
-        </div>
-      )}
-
-      <div className={`grid gap-4 ${same || !data.arr || !data.dep ? "" : "lg:grid-cols-2"}`}>
-        {same ? (
-          <AtisCard title="Arrival & departure" history={byType("ARR")} current={data.arr!} now={now} />
-        ) : (
-          <>
-            {data.arr && <AtisCard title="Arrival" history={byType("ARR")} current={data.arr} now={now} />}
-            {data.dep && <AtisCard title="Departure" history={byType("DEP")} current={data.dep} now={now} />}
-          </>
-        )}
-      </div>
-
-      <section className="rounded-lg border border-line bg-surface p-4">
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted">Weather (aviationweather.gov)</h2>
-        {wx?.metar ? (
-          <div className="mb-3">
-            <div className="mb-1 flex items-center gap-2 text-xs text-muted">
-              METAR · {fmtZ(wx.metar.observedAt)} · {fmtAge(minutesSince(wx.metar.observedAt, now))} ago
-              {wx.metar.category && <CategoryPill cat={wx.metar.category as "VFR"} />}
-            </div>
-            <pre className="whitespace-pre-wrap font-mono text-sm">{wx.metar.raw}</pre>
-          </div>
-        ) : (
-          <p className="mb-3 text-sm text-muted">{wx ? "No METAR." : "Loading…"}</p>
-        )}
-        {wx?.taf ? (
-          <div>
-            <div className="mb-1 text-xs text-muted">TAF · issued {fmtZ(wx.taf.issuedAt)}</div>
-            <pre className="whitespace-pre-wrap font-mono text-sm">{wx.taf.raw.replace(/ (FM\d{6}|TEMPO|BECMG|PROB\d0)/g, "\n  $1")}</pre>
-          </div>
-        ) : (
-          <p className="text-sm text-muted">{wx ? "No TAF." : ""}</p>
-        )}
-      </section>
-    </div>
-  );
-}
-
-function AtisCard({ title, current, history, now }: { title: string; current: AtisRecord; history: AtisRecord[]; now: number }) {
+/** One ATIS (arrival, departure or combined): decoded fields, 24h letter timeline, diff, full text. */
+export function AtisCard({ title, current, history, now }: { title: string; current: AtisRecord; history: AtisRecord[]; now: number }) {
   const list = useMemo(() => (history.some((h) => h.key === current.key) ? history : [current, ...history]), [history, current]);
   // null = follow the newest ATIS.
   const [selectedKey, setSelectedKey] = useState<string | null>(null);

@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
-import type { AirportAtis, AtisRecord } from "@/lib/data/types";
+import type { FlightCounts } from "@/lib/data";
+import type { AirportAtis as AtisRow, AtisRecord } from "@/lib/data/types";
+
+type AirportAtis = AtisRow & { flights?: FlightCounts };
 import { fmtAge, fmtCeil, fmtQnh, fmtVis, fmtWind, fmtZ, minutesSince, worstWind } from "@/lib/format";
 import { CategoryPill, FlagChips, LetterBadge } from "./bits";
 
@@ -268,13 +271,14 @@ export function Board() {
         <p className="py-16 text-center text-muted">No airports match.</p>
       ) : (
         <div className="overflow-hidden rounded-lg border border-line bg-surface">
-          <div className="hidden grid-cols-[minmax(10rem,1.3fr)_minmax(9rem,1fr)_minmax(9rem,1fr)_minmax(8rem,0.9fr)_minmax(7rem,0.8fr)_4.5rem_minmax(8rem,1.2fr)] gap-3 border-b border-line px-3 py-2 text-[11px] uppercase tracking-wide text-muted lg:grid">
+          <div className="hidden grid-cols-[minmax(10rem,1.3fr)_minmax(9rem,1fr)_minmax(9rem,1fr)_minmax(8rem,0.9fr)_minmax(7rem,0.8fr)_4.5rem_5.5rem_minmax(8rem,1.2fr)] gap-3 border-b border-line px-3 py-2 text-[11px] uppercase tracking-wide text-muted lg:grid">
             <span>Airport</span>
             <span>Arrival</span>
             <span>Departure</span>
             <span>Wind · XW/TW</span>
             <span>Vis · Ceiling</span>
             <span>QNH</span>
+            <span>Traffic 1h</span>
             <span>Ops flags</span>
           </div>
           {visible.map((r) => (
@@ -318,7 +322,7 @@ function Row({
 
   return (
     <div
-      className={`group relative grid grid-cols-2 gap-x-3 gap-y-2 border-b border-line px-3 py-2.5 last:border-b-0 lg:grid-cols-[minmax(10rem,1.3fr)_minmax(9rem,1fr)_minmax(9rem,1fr)_minmax(8rem,0.9fr)_minmax(7rem,0.8fr)_4.5rem_minmax(8rem,1.2fr)] lg:items-center ${
+      className={`group relative grid grid-cols-2 gap-x-3 gap-y-2 border-b border-line px-3 py-2.5 last:border-b-0 lg:grid-cols-[minmax(10rem,1.3fr)_minmax(9rem,1fr)_minmax(9rem,1fr)_minmax(8rem,0.9fr)_minmax(7rem,0.8fr)_4.5rem_5.5rem_minmax(8rem,1.2fr)] lg:items-center ${
         changed ? "row-changed" : ""
       }`}
     >
@@ -384,6 +388,19 @@ function Row({
       </div>
 
       <div className="font-mono text-sm">{d ? fmtQnh(d) : "—"}</div>
+
+      <Link href={`/a/${row.icao}?tab=arr`} className="font-mono text-sm hover:text-accent" title="Departed / arrived in the last hour, inbound now (heard over ACARS)">
+        {row.flights && (row.flights.departedLastHour || row.flights.arrivedLastHour || row.flights.inbound) ? (
+          <>
+            <div>
+              ↑{row.flights.departedLastHour} ↓{row.flights.arrivedLastHour}
+            </div>
+            <div className="text-xs text-muted">{row.flights.inbound} inbound</div>
+          </>
+        ) : (
+          <span className="text-muted">—</span>
+        )}
+      </Link>
 
       <div className="col-span-2 lg:col-span-1">
         <FlagChips flags={flags} limit={4} />

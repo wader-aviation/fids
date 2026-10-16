@@ -1,4 +1,4 @@
-import { bigint, boolean, index, integer, jsonb, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { bigint, boolean, doublePrecision, index, integer, jsonb, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 import type { AtisDiff } from "@/lib/decoder/diff";
 import type { DecodedAtis } from "@/lib/decoder";
 
@@ -44,3 +44,31 @@ export const ingestState = pgTable("ingest_state", {
   lastId: bigint("last_id", { mode: "number" }).notNull(),
   updatedAt: timestamp("updated_at", { withTimezone: true }).notNull(),
 });
+
+/** One flight leg of one aircraft, built from ACARS OOOI and position reports. Kept 3 days. */
+export const flightLegs = pgTable(
+  "flight_legs",
+  {
+    key: text("key").primaryKey(), // tail|first-seen minute
+    tail: text("tail").notNull(),
+    flight: text("flight"),
+    origin: text("origin"),
+    destination: text("destination"),
+    outAt: timestamp("out_at", { withTimezone: true }),
+    offAt: timestamp("off_at", { withTimezone: true }),
+    onAt: timestamp("on_at", { withTimezone: true }),
+    inAt: timestamp("in_at", { withTimezone: true }),
+    eta: timestamp("eta", { withTimezone: true }),
+    arrivalRunway: text("arrival_runway"),
+    lastLat: doublePrecision("last_lat"),
+    lastLon: doublePrecision("last_lon"),
+    lastAltFt: integer("last_alt_ft"),
+    firstSeen: timestamp("first_seen", { withTimezone: true }).notNull(),
+    lastSeen: timestamp("last_seen", { withTimezone: true }).notNull(),
+  },
+  (t) => [
+    index("flight_legs_tail_idx").on(t.tail, t.firstSeen),
+    index("flight_legs_origin_idx").on(t.origin, t.lastSeen),
+    index("flight_legs_destination_idx").on(t.destination, t.lastSeen),
+  ],
+);

@@ -1,4 +1,5 @@
 import { runIngest } from "@/lib/ingest/run";
+import { runMovementIngest } from "@/lib/ingest/movements";
 
 export const maxDuration = 60;
 
@@ -9,6 +10,7 @@ export async function GET(request: Request) {
     return Response.json({ error: "unauthorized" }, { status: 401 });
   }
   const started = Date.now();
-  const result = await runIngest();
-  return Response.json({ ...result, ms: Date.now() - started });
+  const [atis, movements] = await Promise.allSettled([runIngest(), runMovementIngest()]);
+  const out = (r: PromiseSettledResult<unknown>) => (r.status === "fulfilled" ? r.value : { error: String(r.reason) });
+  return Response.json({ atis: out(atis), movements: out(movements), ms: Date.now() - started });
 }

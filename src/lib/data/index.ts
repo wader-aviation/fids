@@ -1,4 +1,6 @@
 import { airport } from "@/lib/airports";
+import { arrivalsTo, departuresFrom } from "@/lib/movements/legs";
+import type { FlightLeg } from "@/lib/movements/types";
 import type { AirportAtis, AtisRecord, AtisSource } from "./types";
 
 export type { AirportAtis, AtisRecord } from "./types";
@@ -36,4 +38,39 @@ export function toAirportRows(records: AtisRecord[], order?: string[]): AirportA
     return order.map((icao) => rows.get(icao)!);
   }
   return [...rows.values()].sort((a, b) => a.icao.localeCompare(b.icao));
+}
+
+/** Legs heard within this window are loaded for boards. */
+export const LEGS_WINDOW_MS = 18 * 3_600_000;
+/** Finished movements stay on the airport board this long. */
+export const BOARD_PAST_MS = 3 * 3_600_000;
+
+export function airportFlights(legs: FlightLeg[], icao: string, now = new Date()) {
+  const w = { now, pastMs: BOARD_PAST_MS };
+  return { departures: departuresFrom(legs, icao, w), arrivals: arrivalsTo(legs, icao, w) };
+}
+
+export interface FlightCounts {
+  /** Took off (or pushed back) in the last hour. */
+  departedLastHour: number;
+  /** Landed (or reached the gate) in the last hour. */
+  arrivedLastHour: number;
+  /** Inbound, not landed yet. */
+  inbound: number;
+  /** Earliest ETA among inbound flights. */
+  nextEta: string | null;
+}
+
+export function flightCounts(legs: FlightLeg[], icao: string, now = new Date()): FlightCounts {
+  const hourAgo = new Date(now.getTime() - 3_600_000).toISOString();
+  const { departures, arrivals } = airportFlights(legs, icao, now);
+  const inbound = arrivals.filter((l) => !l.onAt && !l.inAt);
+  const nowIso = now.toISOString();
+  const etas = inbound.map((l) => l.eta).filter((e): e is string => !!e && e >= nowIso).sort();
+  return {
+    departedLastHour: departures.filter((l) => (l.offAt ?? l.outAt ?? "") >= hourAgo).length,
+    arrivedLastHour: arrivals.filter((l) => (l.onAt ?? l.inAt ?? "") >= hourAgo).length,
+    inbound: inbound.length,
+    nextEta: etas[0] ?? null,
+  };
 }

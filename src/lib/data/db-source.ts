@@ -1,4 +1,5 @@
-import { and, desc, eq, gte, inArray, sql } from "drizzle-orm";
+import { and, desc, eq, gte, inArray, or, sql } from "drizzle-orm";
+import { rowToLeg } from "@/lib/movements/rows";
 import { db, schema } from "@/db";
 import type { AtisRecord, AtisSource } from "./types";
 
@@ -26,6 +27,15 @@ export const dbSource: AtisSource = {
       .where(where)
       .orderBy(schema.atis.icao, schema.atis.type, desc(schema.atis.issuedAt));
     return rows.map(toRecord);
+  },
+
+  async legs(icaos, sinceMs) {
+    const since = new Date(Date.now() - sinceMs);
+    const t = schema.flightLegs;
+    const where = icaos
+      ? and(gte(t.lastSeen, since), or(inArray(t.origin, icaos), inArray(t.destination, icaos)))
+      : gte(t.lastSeen, since);
+    return (await db().select().from(t).where(where)).map(rowToLeg);
   },
 
   async history(icao, hours) {

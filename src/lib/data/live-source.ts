@@ -1,6 +1,9 @@
 import { fetchMessagesSince, type AirframesMessage } from "@/lib/airframes/client";
 import { diffAtis } from "@/lib/decoder/diff";
 import { assemble, isBetter, merge } from "@/lib/ingest/assemble";
+import { decodeMovement, MOVEMENT_LABELS } from "@/lib/movements/decode";
+import { foldEvents, LEG_IDLE_MS } from "@/lib/movements/legs";
+import type { FlightLeg } from "@/lib/movements/types";
 import type { AtisRecord, AtisSource } from "./types";
 
 /**
@@ -15,12 +18,24 @@ interface Store {
   records: Map<string, AtisRecord>;
   recentRaw: AirframesMessage[];
   lastId: number;
+  legs: Map<string, FlightLeg>;
+  currentLeg: Map<string, FlightLeg>;
+  movementLastId: number;
   refreshedAt: number;
   pending: Promise<void> | null;
 }
 
 const g = globalThis as unknown as { __datisLive?: Store };
-const store: Store = (g.__datisLive ??= { records: new Map(), recentRaw: [], lastId: 0, refreshedAt: 0, pending: null });
+const store: Store = (g.__datisLive ??= {
+  records: new Map(),
+  recentRaw: [],
+  lastId: 0,
+  legs: new Map(),
+  currentLeg: new Map(),
+  movementLastId: 0,
+  refreshedAt: 0,
+  pending: null,
+});
 
 async function refresh() {
   const now = Date.now();
@@ -29,6 +44,7 @@ async function refresh() {
   const [a9, other] = await Promise.all([
     fetchMessagesSince({ labels: ["A9"], afterId: store.lastId, since, maxPages: first ? 15 : 5 }),
     fetchMessagesSince({ labels: ["RA", "HX"], text: "ATIS", afterId: store.lastId, since, maxPages: 3 }),
+    refreshMovements(now).catch(() => {}), // ATIS must not fail because movements did
   ]);
   const fresh = [...a9.messages, ...other.messages].sort((a, b) => a.id - b.id);
   if (fresh.length) {
@@ -69,6 +85,23 @@ async function refresh() {
   store.refreshedAt = now;
 }
 
+/** Movement messages are ~130/min; the first load takes the last 12 minutes (Airframes allows 60 calls/min). */
+async function refreshMovements(now: number) {
+  const first = store.movementLastId === 0;
+  const since = new Date(now - (first ? 12 : 10) * 60_000).toISOString();
+  const { messages } = await fetchMessagesSince({
+    labels: MOVEMENT_LABELS,
+    afterId: store.movementLastId,
+    since,
+    maxPages: first ? 12 : 6,
+  });
+  if (!messages.length) return;
+  const events = messages.map(decodeMovement).filter((e) => e !== null);
+  for (const leg of foldEvents(store.currentLeg, events)) store.legs.set(leg.key, leg);
+  store.movementLastId = messages[messages.length - 1].id;
+  for (const [key, leg] of store.legs) if (now - new Date(leg.lastSeen).getTime() > LEG_IDLE_MS) store.legs.delete(key);
+}
+
 /** Recomputes prev/diff along each airport+type sequence. */
 function linkDiffs() {
   const groups = new Map<string, AtisRecord[]>();
@@ -86,10 +119,13 @@ function linkDiffs() {
   }
 }
 
+/** Waits only for the very first load; after that, serves what it has and refreshes in the background. */
 async function ensureFresh() {
   if (Date.now() - store.refreshedAt < REFRESH_MS) return;
-  store.pending ??= refresh().finally(() => (store.pending = null));
-  await store.pending;
+  store.pending ??= refresh()
+    .catch(() => {})
+    .finally(() => (store.pending = null));
+  if (store.refreshedAt === 0) await store.pending;
 }
 
 export const liveSource: AtisSource = {
@@ -107,6 +143,15 @@ export const liveSource: AtisSource = {
       if (!cur || r.issuedAt > cur.issuedAt) best.set(k, r);
     }
     return [...best.values()];
+  },
+
+  async legs(icaos, sinceMs) {
+    await ensureFresh();
+    const since = new Date(Date.now() - sinceMs).toISOString();
+    const wanted = icaos ? new Set(icaos) : null;
+    return [...store.legs.values()].filter(
+      (l) => l.lastSeen >= since && (!wanted || (l.origin && wanted.has(l.origin)) || (l.destination && wanted.has(l.destination))),
+    );
   },
 
   async history(icao, hours) {

@@ -1,6 +1,7 @@
 import type { Airport } from "@/lib/airports";
 import type { DecodedAtis } from "@/lib/decoder";
 import type { AtisDiff } from "@/lib/decoder/diff";
+import type { FlightLeg } from "@/lib/movements/types";
 
 /** One ATIS issue as served by the API. Dates are ISO strings. */
 export interface AtisRecord {
@@ -32,6 +33,8 @@ export interface AtisSource {
   latest(icaos: string[] | null, maxAgeMin: number): Promise<AtisRecord[]>;
   /** All records for one airport issued in the last `hours`, newest first. */
   history(icao: string, hours: number): Promise<AtisRecord[]>;
+  /** Flight legs touching these airports (all when null), heard within `sinceMs`. */
+  legs(icaos: string[] | null, sinceMs: number): Promise<FlightLeg[]>;
   /** "database" or "live" (in-memory, straight from Airframes). */
   readonly kind: "database" | "live";
 }

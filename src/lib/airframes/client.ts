@@ -5,6 +5,7 @@ export interface AirframesMessage {
   text: string | null;
   timestamp: string;
   tail: string | null;
+  flightNumber?: string | null;
   blockId: string | null;
   error: number | null;
   sourceType: string | null;
