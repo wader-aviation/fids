@@ -9,7 +9,7 @@
     "lint": "eslint",
     "test": "node --import tsx --test src/lib/**/*.test.ts",
     "type-check": "next typegen && tsc --noEmit",
-    "db:push": "drizzle-kit push"
+    "db:push": "node --env-file=.env.local node_modules/drizzle-kit/bin.cjs push"
   },
   "dependencies": {
     "@airframes/acars-decoder": "^1.9.2",
