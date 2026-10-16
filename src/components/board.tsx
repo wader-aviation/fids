@@ -5,15 +5,19 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import type { FlightCounts } from "@/lib/data";
 import type { AirportAtis as AtisRow, AtisRecord } from "@/lib/data/types";
-
-type AirportAtis = AtisRow & { flights?: FlightCounts };
 import { fmtAge, fmtCeil, fmtQnh, fmtVis, fmtWind, fmtZ, minutesSince, worstWind } from "@/lib/format";
 import { CategoryPill, FlagChips, LetterBadge } from "./bits";
+import { WindsockIcon } from "./icons";
+import { TrafficSpark } from "./traffic-spark";
+
+type AirportAtis = AtisRow & { flights?: FlightCounts };
 
 const POLL_MS = 30_000;
 const STALE_MIN = 60; // not heard for this long
 const OLD_ISSUE_MIN = 120; // issued this long ago
 const CHANGED_MS = 5 * 60_000;
+const COLS =
+  "lg:grid-cols-[minmax(10rem,1.2fr)_minmax(12rem,1.4fr)_minmax(8rem,0.9fr)_minmax(7rem,0.8fr)_4.5rem_minmax(8.5rem,0.9fr)_minmax(8rem,1.1fr)]";
 
 interface SavedBoard {
   name: string;
@@ -83,11 +87,14 @@ function useNow(interval = 15_000) {
   return now;
 }
 
+const sameCodes = (a: string[], b: string[]) => a.length === b.length && a.every((c, i) => c === b[i]);
+
 export function Board() {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
   const codes = useMemo(() => (params.get("a") ?? "").split(",").filter(Boolean), [params]);
+  const draft = params.get("new") === "1";
   const xwLimit = Number(params.get("xw") ?? 25);
   const twLimit = Number(params.get("tw") ?? 10);
   const tv = params.get("tv") === "1";
@@ -116,7 +123,7 @@ export function Board() {
 
   // Restore the last board when opening "/" with no airports.
   useEffect(() => {
-    if (!params.get("a")) {
+    if (!params.get("a") && !params.get("all")) {
       const last = storage.get<string[]>("fids.board", []);
       if (last.length) setParams({ a: last.join(",") });
     }
@@ -127,7 +134,13 @@ export function Board() {
     storage.set("fids.board", codes);
   }, [codes]);
 
+  const showAll = !codes.length && !draft;
+
   const load = useCallback(async () => {
+    if (!codes.length && draft) {
+      setRows([]);
+      return;
+    }
     try {
       const res = await fetch(`/api/v1/atis${codes.length ? `?icao=${codes.join(",")}` : ""}`, { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -148,7 +161,7 @@ export function Board() {
     } catch (e) {
       setError(e instanceof Error ? e.message : "failed");
     }
-  }, [codes]);
+  }, [codes, draft]);
 
   useEffect(() => {
     lastLetters.current = {};
@@ -163,122 +176,112 @@ export function Board() {
   const visible = useMemo(() => {
     if (!rows) return [];
     const q = filter.trim().toUpperCase();
-    if (!q) return rows;
+    if (!showAll || !q) return rows;
     return rows.filter((r) =>
       [r.icao, r.airport?.iata, r.airport?.name, r.airport?.city, r.airport?.country].some((v) => v?.toUpperCase().includes(q)),
     );
-  }, [rows, filter]);
+  }, [rows, filter, showAll]);
 
-  const removeCode = (icao: string) => setParams({ a: codes.filter((c) => c !== icao).join(",") });
+  // One scale for every sparkline, so rows can be compared.
+  const trafficScale = useMemo(
+    () => Math.max(1, ...visible.flatMap((r) => [...(r.flights?.depBuckets ?? []), ...(r.flights?.arrBuckets ?? [])])),
+    [visible],
+  );
+
+  const activeBoard = saved.find((b) => sameCodes(b.codes, codes));
+  const addCodes = (icaos: string[]) => setParams({ a: [...codes, ...icaos.filter((i) => !codes.includes(i))].join(","), new: null, all: null });
+  const removeCode = (icao: string) => setParams({ a: codes.filter((c) => c !== icao).join(",") || null, new: codes.length === 1 ? "1" : null });
 
   const saveBoard = () => {
-    const name = prompt("Name this board", saved.length ? "" : "My airports")?.trim();
+    const name = prompt("Name this board", activeBoard?.name ?? "")?.trim();
     if (!name || !codes.length) return;
-    const next = [...saved.filter((b) => b.name !== name), { name, codes }];
-    setSaved(next);
-  };
-  const deleteBoard = (name: string) => {
-    setSaved(saved.filter((b) => b.name !== name));
+    setSaved([...saved.filter((b) => b.name !== name), { name, codes }]);
   };
 
   return (
     <div className={tv ? "tv" : ""}>
       {!tv && (
         <div className="flex flex-col gap-3 pb-4">
-          <AddAirports
-            onAdd={(icaos) => setParams({ a: [...codes, ...icaos.filter((i) => !codes.includes(i))].join(",") })}
-            onReplace={(icaos) => setParams({ a: icaos.join(",") })}
-          />
           <div className="flex flex-wrap items-center gap-2 text-sm">
+            <Chip active={showAll} onClick={() => setParams({ a: null, new: null, all: "1" })}>
+              All airports
+            </Chip>
             {saved.map((b) => (
-              <span key={b.name} className="inline-flex items-center rounded-full border border-line bg-surface">
-                <button className="px-3 py-1 hover:text-accent" onClick={() => setParams({ a: b.codes.join(",") })}>
-                  {b.name} <span className="text-muted">({b.codes.length})</span>
-                </button>
-                <button className="pr-2 text-muted hover:text-danger" aria-label={`Delete ${b.name}`} onClick={() => deleteBoard(b.name)}>
-                  ×
-                </button>
-              </span>
+              <Chip key={b.name} active={activeBoard?.name === b.name} onClick={() => setParams({ a: b.codes.join(","), new: null, all: null })} onDelete={() => setSaved(saved.filter((x) => x.name !== b.name))}>
+                {b.name} <span className="text-muted">{b.codes.length}</span>
+              </Chip>
             ))}
-            {codes.length > 0 && (
-              <>
-                <button className="rounded-full border border-dashed border-line px-3 py-1 text-muted hover:text-fg" onClick={saveBoard}>
-                  Save board
-                </button>
-                <button className="rounded-full px-3 py-1 text-muted hover:text-fg" onClick={() => setParams({ a: null })}>
-                  Show all airports
-                </button>
-              </>
+            {!showAll && !activeBoard && (
+              <Chip active>
+                {codes.length ? "Unsaved board" : "New board"}
+                {codes.length > 0 && (
+                  <button className="ml-2 text-accent hover:underline" onClick={saveBoard}>
+                    Save
+                  </button>
+                )}
+              </Chip>
             )}
-            <span className="ml-auto flex items-center gap-3 text-muted">
-              <label className="flex items-center gap-1">
-                XW limit
-                <input
-                  type="number"
-                  min={5}
-                  max={50}
-                  value={xwLimit}
-                  onChange={(e) => setParams({ xw: e.target.value })}
-                  className="w-14 rounded border border-line bg-surface px-1.5 py-0.5 font-mono text-fg"
-                />
-              </label>
-              <label className="flex items-center gap-1">
-                TW
-                <input
-                  type="number"
-                  min={0}
-                  max={20}
-                  value={twLimit}
-                  onChange={(e) => setParams({ tw: e.target.value })}
-                  className="w-12 rounded border border-line bg-surface px-1.5 py-0.5 font-mono text-fg"
-                />
-              </label>
-              <button className="hover:text-fg" onClick={() => setParams({ tv: "1" })}>
-                Wall mode
-              </button>
+            <button className="rounded-full border border-dashed border-line px-3 py-1 text-muted hover:text-fg" onClick={() => setParams({ a: null, new: "1", all: null })}>
+              + New board
+            </button>
+
+            <span className="ml-auto flex items-center gap-4">
+              <WindLimits xw={xwLimit} tw={twLimit} onChange={(xw, tw) => setParams({ xw: String(xw), tw: String(tw) })} />
+              <Toggle label="Wall mode" on={tv} onChange={(v) => setParams({ tv: v ? "1" : null })} />
             </span>
           </div>
+
+          {showAll ? (
+            <input
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+              placeholder="Filter airports by code, name or country (e.g. LIS, US, Heathrow)"
+              aria-label="Filter airports"
+              className="w-full rounded-md border border-line bg-surface px-3 py-2 text-sm placeholder:text-muted focus:border-accent focus:outline-none"
+            />
+          ) : (
+            <AddAirports onAdd={addCodes} autoFocus={draft && !codes.length} />
+          )}
         </div>
       )}
 
       <div className="mb-2 flex flex-wrap items-center gap-3 text-xs text-muted">
         <span>
-          {codes.length ? `${codes.length} airports` : `All airports heard in the last 3h`}
-          {rows && ` · ${rows.filter((r) => r.arr || r.dep).length} with D-ATIS`}
+          {showAll ? "All airports heard in the last 3h" : `${codes.length} airports`}
+          {rows && rows.length > 0 && ` · ${rows.filter((r) => r.arr || r.dep).length} with D-ATIS`}
         </span>
-        {!codes.length && rows && (
-          <input
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            placeholder="Filter by code, name, country (e.g. US, LIS)"
-            className="w-64 rounded border border-line bg-surface px-2 py-1 text-fg"
-          />
-        )}
         <span className="ml-auto">
           {error ? <span className="text-danger">Update failed ({error}) — retrying</span> : updatedAt ? `Updated ${fmtZ(new Date(updatedAt).toISOString())}` : "Loading…"}
           {sourceKind === "live" && " · live feed (no database)"}
         </span>
-        {tv && (
-          <button className="underline" onClick={() => setParams({ tv: null })}>
-            Exit wall mode
-          </button>
-        )}
+        {tv && <Toggle label="Wall mode" on={tv} onChange={(v) => setParams({ tv: v ? "1" : null })} />}
       </div>
 
       {rows === null ? (
-        <p className="py-16 text-center text-muted">Loading D-ATIS…</p>
+        <p className="py-16 text-center text-muted">Loading…</p>
+      ) : !showAll && !codes.length ? (
+        <p className="rounded-lg border border-dashed border-line py-16 text-center text-muted">
+          Type airports above, or paste a route like <span className="font-mono text-fg">LPPT-KJFK ALT KBOS</span>.
+        </p>
       ) : visible.length === 0 ? (
         <p className="py-16 text-center text-muted">No airports match.</p>
       ) : (
-        <div className="overflow-hidden rounded-lg border border-line bg-surface">
-          <div className="hidden grid-cols-[minmax(10rem,1.3fr)_minmax(9rem,1fr)_minmax(9rem,1fr)_minmax(8rem,0.9fr)_minmax(7rem,0.8fr)_4.5rem_5.5rem_minmax(8rem,1.2fr)] gap-3 border-b border-line px-3 py-2 text-[11px] uppercase tracking-wide text-muted lg:grid">
+        <div className="rounded-lg border border-line bg-surface">
+          <div className={`hidden gap-3 border-b border-line px-3 py-2 text-[11px] uppercase tracking-wide text-muted lg:grid ${COLS}`}>
             <span>Airport</span>
-            <span>Arrival</span>
-            <span>Departure</span>
+            <span>ATIS</span>
             <span>Wind · XW/TW</span>
             <span>Vis · Ceiling</span>
             <span>QNH</span>
-            <span>Traffic 1h</span>
+            <span className="flex items-center gap-2">
+              Traffic 3h
+              <span className="flex items-center gap-1 normal-case tracking-normal">
+                <span className="h-2 w-2 rounded-sm" style={{ background: "var(--dep)" }} />
+                dep
+                <span className="ml-1 h-2 w-2 rounded-sm" style={{ background: "var(--arr)" }} />
+                arr
+              </span>
+            </span>
             <span>Ops flags</span>
           </div>
           {visible.map((r) => (
@@ -289,10 +292,112 @@ export function Board() {
               changed={!!changedAt[r.icao] && now - changedAt[r.icao] < CHANGED_MS}
               xwLimit={xwLimit}
               twLimit={twLimit}
+              trafficScale={trafficScale}
               onRemove={codes.length && !tv ? () => removeCode(r.icao) : undefined}
             />
           ))}
         </div>
+      )}
+    </div>
+  );
+}
+
+function Chip({ active, onClick, onDelete, children }: { active?: boolean; onClick?: () => void; onDelete?: () => void; children: React.ReactNode }) {
+  return (
+    <span className={`inline-flex items-center rounded-full border ${active ? "border-accent bg-accent/10 text-fg" : "border-line bg-surface text-muted hover:text-fg"}`}>
+      {onClick ? (
+        <button className="px-3 py-1" onClick={onClick}>
+          {children}
+        </button>
+      ) : (
+        <span className="px-3 py-1">{children}</span>
+      )}
+      {onDelete && (
+        <button
+          className="pr-2.5 text-muted hover:text-danger"
+          aria-label="Delete board"
+          onClick={() => {
+            if (confirm("Delete this saved board?")) onDelete();
+          }}
+        >
+          ×
+        </button>
+      )}
+    </span>
+  );
+}
+
+function Toggle({ label, on, onChange }: { label: string; on: boolean; onChange: (v: boolean) => void }) {
+  return (
+    <button role="switch" aria-checked={on} onClick={() => onChange(!on)} className="flex items-center gap-2 text-muted hover:text-fg">
+      <span className={`relative h-5 w-9 rounded-full transition-colors ${on ? "bg-accent" : "bg-line"}`}>
+        <span className={`absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-all ${on ? "left-[18px]" : "left-0.5"}`} />
+      </span>
+      {label}
+    </button>
+  );
+}
+
+function WindLimits({ xw, tw, onChange }: { xw: number; tw: number; onChange: (xw: number, tw: number) => void }) {
+  const [open, setOpen] = useState(false);
+  const [draftXw, setDraftXw] = useState(xw);
+  const [draftTw, setDraftTw] = useState(tw);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const close = (e: MouseEvent) => !ref.current?.contains(e.target as Node) && setOpen(false);
+    const esc = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("mousedown", close);
+    document.addEventListener("keydown", esc);
+    return () => {
+      document.removeEventListener("mousedown", close);
+      document.removeEventListener("keydown", esc);
+    };
+  }, [open]);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        onClick={() => {
+          setDraftXw(xw);
+          setDraftTw(tw);
+          setOpen(!open);
+        }}
+        aria-expanded={open}
+        className="flex items-center gap-1.5 text-muted hover:text-fg"
+      >
+        <WindsockIcon />
+        Wind limits <span className="font-mono text-xs">{xw}/{tw}</span>
+      </button>
+      {open && (
+        <form
+          className="absolute right-0 z-30 mt-2 w-64 rounded-lg border border-line bg-surface-2 p-4 shadow-xl"
+          onSubmit={(e) => {
+            e.preventDefault();
+            onChange(Math.max(0, draftXw), Math.max(0, draftTw));
+            setOpen(false);
+          }}
+        >
+          <p className="mb-3 text-xs text-muted">Values above these turn red on the board. Gusts count.</p>
+          <label className="mb-3 flex items-center justify-between gap-3 text-sm">
+            Crosswind
+            <span className="flex items-center gap-1">
+              <input type="number" min={0} max={60} value={draftXw} onChange={(e) => setDraftXw(Number(e.target.value))} className="w-16 rounded border border-line bg-surface px-2 py-1 text-right font-mono" />
+              kt
+            </span>
+          </label>
+          <label className="mb-4 flex items-center justify-between gap-3 text-sm">
+            Tailwind
+            <span className="flex items-center gap-1">
+              <input type="number" min={0} max={30} value={draftTw} onChange={(e) => setDraftTw(Number(e.target.value))} className="w-16 rounded border border-line bg-surface px-2 py-1 text-right font-mono" />
+              kt
+            </span>
+          </label>
+          <button type="submit" className="w-full rounded-md bg-accent py-1.5 text-sm font-medium text-bg">
+            Apply
+          </button>
+        </form>
       )}
     </div>
   );
@@ -304,6 +409,7 @@ function Row({
   changed,
   xwLimit,
   twLimit,
+  trafficScale,
   onRemove,
 }: {
   row: AirportAtis;
@@ -311,6 +417,7 @@ function Row({
   changed: boolean;
   xwLimit: number;
   twLimit: number;
+  trafficScale: number;
   onRemove?: () => void;
 }) {
   // Weather comes from whichever ATIS was issued last.
@@ -318,14 +425,10 @@ function Row({
   const d = main?.decoded;
   const ww = d ? worstWind(d) : null;
   const flags = d ? mergeFlags(row.arr, row.dep) : [];
-  const same = row.arr && row.dep && row.arr.key === row.dep.key;
+  const f = row.flights;
 
   return (
-    <div
-      className={`group relative grid grid-cols-2 gap-x-3 gap-y-2 border-b border-line px-3 py-2.5 last:border-b-0 lg:grid-cols-[minmax(10rem,1.3fr)_minmax(9rem,1fr)_minmax(9rem,1fr)_minmax(8rem,0.9fr)_minmax(7rem,0.8fr)_4.5rem_5.5rem_minmax(8rem,1.2fr)] lg:items-center ${
-        changed ? "row-changed" : ""
-      }`}
-    >
+    <div className={`group relative grid grid-cols-2 gap-x-3 gap-y-2 border-b border-line px-3 py-2.5 last:border-b-0 lg:items-center ${COLS} ${changed ? "row-changed" : ""}`}>
       <div className="col-span-2 flex items-start gap-2 lg:col-span-1">
         <Link href={`/a/${row.icao}`} className="min-w-0 hover:text-accent">
           <div className="font-mono text-lg font-semibold leading-tight">
@@ -335,26 +438,22 @@ function Row({
           <div className="truncate text-xs text-muted">{row.airport ? `${row.airport.city || row.airport.name}, ${row.airport.country}` : "Unknown airport"}</div>
         </Link>
         {onRemove && (
-          <button
-            onClick={onRemove}
-            className="ml-auto text-muted opacity-0 transition group-hover:opacity-100 hover:text-danger focus:opacity-100"
-            aria-label={`Remove ${row.icao}`}
-          >
+          <button onClick={onRemove} className="ml-auto text-muted opacity-0 transition group-hover:opacity-100 hover:text-danger focus:opacity-100" aria-label={`Remove ${row.icao}`}>
             ×
           </button>
         )}
       </div>
 
-      {same ? (
-        <div className="col-span-2">
-          <AtisCell rec={row.arr} now={now} label="ARR/DEP" />
-        </div>
-      ) : (
-        <>
-          <AtisCell rec={row.arr} now={now} label="ARR" />
-          <AtisCell rec={row.dep} now={now} label="DEP" />
-        </>
-      )}
+      <div className="col-span-2 flex flex-col gap-1.5 lg:col-span-1">
+        {row.split ? (
+          <>
+            <AtisCell rec={row.arr} now={now} label="ARR" icao={row.icao} />
+            <AtisCell rec={row.dep} now={now} label="DEP" icao={row.icao} />
+          </>
+        ) : (
+          <AtisCell rec={row.arr} now={now} icao={row.icao} />
+        )}
+      </div>
 
       <div className="font-mono text-sm">
         <div>{fmtWind(d?.wind)}</div>
@@ -389,18 +488,20 @@ function Row({
 
       <div className="font-mono text-sm">{d ? fmtQnh(d) : "—"}</div>
 
-      <Link href={`/a/${row.icao}?tab=arr`} className="font-mono text-sm hover:text-accent" title="Departed / arrived in the last hour, inbound now (heard over ACARS)">
-        {row.flights && (row.flights.departedLastHour || row.flights.arrivedLastHour || row.flights.inbound) ? (
+      <div className="flex items-center gap-2">
+        {f && (f.depBuckets.some(Boolean) || f.arrBuckets.some(Boolean) || f.inbound) ? (
           <>
-            <div>
-              ↑{row.flights.departedLastHour} ↓{row.flights.arrivedLastHour}
-            </div>
-            <div className="text-xs text-muted">{row.flights.inbound} inbound</div>
+            <TrafficSpark dep={f.depBuckets} arr={f.arrBuckets} scale={trafficScale} />
+            <Link href={`/a/${row.icao}`} className="font-mono text-xs leading-tight text-muted hover:text-fg" title="Inbound now (heard over ACARS)">
+              <span className="text-fg">{f.inbound}</span>
+              <br />
+              inbound
+            </Link>
           </>
         ) : (
-          <span className="text-muted">—</span>
+          <span className="text-sm text-muted">—</span>
         )}
-      </Link>
+      </div>
 
       <div className="col-span-2 lg:col-span-1">
         <FlagChips flags={flags} limit={4} />
@@ -409,14 +510,12 @@ function Row({
   );
 }
 
-function AtisCell({ rec, now, label }: { rec: AtisRecord | null; now: number; label: string }) {
+function AtisCell({ rec, now, label, icao }: { rec: AtisRecord | null; now: number; label?: "ARR" | "DEP"; icao: string }) {
   if (!rec) {
     return (
       <div className="flex items-center gap-2 text-sm text-muted">
         <LetterBadge />
-        <span>
-          <span className="text-[11px] uppercase lg:hidden">{label} · </span>no D-ATIS heard
-        </span>
+        <span>{label ? `${label} · ` : ""}no D-ATIS heard</span>
       </div>
     );
   }
@@ -424,20 +523,27 @@ function AtisCell({ rec, now, label }: { rec: AtisRecord | null; now: number; la
   const heard = minutesSince(rec.lastSeen, now);
   const stale = heard > STALE_MIN || age > OLD_ISSUE_MIN;
   const d = rec.decoded;
-  const rwys = label === "DEP" ? d.departureRunways : label === "ARR" ? d.arrivalRunways : [...new Set([...d.arrivalRunways, ...d.departureRunways])];
-  const appr = d.approaches[0]?.type;
+  const rwys = label === "DEP" ? d.departureRunways : label === "ARR" ? d.arrivalRunways : null;
   return (
-    <Link href={`/a/${rec.icao}`} className="flex min-w-0 items-center gap-2">
+    <Link href={`/a/${icao}`} className="flex min-w-0 items-center gap-2">
       <LetterBadge letter={rec.letter} stale={stale} />
       <span className="min-w-0 text-sm">
         <span className="block font-mono">
-          <span className="text-[11px] text-muted uppercase lg:hidden">{label} </span>
-          {rwys.length ? rwys.join(" ") : <span className="text-muted">rwy ?</span>}
-          {appr && <span className="ml-1.5 text-xs text-muted">{appr}</span>}
+          {label && <span className="mr-1 text-[11px] text-muted">{label}</span>}
+          {rwys ? (
+            rwys.join(" ") || <span className="text-muted">rwy ?</span>
+          ) : (
+            <>
+              {d.arrivalRunways.length > 0 && <span title="Landing">↓{d.arrivalRunways.join(" ")} </span>}
+              {d.departureRunways.length > 0 && <span title="Take-off">↑{d.departureRunways.join(" ")}</span>}
+              {!d.arrivalRunways.length && !d.departureRunways.length && <span className="text-muted">rwy ?</span>}
+            </>
+          )}
+          {d.approaches[0] && <span className="ml-1.5 text-xs text-muted">{d.approaches[0].type}</span>}
         </span>
         <span className={`block text-xs ${stale ? "text-warn" : "text-muted"}`}>
           {d.issued ? `${d.issued}Z` : fmtZ(rec.issuedAt)} · {fmtAge(age)} ago
-          {stale && ` · last heard ${fmtAge(heard)} ago`}
+          {stale && heard > STALE_MIN && ` · last heard ${fmtAge(heard)} ago`}
           {rec.diff && rec.diff.changes.some((c) => c.field.endsWith("Runways")) && <span className="ml-1 text-accent">· rwy change</span>}
         </span>
       </span>
@@ -451,13 +557,13 @@ function mergeFlags(a: AtisRecord | null, b: AtisRecord | null) {
   return [...map.values()];
 }
 
-function AddAirports({ onAdd, onReplace }: { onAdd: (icaos: string[]) => void; onReplace: (icaos: string[]) => void }) {
+function AddAirports({ onAdd, autoFocus }: { onAdd: (icaos: string[]) => void; autoFocus?: boolean }) {
   const [value, setValue] = useState("");
   const [note, setNote] = useState<string | null>(null);
   const [suggestions, setSuggestions] = useState<Array<{ icao: string; iata: string; name: string; city: string; country: string }>>([]);
 
   const query = value.trim();
-  const searchable = query.length >= 3 && !/[\s,\-]/.test(query);
+  const searchable = query.length >= 2 && !/[\s,\-]/.test(query);
   useEffect(() => {
     if (!searchable) return;
     const t = setTimeout(async () => {
@@ -467,11 +573,11 @@ function AddAirports({ onAdd, onReplace }: { onAdd: (icaos: string[]) => void; o
     return () => clearTimeout(t);
   }, [query, searchable]);
 
-  const submit = async (replace: boolean) => {
-    if (!value.trim()) return;
+  const submit = async () => {
+    if (!query) return;
     const res = await fetch(`/api/v1/airports?resolve=${encodeURIComponent(value)}`);
     const { icaos, unknown } = (await res.json()) as { icaos: string[]; unknown: string[] };
-    if (icaos.length) (replace ? onReplace : onAdd)(icaos);
+    if (icaos.length) onAdd(icaos);
     setNote(unknown.length ? `Not found: ${unknown.join(", ")}` : null);
     setValue("");
     setSuggestions([]);
@@ -480,31 +586,23 @@ function AddAirports({ onAdd, onReplace }: { onAdd: (icaos: string[]) => void; o
   return (
     <div className="relative">
       <form
-        className="flex flex-col gap-2 sm:flex-row"
         onSubmit={(e) => {
           e.preventDefault();
-          submit(false);
+          submit();
         }}
       >
         <input
           value={value}
+          autoFocus={autoFocus}
           onChange={(e) => setValue(e.target.value)}
-          placeholder="Add airports or a route: LPPT-KJFK ALT KBOS, or LIS JFK BOS"
+          placeholder="Add airports: type a code or name, or paste a route like LPPT-KJFK ALT KBOS, then Enter"
           aria-label="Add airports or a route"
-          className="min-w-0 flex-1 rounded-md border border-line bg-surface px-3 py-2 font-mono text-sm uppercase placeholder:normal-case placeholder:text-muted focus:border-accent focus:outline-none"
+          className="w-full rounded-md border border-line bg-surface px-3 py-2 text-sm placeholder:text-muted focus:border-accent focus:outline-none"
         />
-        <div className="flex gap-2">
-          <button type="submit" className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-bg">
-            Add
-          </button>
-          <button type="button" onClick={() => submit(true)} className="rounded-md border border-line px-4 py-2 text-sm">
-            New board
-          </button>
-        </div>
       </form>
       {note && <p className="mt-1 text-xs text-warn">{note}</p>}
       {searchable && suggestions.length > 0 && (
-        <ul className="absolute z-10 mt-1 w-full max-w-xl overflow-hidden rounded-md border border-line bg-surface-2 shadow-lg">
+        <ul className="absolute z-20 mt-1 w-full max-w-xl overflow-hidden rounded-md border border-line bg-surface-2 shadow-lg">
           {suggestions.map((s) => (
             <li key={s.icao}>
               <button

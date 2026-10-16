@@ -1,6 +1,7 @@
 import { json, ATTRIBUTION } from "@/lib/api";
-import { airport, resolveCode } from "@/lib/airports";
+import { airport, resolveCode, timezoneOf } from "@/lib/airports";
 import { airportFlights, flightCounts, LATEST_MAX_AGE_MIN, LEGS_WINDOW_MS, source, toAirportRows } from "@/lib/data";
+import { dedupeIssues, splitAirports, toIssue } from "@/lib/data/merge-atis";
 import { legStatus } from "@/lib/movements/legs";
 
 /**
@@ -18,6 +19,7 @@ export async function GET(request: Request, ctx: RouteContext<"/api/v1/airport/[
     src.legs([icao], LEGS_WINDOW_MS),
   ]);
   const now = new Date();
+  const split = splitAirports(history.map(toIssue));
   const { departures, arrivals } = airportFlights(legs, icao, now);
   const withStatus = (l: (typeof legs)[number]) => ({
     ...l,
@@ -30,8 +32,9 @@ export async function GET(request: Request, ctx: RouteContext<"/api/v1/airport/[
     attribution: ATTRIBUTION,
     generatedAt: now.toISOString(),
     data: {
-      ...toAirportRows(latest, [icao])[0],
-      history,
+      ...toAirportRows(latest, [icao], split)[0],
+      timezone: timezoneOf(icao),
+      history: split.has(icao) ? history : dedupeIssues(history),
       departures: departures.map(withStatus),
       arrivals: arrivals.map(withStatus),
       counts: flightCounts(legs, icao, now),

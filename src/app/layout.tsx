@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </header>
         <main className="mx-auto w-full max-w-[1500px] flex-1 px-4 py-5">{children}</main>
         <footer className="border-t border-line">
-          <div className="mx-auto max-w-[1500px] px-4 py-4 text-xs text-muted">
+          <div className="mx-auto max-w-[1500px] px-4 py-4 text-center text-xs text-muted">
             <p>
               <strong className="text-warn">Not for operational use.</strong> D-ATIS only reaches us when an aircraft requests
               it, so airports can be missing or out of date. Always confirm with official sources.

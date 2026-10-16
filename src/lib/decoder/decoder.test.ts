@@ -121,6 +121,11 @@ describe("runways", () => {
     assert.ok(d.approaches.some((a) => a.type === "ILS Z" && a.runways.includes("34L")));
     assert.deepEqual(d.departureRunways, ["05", "34R"]);
   });
+  it("reads LDG/DEP without the word RWY", () => {
+    const d = decodeAtis("/RIOCDYA.TI2/SBGR ARR ATIS K\nATIS K\nEXP ILS Q CAT I RWY 10R/ LDG 10R DEP 10L IN USE\nDEP FREQ 126.0\n5701");
+    assert.ok(d);
+    assert.deepEqual([d.arrivalRunways, d.departureRunways], [["10R"], ["10L"]]);
+  });
   it("reads runway lists", () => {
     assert.deepEqual(readRunwayList("24L AND 24R AND VFR 24L DEP"), ["24L", "24R"]);
     assert.deepEqual(readRunwayList("34L/34R"), ["34L", "34R"]);

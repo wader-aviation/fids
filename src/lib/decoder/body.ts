@@ -225,6 +225,9 @@ export function parseRunways(flat: string): { arrival: string[]; departure: stri
     [new RegExp(String.raw`\b(?:RWYS?|RYS?|RUNWAYS?):?\s*` + LIST + String.raw`FOR\s+(?:ARRS?|ARRIVALS?|LDG|LANDING)\b`, "g"), [arrival]],
     [new RegExp(String.raw`\b(?:RWYS?|RYS?|RUNWAYS?):?\s*` + LIST + String.raw`FOR\s+(?:DEPS?|DEPARTURES?|TKOF|TAKE-?OFF)\b`, "g"), [departure]],
     [new RegExp(String.raw`\b(?:RWYS?|RYS?|RUNWAYS?)\s+IN\s+USE:?\s*` + LIST, "g"), [inUse]],
+    // "LDG 10R DEP 10L IN USE" (SBGR), "LDG 34 35 DEP 34 35" — no RWY word.
+    [new RegExp(String.raw`\b(?:LDG|LNDG)\s+(?=\d)` + LIST, "g"), [arrival]],
+    [new RegExp(String.raw`\b(?:DEP|DEPG)\s+(?=\d)` + LIST, "g"), [departure]],
     [new RegExp(String.raw`\b(?:RWYS?|RYS?|RUNWAYS?)\s*` + LIST + String.raw`IN\s+USE\b`, "g"), [inUse]],
     [new RegExp(String.raw`\bRWY:\s*` + LIST, "g"), [inUse]],
   ];

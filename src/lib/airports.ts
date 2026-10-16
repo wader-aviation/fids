@@ -1,3 +1,4 @@
+import tzLookup from "@photostructure/tz-lookup";
 import data from "@/data/airports.json";
 
 export interface Airport {
@@ -68,4 +69,15 @@ export function searchAirports(query: string, limit = 8): Airport[] {
     }
   }
   return out;
+}
+
+/** IANA time zone at the airport (e.g. "America/Sao_Paulo"), from its coordinates. */
+export function timezoneOf(icao: string): string | null {
+  const a = airport(icao);
+  if (!a) return null;
+  try {
+    return tzLookup(a.lat, a.lon);
+  } catch {
+    return null;
+  }
 }

@@ -16,20 +16,36 @@ export const LATEST_MAX_AGE_MIN = 180;
 
 const newer = (a: AtisRecord | null, b: AtisRecord) => (!a || b.issuedAt > a.issuedAt ? b : a);
 
-/** Groups latest records into one row per airport. A combined ATIS fills both columns unless a newer split one exists. */
-export function toAirportRows(records: AtisRecord[], order?: string[]): AirportAtis[] {
+/** How far back we look to decide whether an airport has separate arrival and departure ATIS. */
+export const SPLIT_LOOKBACK_HOURS = 24;
+
+/**
+ * Groups latest records into one row per airport.
+ * Airports in `split` get separate ARR and DEP columns; all others show one ATIS (the newest of any type).
+ */
+export function toAirportRows(records: AtisRecord[], order?: string[], split: Set<string> = new Set()): AirportAtis[] {
   const rows = new Map<string, AirportAtis>();
   const row = (icao: string) => {
     let r = rows.get(icao);
     if (!r) {
       const a = airport(icao);
-      r = { icao, airport: a ? { iata: a.iata, name: a.name, city: a.city, country: a.country } : null, arr: null, dep: null };
+      r = {
+        icao,
+        airport: a ? { iata: a.iata, name: a.name, city: a.city, country: a.country } : null,
+        split: split.has(icao),
+        arr: null,
+        dep: null,
+      };
       rows.set(icao, r);
     }
     return r;
   };
   for (const rec of records) {
     const r = row(rec.icao);
+    if (!r.split) {
+      r.arr = r.dep = newer(r.arr, rec);
+      continue;
+    }
     if (rec.type !== "DEP") r.arr = newer(r.arr, rec);
     if (rec.type !== "ARR") r.dep = newer(r.dep, rec);
   }
@@ -50,7 +66,15 @@ export function airportFlights(legs: FlightLeg[], icao: string, now = new Date()
   return { departures: departuresFrom(legs, icao, w), arrivals: arrivalsTo(legs, icao, w) };
 }
 
+/** Traffic sparkline: 6 buckets of 30 minutes, oldest first, ending now. */
+export const TRAFFIC_BUCKETS = 6;
+const BUCKET_MS = 30 * 60_000;
+
 export interface FlightCounts {
+  /** Departures (OFF, or OUT) per 30-minute bucket over the last 3 hours, oldest first. */
+  depBuckets: number[];
+  /** Arrivals (ON, or IN) per 30-minute bucket over the last 3 hours, oldest first. */
+  arrBuckets: number[];
   /** Took off (or pushed back) in the last hour. */
   departedLastHour: number;
   /** Landed (or reached the gate) in the last hour. */
@@ -67,7 +91,19 @@ export function flightCounts(legs: FlightLeg[], icao: string, now = new Date()):
   const inbound = arrivals.filter((l) => !l.onAt && !l.inAt);
   const nowIso = now.toISOString();
   const etas = inbound.map((l) => l.eta).filter((e): e is string => !!e && e >= nowIso).sort();
+  const buckets = (times: Array<string | null>) => {
+    const out = new Array<number>(TRAFFIC_BUCKETS).fill(0);
+    for (const t of times) {
+      if (!t) continue;
+      const ago = now.getTime() - new Date(t).getTime();
+      const i = TRAFFIC_BUCKETS - 1 - Math.floor(ago / BUCKET_MS);
+      if (ago >= 0 && i >= 0) out[i]++;
+    }
+    return out;
+  };
   return {
+    depBuckets: buckets(departures.map((l) => l.offAt ?? l.outAt)),
+    arrBuckets: buckets(arrivals.map((l) => l.onAt ?? l.inAt)),
     departedLastHour: departures.filter((l) => (l.offAt ?? l.outAt ?? "") >= hourAgo).length,
     arrivedLastHour: arrivals.filter((l) => (l.onAt ?? l.inAt ?? "") >= hourAgo).length,
     inbound: inbound.length,

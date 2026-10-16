@@ -4,6 +4,7 @@ import { assemble, isBetter, merge } from "@/lib/ingest/assemble";
 import { decodeMovement, MOVEMENT_LABELS } from "@/lib/movements/decode";
 import { foldEvents, LEG_IDLE_MS } from "@/lib/movements/legs";
 import type { FlightLeg } from "@/lib/movements/types";
+import { toIssue } from "./merge-atis";
 import type { AtisRecord, AtisSource } from "./types";
 
 /**
@@ -143,6 +144,15 @@ export const liveSource: AtisSource = {
       if (!cur || r.issuedAt > cur.issuedAt) best.set(k, r);
     }
     return [...best.values()];
+  },
+
+  async issues(icaos, hours) {
+    await ensureFresh();
+    const since = new Date(Date.now() - hours * 3_600_000).toISOString();
+    const wanted = icaos ? new Set(icaos) : null;
+    return [...store.records.values()]
+      .filter((r) => r.type !== "ARR/DEP" && r.issuedAt >= since && (!wanted || wanted.has(r.icao)))
+      .map(toIssue);
   },
 
   async legs(icaos, sinceMs) {

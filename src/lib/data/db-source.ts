@@ -29,6 +29,17 @@ export const dbSource: AtisSource = {
     return rows.map(toRecord);
   },
 
+  async issues(icaos, hours) {
+    const t = schema.atis;
+    const since = new Date(Date.now() - hours * 3_600_000);
+    const fp = sql<string>`regexp_replace(array_to_string(array(select jsonb_array_elements_text(${t.decoded}->'lines')), ' '), '[^A-Z0-9]', '', 'g')`;
+    const rows = await db()
+      .select({ icao: t.icao, type: t.type, letter: t.letter, issuedAt: t.issuedAt, fingerprint: fp })
+      .from(t)
+      .where(and(gte(t.issuedAt, since), inArray(t.type, ["ARR", "DEP"]), icaos ? inArray(t.icao, icaos) : undefined));
+    return rows.map((r) => ({ ...r, type: r.type as AtisRecord["type"], issuedAt: r.issuedAt.toISOString() }));
+  },
+
   async legs(icaos, sinceMs) {
     const since = new Date(Date.now() - sinceMs);
     const t = schema.flightLegs;

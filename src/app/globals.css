@@ -17,6 +17,8 @@
   --ifr: #ff6b6b;
   --lifr: #e46cf0;
   --flash: rgba(92, 200, 255, 0.16);
+  --dep: #3987e5;
+  --arr: #d95926;
   color-scheme: dark;
 }
 
@@ -37,6 +39,8 @@
     --ifr: #c62828;
     --lifr: #a21caf;
     --flash: rgba(10, 116, 194, 0.12);
+    --dep: #2a78d6;
+    --arr: #eb6834;
     color-scheme: light;
   }
 }
@@ -56,6 +60,8 @@
   --ifr: #c62828;
   --lifr: #a21caf;
   --flash: rgba(10, 116, 194, 0.12);
+  --dep: #2a78d6;
+  --arr: #eb6834;
   color-scheme: light;
 }
 
@@ -100,3 +106,66 @@ body {
 
 /* Wall / TV mode: bigger type, no chrome. */
 .tv { zoom: 1.3; }
+
+/* ------------------------------------------------------------------ split-flap board
+   Always dark, like the real thing, in both themes. */
+.flap-board {
+  --flap-bg: #0a0a0a;
+  --flap-cell: #1b1b1b;
+  --flap-cell-hi: #262626;
+  --flap-ink: #f5d33f;
+  --flap-white: #e9e9e9;
+  --flap-green: #3fdc6e;
+  --flap-red: #ff5a52;
+  --flap-dim: #8a8a8a;
+  background: linear-gradient(180deg, #151515 0%, #050505 100%);
+  color: var(--flap-white);
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.flap-row {
+  display: flex;
+  gap: 10px;
+  padding: 3px 10px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #222;
+  background: #0d0d0d;
+}
+.flap-text {
+  display: inline-flex;
+  gap: 1px;
+}
+.flap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.92em;
+  height: 1.45em;
+  background: linear-gradient(180deg, var(--flap-cell-hi) 0 49%, #000 49% 51%, var(--flap-cell) 51% 100%);
+  border-radius: 2px;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-weight: 600;
+  line-height: 1;
+  perspective: 300px;
+}
+.flap > span {
+  display: inline-block;
+}
+.flap.flipping > span {
+  animation: flap-turn 70ms linear;
+}
+@keyframes flap-turn {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(-90deg); }
+  51% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
+}
+.flap-yellow { color: var(--flap-ink); }
+.flap-white { color: var(--flap-white); }
+.flap-green { color: var(--flap-green); }
+.flap-red { color: var(--flap-red); }
+.flap-dim { color: var(--flap-dim); }
+@media (prefers-reduced-motion: reduce) {
+  .flap.flipping > span { animation: none; }
+}

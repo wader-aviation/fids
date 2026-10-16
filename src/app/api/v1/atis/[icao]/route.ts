@@ -1,6 +1,7 @@
 import { json, ATTRIBUTION } from "@/lib/api";
 import { resolveCode } from "@/lib/airports";
 import { LATEST_MAX_AGE_MIN, source, toAirportRows } from "@/lib/data";
+import { dedupeIssues, splitAirports, toIssue } from "@/lib/data/merge-atis";
 
 /** GET /api/v1/atis/{icao}?hours=24 — current ATIS plus every issue in the last `hours` (max 72). */
 export async function GET(request: Request, ctx: RouteContext<"/api/v1/atis/[icao]">) {
@@ -9,10 +10,11 @@ export async function GET(request: Request, ctx: RouteContext<"/api/v1/atis/[ica
   const hours = Math.min(Math.max(Number(new URL(request.url).searchParams.get("hours") ?? 24) || 24, 1), 72);
   const src = await source();
   const [latest, history] = await Promise.all([src.latest([icao], LATEST_MAX_AGE_MIN), src.history(icao, hours)]);
+  const split = splitAirports(history.map(toIssue));
   return json({
     source: src.kind,
     attribution: ATTRIBUTION,
     generatedAt: new Date().toISOString(),
-    data: { ...toAirportRows(latest, [icao])[0], history },
+    data: { ...toAirportRows(latest, [icao], split)[0], history: split.has(icao) ? history : dedupeIssues(history) },
   });
 }
