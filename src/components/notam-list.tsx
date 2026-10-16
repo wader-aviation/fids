@@ -38,7 +38,7 @@ export function relevantNotams(notams: Notam[], now: Date) {
 export function NotamList({ result, now }: { result: NotamResult | null; now: number }) {
   if (!result) return <p className="text-sm text-muted">Loading NOTAMs…</p>;
   if (result.status === "not-configured") {
-    return <p className="text-sm text-muted">NOTAMs are not set up on this server (FAA NOTAM API keys missing).</p>;
+    return <p className="text-sm text-muted">NOTAMs are not set up on this server (FAA NMS keys missing).</p>;
   }
   if (result.status === "error") return <p className="text-sm text-danger">NOTAMs unavailable: {result.message}</p>;
 

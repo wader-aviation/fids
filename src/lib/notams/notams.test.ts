@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { classify, isActive } from "./classify";
-import { mapFaaItem } from "./faa";
+import { mapNmsFeature, parseNmsBody } from "./nms";
 
 describe("classify", () => {
   it("uses the Q-code", () => {
@@ -27,30 +27,54 @@ describe("isActive", () => {
   });
 });
 
-describe("mapFaaItem", () => {
-  it("maps an FAA GeoJSON item", () => {
-    const n = mapFaaItem({
-      properties: {
-        coreNOTAMData: {
-          notam: {
-            id: "NOTAM_1",
-            series: "A",
-            number: "1234",
-            year: "2026",
-            icaoLocation: "LPPT",
-            selectionCode: "QMRLC",
-            effectiveStart: "2026-10-16T22:00:00.000Z",
-            effectiveEnd: "2026-10-17T05:00:00.000ZEST",
-            text: "RWY 02/20 CLSD DUE TO WIP",
-          },
+describe("mapNmsFeature", () => {
+  const feature = (notam: Record<string, unknown>, translations?: Array<Record<string, unknown>>) => ({
+    properties: { coreNOTAMData: { notam, notamTranslation: translations } },
+  });
+  it("maps an NMS GeoJSON feature", () => {
+    const n = mapNmsFeature(
+      feature(
+        {
+          id: "NOTAM_1",
+          series: "A ",
+          number: "1234",
+          year: "2026",
+          type: "N",
+          icaoLocation: "LPPT ",
+          selectionCode: "QMRLC",
+          effectiveStart: "2026-10-16T22:00:00.000Z",
+          effectiveEnd: "2026-10-17T05:00:00.000Z",
+          estimated: "true",
+          text: "RWY 02/20 CLSD DUE TO WIP",
         },
-      },
-    });
+        [{ type: "ICAO", formattedText: "A1234/26 NOTAMN\nE) RWY 02/20 CLSD DUE TO WIP" }],
+      ),
+    );
     assert.ok(n);
     assert.deepEqual([n.id, n.location, n.qcode, n.summary, n.estimatedEnd], ["A1234/26", "LPPT", "QMRLC", "Runway closed", true]);
-    assert.equal(n.end, "2026-10-17T05:00:00.000Z");
+    assert.match(n.text, /^A1234\/26 NOTAMN/);
   });
-  it("skips empty items", () => {
-    assert.equal(mapFaaItem({}), null);
+  it("does not repeat the series letter", () => {
+    assert.equal(mapNmsFeature(feature({ series: "A", number: "A8258", year: "2026", text: "x" }))?.id, "A8258/26");
+  });
+  it("treats PERM as no end", () => {
+    const n = mapNmsFeature(feature({ number: "10/123", text: "TWY F CLSD", effectiveEnd: "PERM", location: "JFK" }));
+    assert.equal(n?.end, null);
+    assert.equal(n?.id, "10/123");
+  });
+  it("skips cancellations and empty features", () => {
+    assert.equal(mapNmsFeature(feature({ number: "1", type: "C", text: "x" })), null);
+    assert.equal(mapNmsFeature({}), null);
+  });
+});
+
+describe("parseNmsBody", () => {
+  it("never turns a throttle into an empty list", () => {
+    assert.throws(() => parseNmsBody(200, '{"fault":{"faultstring":"Spike arrest violation"}}'));
+    assert.throws(() => parseNmsBody(429, ""));
+    assert.throws(() => parseNmsBody(200, "{}"));
+  });
+  it("accepts a success envelope", () => {
+    assert.deepEqual(parseNmsBody(200, '{"status":"Success","data":{"geojson":[]}}').data, { geojson: [] });
   });
 });

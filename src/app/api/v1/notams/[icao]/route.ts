@@ -8,7 +8,7 @@ export async function GET(_request: Request, ctx: RouteContext<"/api/v1/notams/[
   if (!icao) return json({ error: "unknown airport code" }, { status: 404 });
   const result = await faaNotams(icao);
   return json(
-    { attribution: "NOTAMs from the FAA NOTAM API. Check official sources.", data: { icao, ...result } },
+    { attribution: "NOTAMs from the FAA NOTAM Management Service. Check official sources.", data: { icao, ...result } },
     { headers: { "Cache-Control": "public, max-age=300, s-maxage=300" } },
   );
 }

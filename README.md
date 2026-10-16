@@ -5,7 +5,7 @@ pilots and dispatchers care about. Built only on free/open data:
 
 - **D-ATIS** (digital ATIS over ACARS) decoded into runways, approaches, weather and ops flags, with every letter change.
 - **Departures and arrivals** heard over ACARS: OUT/OFF/ON/IN times, ETA, arrival runway.
-- **METAR/TAF** from aviationweather.gov and **NOTAMs** from the FAA NOTAM API.
+- **METAR/TAF** from aviationweather.gov and **NOTAMs** from the FAA NOTAM Management Service (NMS).
 - A JSON API for all of it.
 
 > **Not for operational use.** D-ATIS only reaches us when an aircraft requests it, so some airports
@@ -52,7 +52,7 @@ All JSON, CORS open. API keys and rate limits come later.
 | `GET /api/v1/wx/{icao}` | Latest METAR and TAF |
 | `GET /api/v1/airport/{icao}` | Airport board in one call: ATIS + history, departures, arrivals, counts |
 | `GET /api/v1/flights?airport=KJFK&dir=dep\|arr` | Flights heard over ACARS for one airport |
-| `GET /api/v1/notams/{icao}` | NOTAMs (needs `FAA_CLIENT_ID` / `FAA_CLIENT_SECRET`) |
+| `GET /api/v1/notams/{icao}` | NOTAMs, worldwide, from the FAA NOTAM Management Service (needs `NMS_CLIENT_ID` / `NMS_CLIENT_SECRET`) |
 
 Without `DATABASE_URL` the app runs on a live in-memory feed straight from Airframes (first load
 takes ~30s). That is for development only.
