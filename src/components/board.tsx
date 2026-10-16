@@ -98,7 +98,7 @@ export function Board() {
   const [error, setError] = useState<string | null>(null);
   const [changedAt, setChangedAt] = useState<Record<string, number>>({});
   const [filter, setFilter] = useState("");
-  const [saved, setSaved] = useStored<SavedBoard[]>("datis.boards", []);
+  const [saved, setSaved] = useStored<SavedBoard[]>("fids.boards", []);
   const lastLetters = useRef<Record<string, string>>({});
   const now = useNow();
 
@@ -117,14 +117,14 @@ export function Board() {
   // Restore the last board when opening "/" with no airports.
   useEffect(() => {
     if (!params.get("a")) {
-      const last = storage.get<string[]>("datis.board", []);
+      const last = storage.get<string[]>("fids.board", []);
       if (last.length) setParams({ a: last.join(",") });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    storage.set("datis.board", codes);
+    storage.set("fids.board", codes);
   }, [codes]);
 
   const load = useCallback(async () => {

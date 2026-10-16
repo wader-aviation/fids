@@ -25,8 +25,8 @@ interface Store {
   pending: Promise<void> | null;
 }
 
-const g = globalThis as unknown as { __datisLive?: Store };
-const store: Store = (g.__datisLive ??= {
+const g = globalThis as unknown as { __fidsLive?: Store };
+const store: Store = (g.__fidsLive ??= {
   records: new Map(),
   recentRaw: [],
   lastId: 0,

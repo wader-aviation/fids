@@ -28,7 +28,7 @@ interface Query {
 async function getJson(url: string, attempt = 0): Promise<AirframesMessage[]> {
   const headers: Record<string, string> = {
     Accept: "application/json",
-    "User-Agent": "datis-board (+https://github.com/wader-app/datis)",
+    "User-Agent": "fids (open-source flight information board)",
   };
   if (process.env.AIRFRAMES_API_KEY) headers.Authorization = `Bearer ${process.env.AIRFRAMES_API_KEY}`;
 

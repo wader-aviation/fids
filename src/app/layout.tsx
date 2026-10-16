@@ -7,8 +7,8 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: { default: "D-ATIS Board", template: "%s · D-ATIS Board" },
-  description: "Live decoded D-ATIS for airline operations control and dispatch. Runways, ops flags and every letter change.",
+  title: { default: "FIDS", template: "%s · FIDS" },
+  description: "Open-source flight information board: departures, arrivals, decoded D-ATIS, METAR/TAF and NOTAMs from open data.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -18,9 +18,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <header className="border-b border-line">
           <nav className="mx-auto flex max-w-[1500px] items-center gap-4 px-4 py-3">
             <Link href="/" className="font-mono text-sm font-semibold tracking-wide">
-              D-ATIS<span className="text-accent">·</span>BOARD
+              FIDS
             </Link>
-            <span className="text-xs text-muted">Decoded digital ATIS for ops control</span>
+            <span className="text-xs text-muted">Flights, ATIS and conditions from open data</span>
           </nav>
         </header>
         <main className="mx-auto w-full max-w-[1500px] flex-1 px-4 py-5">{children}</main>

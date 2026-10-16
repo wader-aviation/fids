@@ -1,6 +1,7 @@
-# D-ATIS Board
+# FIDS
 
-Open-source airport board for airline operations control and dispatch, built only on free/open data:
+An open-source flight information display: the airport board you see in a terminal, plus the conditions
+pilots and dispatchers care about. Built only on free/open data:
 
 - **D-ATIS** (digital ATIS over ACARS) decoded into runways, approaches, weather and ops flags, with every letter change.
 - **Departures and arrivals** heard over ACARS: OUT/OFF/ON/IN times, ETA, arrival runway.

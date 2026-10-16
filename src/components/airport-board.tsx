@@ -64,8 +64,8 @@ export function AirportBoard({ icao }: { icao: string }) {
 
   const addToBoard = () => {
     try {
-      const cur: string[] = JSON.parse(localStorage.getItem("datis.board") ?? "[]");
-      if (!cur.includes(icao)) localStorage.setItem("datis.board", JSON.stringify([...cur, icao]));
+      const cur: string[] = JSON.parse(localStorage.getItem("fids.board") ?? "[]");
+      if (!cur.includes(icao)) localStorage.setItem("fids.board", JSON.stringify([...cur, icao]));
     } catch {}
   };
 

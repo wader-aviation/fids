@@ -8,7 +8,7 @@ export interface Weather {
 const BASE = "https://aviationweather.gov/api/data";
 
 async function getJson<T>(url: string): Promise<T[]> {
-  const res = await fetch(url, { headers: { "User-Agent": "datis-board" } });
+  const res = await fetch(url, { headers: { "User-Agent": "fids" } });
   if (!res.ok || res.status === 204) return [];
   return res.json();
 }
