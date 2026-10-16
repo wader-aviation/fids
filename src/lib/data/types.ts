@@ -40,6 +40,8 @@ export interface AtisSource {
   issues(icaos: string[] | null, hours: number): Promise<AtisIssue[]>;
   /** Flight legs touching these airports (all when null), heard within `sinceMs`. */
   legs(icaos: string[] | null, sinceMs: number): Promise<FlightLeg[]>;
+  /** Every leg of one aircraft (tail) or one flight number, newest first. */
+  legsFor(by: { tail?: string; flight?: string }): Promise<FlightLeg[]>;
   /** "database" or "live" (in-memory, straight from Airframes). */
   readonly kind: "database" | "live";
 }

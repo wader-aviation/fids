@@ -164,6 +164,13 @@ export const liveSource: AtisSource = {
     );
   },
 
+  async legsFor(by) {
+    await ensureFresh();
+    return [...store.legs.values()]
+      .filter((l) => (by.tail ? l.tail === by.tail : by.flight ? l.flight === by.flight : false))
+      .sort((a, b) => b.firstSeen.localeCompare(a.firstSeen));
+  },
+
   async history(icao, hours) {
     await ensureFresh();
     const since = new Date(Date.now() - hours * 3_600_000).toISOString();

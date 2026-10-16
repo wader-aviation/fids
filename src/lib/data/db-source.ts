@@ -49,6 +49,13 @@ export const dbSource: AtisSource = {
     return (await db().select().from(t).where(where)).map(rowToLeg);
   },
 
+  async legsFor(by) {
+    const t = schema.flightLegs;
+    const where = by.tail ? eq(t.tail, by.tail) : by.flight ? eq(t.flight, by.flight) : undefined;
+    if (!where) return [];
+    return (await db().select().from(t).where(where).orderBy(desc(t.firstSeen)).limit(50)).map(rowToLeg);
+  },
+
   async history(icao, hours) {
     const since = new Date(Date.now() - hours * 3_600_000);
     const rows = await db()

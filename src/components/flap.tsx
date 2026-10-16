@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { PlaneIcon } from "./icons";
+import { LandingIcon, TakeoffIcon } from "./icons";
 
 /** The order a real flap drum turns through. */
 const DRUM = " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:./-";
@@ -77,10 +77,17 @@ export interface FlapColumn {
   width: number;
 }
 
+export interface FlapCell {
+  text: string;
+  tone?: FlapTone;
+  /** Makes the cell a button (e.g. open a flight's history). */
+  onClick?: () => void;
+  title?: string;
+}
+
 export interface FlapRow {
   key: string;
-  cells: Array<{ text: string; tone?: FlapTone }>;
-  href?: string;
+  cells: FlapCell[];
 }
 
 /** A departures/arrivals board in the style of an airport split-flap display. */
@@ -107,7 +114,7 @@ export function FlapBoard({
       <div style={{ fontSize: `min(17px, calc((100cqw - ${columns.length * 10 + 24}px) / ${chars * 1.02}))` }}>
         <header className="flex items-center gap-3 px-3 pt-3 pb-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-md" style={{ background: "#f5d33f", color: "#111" }}>
-            <PlaneIcon direction={direction} />
+            {direction === "dep" ? <TakeoffIcon /> : <LandingIcon />}
           </span>
           <h2 className="text-2xl font-semibold tracking-wide text-white">{title}</h2>
         </header>
@@ -125,7 +132,18 @@ export function FlapBoard({
             <div key={`row-${ri}`} role="row" className="flap-row">
               {r.cells.map((cell, ci) => (
                 <span role="cell" key={ci}>
-                  <FlapText text={cell.text} width={columns[ci].width} tone={cell.tone} delay={ri * 40} />
+                  {cell.onClick && cell.text.trim() ? (
+                    <button
+                      onClick={cell.onClick}
+                      title={cell.title}
+                      aria-label={cell.title ? `${cell.title}: ${cell.text}` : cell.text}
+                      className="rounded-[3px] outline-offset-2 hover:outline hover:outline-1 hover:outline-[#f5d33f]/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#f5d33f]"
+                    >
+                      <FlapText text={cell.text} width={columns[ci].width} tone={cell.tone} delay={ri * 40} />
+                    </button>
+                  ) : (
+                    <FlapText text={cell.text} width={columns[ci].width} tone={cell.tone} delay={ri * 40} />
+                  )}
                 </span>
               ))}
             </div>

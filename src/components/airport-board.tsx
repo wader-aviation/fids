@@ -12,6 +12,7 @@ import type { Weather } from "@/lib/weather";
 import { AtisCard } from "./atis-card";
 import { CategoryPill, LetterBadge } from "./bits";
 import { FlapBoard, type FlapRow, type FlapTone } from "./flap";
+import { LegHistory, type HistoryQuery } from "./leg-history";
 import { BackIcon, ChevronIcon } from "./icons";
 import { NotamList, relevantNotams } from "./notam-list";
 
@@ -36,6 +37,7 @@ export function AirportBoard({ icao }: { icao: string }) {
   const [error, setError] = useState<string | null>(null);
   const [now, setNow] = useState(() => Date.now());
   const [open, setOpen] = useState(false);
+  const [history, setHistory] = useState<HistoryQuery | null>(null);
 
   const load = useCallback(async () => {
     // Weather and NOTAMs are slower; they fill in on their own.
@@ -150,30 +152,40 @@ export function AirportBoard({ icao }: { icao: string }) {
           title="Departures"
           direction="dep"
           columns={[
-            { label: "TIME", width: 5 },
-            { label: "DESTINATION", width: 12 },
             { label: "FLIGHT", width: 7 },
-            { label: "REMARKS", width: 9 },
+            { label: "TAIL", width: 7 },
+            { label: "TO", width: 4 },
+            { label: "OUT", width: 5 },
+            { label: "OFF", width: 5 },
+            { label: "ARR", width: 5 },
+            { label: "REMARKS", width: 8 },
           ]}
-          rows={departureRows(data.departures, tz)}
+          rows={departureRows(data.departures, tz, setHistory)}
           minRows={BOARD_ROWS}
         />
         <FlapBoard
           title="Arrivals"
           direction="arr"
           columns={[
-            { label: "TIME", width: 5 },
-            { label: "ORIGIN", width: 12 },
             { label: "FLIGHT", width: 7 },
-            { label: "REMARKS", width: 9 },
+            { label: "TAIL", width: 7 },
+            { label: "FROM", width: 4 },
+            { label: "OFF", width: 5 },
+            { label: "ETA", width: 5 },
+            { label: "ON", width: 5 },
+            { label: "IN", width: 5 },
+            { label: "REMARKS", width: 8 },
           ]}
-          rows={arrivalRows(data.arrivals, tz)}
+          rows={arrivalRows(data.arrivals, tz, setHistory)}
           minRows={BOARD_ROWS}
         />
       </div>
       <p className="text-center text-xs text-muted">
-        Local times. Flights heard over ACARS in the last 3 hours: only aircraft whose datalink messages reach Airframes feeders, so this is not a full schedule.
+        Times in {icao} local time. OUT = left the gate · OFF = took off · ON = landed · IN = at the gate. Click a flight or a tail for its history.
+        <br />
+        Flights heard over ACARS in the last 3 hours: only aircraft whose datalink messages reach Airframes feeders, so this is not a full schedule.
       </p>
+      {history && <LegHistory query={history} onClose={() => setHistory(null)} onOpen={setHistory} />}
     </div>
   );
 }
@@ -182,13 +194,22 @@ export function AirportBoard({ icao }: { icao: string }) {
 
 const localHm = (iso: string, tz: string) => new Intl.DateTimeFormat("en-GB", { timeZone: tz, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(iso));
 
-/** City names without accents (the flap drum has none). */
-const place = (city: string | null, icao: string | null) => (city ? city.normalize("NFD").replace(/[\u0300-\u036f]/g, "") : (icao ?? "?"));
+type Open = (q: HistoryQuery) => void;
 
-function departureRows(legs: BoardLeg[], tz: string): FlapRow[] {
+const z = (iso: string | null, tz: string) => (iso ? localHm(iso, tz) : "");
+
+function idCells(l: BoardLeg, open: Open) {
+  return [
+    { text: l.flight ?? "", tone: "yellow" as FlapTone, onClick: l.flight ? () => open({ flight: l.flight! }) : undefined, title: "Flight history" },
+    { text: l.tail, tone: "white" as FlapTone, onClick: () => open({ tail: l.tail }), title: "Aircraft history" },
+  ];
+}
+
+function departureRows(legs: BoardLeg[], tz: string, open: Open): FlapRow[] {
   const remark = (l: BoardLeg): [string, FlapTone] => {
+    if (l.inAt) return ["AT GATE", "dim"];
+    if (l.onAt) return ["ARRIVED", "dim"];
     if (l.status === "taxi-out") return ["TAXIING", "yellow"];
-    if (l.status === "landed" || l.status === "at-gate") return ["ARRIVED", "dim"];
     if (l.offAt || l.status === "airborne" || l.status === "en-route") return ["DEPARTED", "green"];
     // Route heard (e.g. flight plan or init report) but no push-back yet.
     return ["PLANNED", "white"];
@@ -197,21 +218,24 @@ function departureRows(legs: BoardLeg[], tz: string): FlapRow[] {
     .map((l) => ({ l, t: l.offAt ?? l.outAt ?? l.firstSeen }))
     .sort((a, b) => a.t.localeCompare(b.t))
     .slice(-BOARD_ROWS)
-    .map(({ l, t }) => {
+    .map(({ l }) => {
       const [text, tone] = remark(l);
+      const arrival = l.onAt ?? l.inAt;
       return {
         key: l.key,
         cells: [
-          { text: localHm(t, tz), tone: "yellow" },
-          { text: place(l.destinationCity, l.destination), tone: "yellow" },
-          { text: l.flight ?? l.tail, tone: "yellow" },
+          ...idCells(l, open),
+          { text: l.destination ?? "????", tone: "yellow" },
+          { text: z(l.outAt, tz), tone: "yellow" },
+          { text: z(l.offAt, tz), tone: "yellow" },
+          { text: arrival ? z(arrival, tz) : z(l.eta, tz), tone: arrival ? "green" : "white" },
           { text, tone },
         ],
       };
     });
 }
 
-function arrivalRows(legs: BoardLeg[], tz: string): FlapRow[] {
+function arrivalRows(legs: BoardLeg[], tz: string, open: Open): FlapRow[] {
   const inbound = legs.filter((l) => !l.onAt && !l.inAt);
   const landed = legs.filter((l) => l.onAt || l.inAt);
   // Upcoming first matter most; fill the rest with the latest landings.
@@ -221,14 +245,17 @@ function arrivalRows(legs: BoardLeg[], tz: string): FlapRow[] {
   const rows = [...keepLanded, ...inbound.slice(0, BOARD_ROWS)].map((l) => ({ l, t: l.onAt ?? l.inAt ?? l.eta }));
   return rows
     .sort((a, b) => (a.t ?? "9").localeCompare(b.t ?? "9"))
-    .map(({ l, t }) => {
+    .map(({ l }) => {
       const [text, tone]: [string, FlapTone] = l.inAt ? ["AT GATE", "dim"] : l.onAt ? ["LANDED", "green"] : l.eta ? ["EXPECTED", "white"] : ["EN ROUTE", "white"];
       return {
         key: l.key,
         cells: [
-          { text: t ? localHm(t, tz) : "--:--", tone: "yellow" },
-          { text: place(l.originCity, l.origin), tone: "yellow" },
-          { text: l.flight ?? l.tail, tone: "yellow" },
+          ...idCells(l, open),
+          { text: l.origin ?? "????", tone: "yellow" },
+          { text: z(l.offAt, tz), tone: "yellow" },
+          { text: l.onAt || l.inAt ? "" : z(l.eta, tz), tone: "white" },
+          { text: z(l.onAt, tz), tone: "green" },
+          { text: z(l.inAt, tz), tone: "green" },
           { text, tone },
         ],
       };
